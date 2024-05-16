@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FriendService } from '../friend.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { FriendService } from '../friend.service';
   styleUrl: './friendbox.component.scss'
 })
 export class FriendboxComponent {
+  @Input() canFollow = true;
   constructor(public fs: FriendService) {
 
   }

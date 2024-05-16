@@ -10,14 +10,4 @@
         object-position: center;
         margin: 1em;
     }
-
-    a {
-        color: black;
-        text-decoration: none;
-        &:hover {
-            cursor: pointer;
-            text-decoration: underline;
-            color: orange;
-        }
-    }
 }
