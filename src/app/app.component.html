@@ -1,5 +1,8 @@
 <app-header></app-header>
 <div class="container">
-  <app-capy-card [text]="hamsterTexts[0]" [source]="images[0]"></app-capy-card>
-  <app-capy-card [text]="'Ich fresse gerne Gras'" [source]="images[1]"></app-capy-card>
+  <app-capy-card
+  *ngFor = "let i of [0,1,2,3]" 
+  [text] = "hamsterTexts[i]"
+  [source] = "images[i]"
+  ></app-capy-card>
 </div>
