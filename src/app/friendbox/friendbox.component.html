@@ -1,9 +1,9 @@
 
 <div class=" friendrow">
     
-    <div class="friend default-card" *ngFor = "let i of [0, 1, 2, 3]">
-        <img src={{images[i]}} alt="">
-        <p>{{names[i]}}</p>
+    <div class="friend default-card" *ngFor = "let name of fs.names; let i = index">
+        <img src={{fs.images[i]}} alt="">
+        <p>{{name}}</p>
         
         
     </div>

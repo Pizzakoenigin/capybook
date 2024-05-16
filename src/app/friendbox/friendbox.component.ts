@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { FriendService } from '../friend.service';
 
 @Component({
   selector: 'app-friendbox',
@@ -9,11 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './friendbox.component.scss'
 })
 export class FriendboxComponent {
-  names = ['Uwe', 'Manfred', 'Willy', 'Peter']
-  texts = ['taucht gerne', 'spielt', 'freundlich', 'haarig']
-  images = ['assets/img/capybara9.jpg',
-    'assets/img/capybara10.jpg',
-    'assets/img/capybara11.jpg',
-    'assets/img/capybara12.jpg'
-  ]
+  constructor(public fs: FriendService) {
+
+  }
+
 }

@@ -4,12 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FriendService {
-  names = ['Uwe', 'Manfred', 'Willy', 'Peter']
+  names = ['Uwe', 'Manfred']
   texts = ['taucht gerne', 'spielt', 'freundlich', 'haarig']
   images = ['assets/img/capybara9.jpg',
-    'assets/img/capybara10.jpg',
-    'assets/img/capybara11.jpg',
-    'assets/img/capybara12.jpg'
+
   ]
   constructor() { }
+
+  addFriend(name:string, text:string, image:string){
+    this.names.push(name);
+    this.texts.push(text);
+    this.images.push(image)
+  }
 }
