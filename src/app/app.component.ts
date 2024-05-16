@@ -6,11 +6,12 @@ import { NgFor } from '@angular/common';
 import { ProposalsComponent } from './proposals/proposals.component';
 import { ProfileRowComponent } from './profile-row/profile-row.component';
 import { FriendboxComponent } from './friendbox/friendbox.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, FriendboxComponent, NgFor],
+  imports: [RouterOutlet, HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, FriendboxComponent, MatIconModule, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

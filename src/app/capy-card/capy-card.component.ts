@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-capy-card',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './capy-card.component.html',
   styleUrl: './capy-card.component.scss'
 })

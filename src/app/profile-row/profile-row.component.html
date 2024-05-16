@@ -1,10 +1,9 @@
 <div class="profile-row">
     <img src={{source}} alt="">
-
     <div>
         <b>{{name}}</b>
         <span> {{text}}</span> <br>
-        <a href="">folgen</a>
+        <a *ngIf="canFollow" (click)="fs.addFriend(name, text, source); canFollow=false">adden</a>
     </div>
     
 </div>
