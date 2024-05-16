@@ -1,11 +1,23 @@
 header {
-    box-shadow: 2px 2px 2px rgb(0, 0,0);
-    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px 5px rgba(141, 140, 140, 0.1);
+    background-color: rgba(224, 166, 89, 0.901);
     display: flex;
     align-items: center;
-}
+    font-size: 2em;
+    text-transform: uppercase;
+    color: rgb(20, 19, 69);
+    padding: 0.3em;
 
-.logo {
-    height: 10vh;
-    margin: 0.2em;
+    .logo {
+        height: 10vh;
+        margin: 0.2em;
+    }
+
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-weight: 100;
+        font-size: 1.8em;
+    }
+
 }
