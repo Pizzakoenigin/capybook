@@ -1,0 +1,12 @@
+.profile-row {
+    display: flex;
+    align-items: center;
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin: 1em;
+    }
+}

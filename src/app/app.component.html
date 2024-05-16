@@ -1,8 +1,15 @@
 <app-header></app-header>
-<div class="container">
+<div class="flexrow">
+  <div class="container">
   <app-capy-card
   *ngFor = "let i of [0,1,2,3]" 
   [text] = "hamsterTexts[i]"
   [source] = "images[i]"
   ></app-capy-card>
+</div>
+
+<app-proposals>
+
+</app-proposals>
+
 </div>

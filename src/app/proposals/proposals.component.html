@@ -1,1 +1,10 @@
-<p>proposals works!</p>
+<div class="container">
+    <b>Freundesvorschläge</b>
+
+    <app-profile-row 
+    *ngFor= "let i of [0,1,2,3]"
+    [name] = "names[i]"
+    [source] = "images[i]"
+    [text] = "texts[i]"
+    ></app-profile-row>  
+</div>

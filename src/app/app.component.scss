@@ -1,4 +1,14 @@
 .container {
     padding: 1.5em;
     display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 60%;
+}
+
+.flexrow {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
 }
