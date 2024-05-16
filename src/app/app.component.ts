@@ -11,5 +11,17 @@ import { CapyCardComponent } from './capy-card/capy-card.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'capybook';
+  hamsterTexts = [
+    'Hallo, ich bin Frederik das Capybara.',
+    'Ich bin Carlos.',
+    'Ich fresse gerne Gras.',
+    'Hey, bist du auch ein Capybara?'
+  ]
+
+  images = [
+    'assets/img/capybara1.jpg',
+    'assets/img/capybara2.jpg',
+    'assets/img/capybara3.jpg',
+    'assets/img/capybara4.jpg',
+  ]
 }

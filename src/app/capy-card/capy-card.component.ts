@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-capy-card',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './capy-card.component.scss'
 })
 export class CapyCardComponent {
-
+  @Input() text: string = '';
+  @Input() source: string = '';
 }

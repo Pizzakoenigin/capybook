@@ -1,0 +1,45 @@
+.card {
+    min-height: 20%;
+    background-color: white;
+    width: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+
+    img {
+        width: 100%
+    }
+
+    p,
+    button {
+        padding: 0.5em;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 0.5em;
+
+
+        button {
+            width: 40%;
+            border: unset;
+            cursor: pointer;
+
+            &:first-child {
+                left: 0;
+            }
+
+            &:last-child {
+                right: 0;
+            }
+            
+            &:hover {
+                background-color: rgb(198, 217, 198);
+                color: white;
+            }
+        }
+    }
+
+
+}
