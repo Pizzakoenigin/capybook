@@ -2,5 +2,20 @@ body {
     margin: 0;
     background-color: rgba($color: #c9b449, $alpha: 0.1);
     font-family: sans-serif;
-    color: rgb(97, 97, 94)
+    color: rgb(97, 97, 94);
+
+    h2 {
+        margin: 0;
+    }
+    
+}
+
+
+.default-card {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px 3px rgba(141, 140, 140, 0.1);
+    box-sizing: border-box;
 }

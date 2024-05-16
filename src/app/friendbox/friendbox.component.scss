@@ -1,0 +1,24 @@
+.friendrow{
+    display: flex;
+    flex-direction: row;
+
+    .friend{
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        margin: 0.5em;
+        align-items: center;
+        img {
+            width: 5em;
+            height: 5em;
+            border-radius: 15em;
+            object-fit: cover;
+            margin: 0.7em;
+        }
+
+        p{
+            margin: 0.5em;
+        }
+        
+    }
+}

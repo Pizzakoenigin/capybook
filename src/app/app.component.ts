@@ -5,11 +5,12 @@ import { CapyCardComponent } from './capy-card/capy-card.component';
 import { NgFor } from '@angular/common';
 import { ProposalsComponent } from './proposals/proposals.component';
 import { ProfileRowComponent } from './profile-row/profile-row.component';
+import { FriendboxComponent } from './friendbox/friendbox.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, NgFor],
+  imports: [RouterOutlet, HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, FriendboxComponent, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
