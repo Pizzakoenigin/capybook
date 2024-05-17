@@ -8,8 +8,8 @@
     <div class="friend default-card" *ngFor = "let name of fs.names; let i =index">
         <img src={{fs.images[i]}} alt="">
         <p>{{name}}</p>
-        <a (click)="canFollow=true">unfollow</a>
-        <!-- <a (click)="fs.removeFriend(name, text, source); canFollow=true">unfollow</a> -->
+        <a (click)="fs.removeFriend(i); canFollow=true">entfernen</a>
+        
         
     </div>
 </div>
