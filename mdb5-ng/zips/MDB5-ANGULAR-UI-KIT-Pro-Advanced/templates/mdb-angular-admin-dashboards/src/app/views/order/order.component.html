@@ -1,0 +1,130 @@
+<div class="container">
+  <h1 class="h4 text-center py-5 mb-0">Order dashboard</h1>
+
+  <!--Section: Order chart-->
+  <section class="mb-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <canvas
+              mdbChart
+              [type]="'line'"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+            ></canvas>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <canvas
+              mdbChart
+              [type]="'bar'"
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Order chart-->
+
+  <!--Section: Order table-->
+  <section>
+    <div class="card">
+      <div class="card-header">
+        <mdb-form-control class="my-3">
+          <input
+            mdbInput
+            type="text"
+            class="form-control"
+            id="datatable-search-input"
+            (keyup)="search($event)"
+          />
+          <label mdbLabel class="form-label" for="datatable-search-input"
+            >Search</label
+          >
+        </mdb-form-control>
+      </div>
+
+      <div class="card-body">
+        <div class="datatable mt-4">
+          <table
+            class="table datatable-table"
+            mdbTable
+            mdbTableSort
+            #table="mdbTable"
+            #sort="mdbTableSort"
+            [dataSource]="dataSource"
+            [sort]="sort"
+            [pagination]="pagination"
+            [striped]="true"
+          >
+            <thead class="datatable-header">
+              <tr>
+                <th scope="col">
+                  <div class="form-check d-flex align-items-center mb-0">
+                    <input
+                      mdbCheckbox
+                      class="datatable-header-checkbox form-check-input"
+                      type="checkbox"
+                      [checked]="allRowsSelected()"
+                      (checkboxChange)="toggleAll($event)"
+                    />
+                  </div>
+                </th>
+                <th
+                  *ngFor="let header of headers"
+                  [mdbTableSortHeader]="header.value"
+                  scope="col"
+                >
+                  {{ header.label }}
+                </th>
+              </tr>
+            </thead>
+            <tbody class="datatable-body">
+              <tr
+                *ngFor="let data of table.data"
+                scope="row"
+                [class.active]="selections.has(data)"
+              >
+                <td>
+                  <div class="form-check">
+                    <input
+                      mdbCheckbox
+                      (click)="$event.stopPropagation()"
+                      (checkboxChange)="toggleSelection($event, data)"
+                      [checked]="selections.has(data)"
+                      class="datatable-row-checkbox form-check-input"
+                      type="checkbox"
+                    />
+                  </div>
+                </td>
+                <td>
+                  {{ data.orderId }}
+                </td>
+                <td>
+                  {{ data.customer }}
+                </td>
+                <td>
+                  {{ data.date }}
+                </td>
+                <td>
+                  {{ data.country }}
+                </td>
+                <td>
+                  {{ data.status }}
+                </td>
+                <td>
+                  {{ data.amount }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mdb-table-pagination #pagination></mdb-table-pagination>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Order table-->
+</div>

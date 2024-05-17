@@ -1,0 +1,271 @@
+<div class="container">
+  <h1 class="h3 text-center py-5 mb-0">Ads dashboard</h1>
+
+  <!--Section: Mixed charts-->
+  <section class="text-center">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Visibility</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-around">
+              <div>
+                <p class="mb-2">Impr. Top</p>
+                <h5>
+                  90%
+                  <small class="text-success"
+                    ><i class="fas fa-caret-up me-1"></i
+                    ><span>3.0%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">Impr. Abs Top</p>
+                <h5>
+                  86.3
+                  <small class="text-success"
+                    ><i class="fas fa-caret-up me-1"></i
+                    ><span>4.5%</span></small
+                  >
+                </h5>
+              </div>
+            </div>
+
+            <div style="height: 350px">
+              <canvas
+                mdbChart
+                [type]="'bar'"
+                [datasets]="visibilityChartData"
+                [labels]="visibilityChartLabels"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Acquisition</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-around">
+              <div>
+                <p class="mb-2">Clicks</p>
+                <h5>
+                  4.9K
+                  <small class="text-danger"
+                    ><i class="fas fa-caret-down me-1"></i
+                    ><span> -71.9%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">CTR</p>
+                <h5>
+                  31.13%
+                  <small class="text-danger"
+                    ><i class="fas fa-caret-down me-1"></i
+                    ><span>-2.6%</span></small
+                  >
+                </h5>
+              </div>
+            </div>
+
+            <div id="chart-acquisition" style="height: 350px">
+              <canvas
+                mdbChart
+                [type]="'bar'"
+                [datasets]="acquisitionChartData"
+                [labels]="acquisitionChartLabels"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Conversion</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-around">
+              <div>
+                <p class="mb-2">Conversions</p>
+                <h5>
+                  859.5
+                  <small class="text-success"
+                    ><i class="fas fa-caret-up me-1"></i
+                    ><span>72.0%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">Conversion rate</p>
+                <h5>
+                  17.7%
+                  <small class="text-success"
+                    ><i class="fas fa-caret-up me-1"></i
+                    ><span>3.0%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">Cost / conv.</p>
+                <h5>
+                  $1.86
+                  <small class="text-danger"
+                    ><i class="fas fa-caret-up me-1"></i
+                    ><span>4.5%</span></small
+                  >
+                </h5>
+              </div>
+            </div>
+
+            <div id="chart-conversion" style="height: 350px">
+              <canvas
+                mdbChart
+                [type]="'bar'"
+                [datasets]="conversionChartData"
+                [labels]="conversionChartLabels"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Cost</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-around">
+              <div>
+                <p class="mb-2">Cost</p>
+                <h5>
+                  $1.60K
+                  <small class="text-success"
+                    ><i class="fas fa-caret-down me-1"></i
+                    ><span> -71.9%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">Avg. CPC</p>
+                <h5>
+                  $0.3
+                  <small class="text-success"
+                    ><i class="fas fa-caret-down me-1"></i
+                    ><span>-11.1%</span></small
+                  >
+                </h5>
+              </div>
+              <div>
+                <p class="mb-2">Avg. CPM</p>
+                <h5>
+                  $102.55
+                  <small class="text-success"
+                    ><i class="fas fa-caret-down me-1"></i
+                    ><span>-13.4%</span></small
+                  >
+                </h5>
+              </div>
+            </div>
+
+            <div id="chart-cost" style="height: 350px">
+              <canvas
+                mdbChart
+                [type]="'bar'"
+                [datasets]="costChartData"
+                [labels]="costChartLabels"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Mixed charts-->
+
+  <!--Section: Table-->
+  <section>
+    <div class="card">
+      <div class="card-body">
+        <div class="datatable mt-4">
+          <div class="datatable-inner" mdbScrollbar style="position: relative">
+            <table
+              class="table datatable-table"
+              mdbTable
+              mdbTableSort
+              #table="mdbTable"
+              #sort="mdbTableSort"
+              [dataSource]="dataSource"
+              [pagination]="pagination"
+              [sort]="sort"
+              [hover]="true"
+              [sm]="true"
+              [responsive]="true"
+            >
+              <thead class="datatable-header">
+                <tr>
+                  <th
+                    *ngFor="let header of headers"
+                    [mdbTableSortHeader]="header.value"
+                    scope="col"
+                  >
+                    {{ header.label }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="datatable-body">
+                <tr *ngFor="let data of table.data" scope="row">
+                  <td>
+                    {{ data.campaignId }}
+                  </td>
+                  <td>
+                    {{ data.impressions }}
+                  </td>
+                  <td>
+                    {{ data.impressionsAbs }}
+                  </td>
+                  <td>
+                    {{ data.clicks }}
+                  </td>
+                  <td>
+                    {{ data.ctr }}
+                  </td>
+                  <td>
+                    {{ data.conversions }}
+                  </td>
+                  <td>
+                    {{ data.conversionRate }}
+                  </td>
+                  <td>
+                    {{ data.conversionCost }}
+                  </td>
+                  <td>
+                    {{ data.cost }}
+                  </td>
+                  <td>
+                    {{ data.cpcAvg }}
+                  </td>
+                  <td>
+                    {{ data.cpmAvg }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <mdb-table-pagination #pagination></mdb-table-pagination>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Table-->
+</div>

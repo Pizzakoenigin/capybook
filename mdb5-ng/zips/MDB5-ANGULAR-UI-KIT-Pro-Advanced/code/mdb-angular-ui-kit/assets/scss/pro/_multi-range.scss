@@ -1,0 +1,85 @@
+// Additional MDB Angular styles
+mdb-multi-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+// Additional MDB Angular styles
+
+.multi-range-slider {
+  width: 100%;
+  height: 2px;
+  color: transparent;
+  cursor: pointer;
+  background-color: #dee2e6;
+  border-color: transparent;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.multi-range-slider .thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.45rem;
+  background-color: #0d6efd;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  position: absolute;
+  touch-action: none;
+    &:focus {
+      outline: none;
+    }
+}
+
+.multi-range-slider .thumb-dragging {
+  background-color: #b6d4fe !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .multi-range-slider .thumb {
+    -moz-transition: none;
+    transition: none;
+  }
+}
+
+.multi-range-slider:disabled {
+  pointer-events: none;
+}
+
+.multi-range-slider:disabled .thumb {
+  background-color: #adb5bd;
+}
+
+.multi-range-slider-tooltip {
+  position: absolute;
+  top: -38px;
+  background-color: #1266f1;
+  transform-origin: 50% 50%;
+  border: none;
+  transition: top .2s,transform .2s,border-radius .2s;
+  color: #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(
+-45deg) translate(-5px,-4px) scale(1);
+  &-value {
+    transform: rotate(
+      45deg) translateY(25%);
+          color: #fff;
+          height: 30px;
+          font-size: 10px;
+          display: block;
+          width: 30px;
+          text-align: center;
+  }
+}

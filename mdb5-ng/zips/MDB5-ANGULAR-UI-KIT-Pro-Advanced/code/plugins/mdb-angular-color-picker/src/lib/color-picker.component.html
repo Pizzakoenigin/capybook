@@ -1,0 +1,350 @@
+<div class="color-picker" style="max-width: 350px">
+  <div *ngIf="colorPalette" class="color-picker-canvas-wrapper">
+    <div
+      class="color-picker-canvas-dot"
+      #dot
+      [ngStyle]="{
+        top: dotPickerCoordinates.currentY + 'px',
+        left: dotPickerCoordinates.currentX + 'px'
+      }"
+    ></div>
+    <canvas #canvas width="350" height="350"></canvas>
+  </div>
+
+  <div class="color-picker-controls d-flex align-items-center p-2">
+    <div class="color-picker-color-dot-wrapper">
+      <div class="color-picker-color-dot" [ngStyle]="{ 'background-color': color }"></div>
+    </div>
+    <div class="ps-4 w-100" [formGroup]="colorSlidersGroup">
+      <div class="color-picker-range">
+        <input
+          [formControlName]="'sliderHue'"
+          type="range"
+          class="form-range"
+          value="0"
+          min="0"
+          max="360"
+          id="hueRange"
+        />
+      </div>
+      <div class="color-picker-range">
+        <div class="color-picker-range-alpha">
+          <input
+            [formControlName]="'sliderAlpha'"
+            [style.--color-rgb]="hueSliderInRGB"
+            autocompleted=""
+            type="range"
+            class="form-range"
+            value="1"
+            min="0"
+            max="1"
+            step="0.01"
+            id="alphaRange"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="colorInputs" class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+
+    <form *ngIf="actualFormat === 'hex'" [formGroup]="colorHEXGroup">
+      <div class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+        <mdb-form-control class="me-2">
+        <input mdbInput  name="color" id="colorHex" formControlName="hex" class="form-control text-center" autocomplete="off" />
+        <label mdbLabel class="form-label" for="typeNumber">Hex</label>
+      </mdb-form-control>
+    </div>
+  </form>
+    <form *ngIf="actualFormat === 'rgba'" [formGroup]="colorsRGBGroup">
+      <div class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            max="255"
+            min="0"
+            id="rgbr"
+            formControlName="rgbR"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">r</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="rgbg"
+            max="255"
+            min="0"
+            formControlName="rgbG"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">g</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="rgbb"
+            max="255"
+            min="0"
+            formControlName="rgbB"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">b</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            type="number"
+            id="rgba"
+            formControlName="alpha"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">a</label>
+        </mdb-form-control>
+      </div>
+    </form>
+
+    <form *ngIf="actualFormat === 'hsva'" [formGroup]="colorsHSVGroup">
+      <div class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="359"
+            step="1"
+            id="hsvh"
+            formControlName="hsvH"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">h</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="hsvs"
+            min="0"
+            max="1"
+            step="0.01"
+            formControlName="hsvS"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">s</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            id="hsvv"
+            formControlName="hsvV"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">v</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            id="hsva"
+            formControlName="alpha"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">a</label>
+        </mdb-form-control>
+      </div>
+    </form>
+    <form *ngIf="actualFormat === 'hsla'" [formGroup]="colorsHSLGroup">
+      <div class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="hslh"
+            min="0"
+            max="359"
+            formControlName="hslH"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">h</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            id="hsls"
+            formControlName="hslS"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">s</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            id="hsll"
+            formControlName="hslL"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">l</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            min="0"
+            max="1"
+            step="0.01"
+            id="hsla"
+            formControlName="alpha"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">a</label>
+        </mdb-form-control>
+      </div>
+    </form>
+    <form *ngIf="actualFormat === 'cmyk'" [formGroup]="colorsCMYKGroup">
+      <div class="color-picker-color-inputs-wrapper d-flex align-items-center p-2">
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="cmykc"
+            formControlName="cmykC"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">c</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="cmykm"
+            formControlName="cmykM"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">m</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="cmyky"
+            formControlName="cmykY"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">y</label>
+        </mdb-form-control>
+        <mdb-form-control class="me-2">
+          <input
+            mdbInput
+            type="number"
+            name="color"
+            id="cmykk"
+            formControlName="cmykK"
+            class="form-control text-center me-2 active"
+            autocomplete="off"
+          />
+          <label mdbLabel class="form-label" for="typeNumber">k</label>
+        </mdb-form-control>
+      </div>
+    </form>
+    <div *ngIf="changeFormatBtn" class="color-picker-change-view-icons d-flex flex-column align-items-center">
+      <button
+        [attr.disabled]="disabled ? '' : null"
+        id="next-format"
+        type="button"
+        class="btn btn-link btn-sm py-0 px-2"
+        (click)="setNextFormat()"
+      >
+        <i class="fas fa-angle-up"></i>
+      </button>
+      <button
+        [attr.disabled]="disabled ? '' : null"
+        id="previous-format"
+        type="button"
+        class="btn btn-link btn-sm py-0 px-2"
+        (click)="setPrevFormat()"
+      >
+        <i class="fas fa-angle-down"></i>
+      </button>
+    </div>
+    <button
+      *ngIf="copyIcon"
+      [attr.disabled]="disabled ? '' : null"
+      id="copy-code"
+      class="btn btn-link py-0 px-2"
+      (click)="copyColor()"
+    >
+      <i class="far fa-copy"></i>
+    </button>
+  </div>
+  <div *ngIf="colorSwatches.length >= 1" class="color-picker-swatches p-2" [ngStyle]="{'max-height': colorSwatchesHeight === null ? 'unset' : colorSwatchesHeight + 'px'}">
+    <div class="row">
+      <div class="col">
+        <div *ngFor="let swatchColor of colorSwatches.slice(0, colorSwatches.length / 2)"
+          tabindex="1"
+          class="mb-1 color-picker-swatches-color"
+          [ngStyle]="{'background-color': swatchColor}"
+          (click)="color = swatchColor"
+        ></div>
+      </div>
+      <div class="col">
+        <div *ngFor="let swatchColor of colorSwatches.slice(colorSwatches.length / 2, colorSwatches.length)"
+          tabindex="1"
+          class="mb-1 color-picker-swatches-color"
+          [ngStyle]="{'background-color': swatchColor}"
+          (click)="color = swatchColor"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+<div class="container">
+  <h1 class="h3 text-center py-5 mb-0">Traffic dashboard</h1>
+
+  <!--Section: Date-->
+  <section class="mb-4">
+    <div class="card">
+      <div class="card-body p-4">
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <mdb-form-control>
+              <mdb-select [formControl]="selectDateControl">
+                <mdb-option
+                  *ngFor="let option of dateOptions"
+                  [value]="option.value"
+                  >{{ option.label }}</mdb-option
+                >
+              </mdb-select>
+              <label mdbLabel class="form-label">Date</label>
+            </mdb-form-control>
+          </div>
+
+          <div class="col-md-6">
+            <mdb-form-control>
+              <input
+                mdbInput
+                [mdbDatepicker]="datepicker"
+                type="text"
+                class="form-control"
+                id="exampleDatepicker"
+              />
+              <label mdbLabel for="exampleDatepicker" class="form-label"
+                >Date</label
+              >
+              <mdb-datepicker-toggle
+                [mdbDatepicker]="datepicker"
+              ></mdb-datepicker-toggle>
+              <mdb-datepicker #datepicker></mdb-datepicker>
+            </mdb-form-control>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Date-->
+
+  <!--Section: Design Block-->
+  <section>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="text-uppercase small mb-2">
+              <strong>USERS</strong>
+            </p>
+            <h5 class="mb-0">
+              <strong>14 567</strong>
+              <small class="text-success ms-2">
+                <i class="fas fa-arrow-up fa-sm pe-1"></i>13,48%</small
+              >
+            </h5>
+
+            <hr />
+
+            <p class="text-uppercase text-muted small mb-2">Previous period</p>
+            <h5 class="text-muted mb-0">11 467</h5>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="text-uppercase small mb-2">
+              <strong>PAGE VIEWS</strong>
+            </p>
+            <h5 class="mb-0">
+              <strong>51 354 </strong>
+              <small class="text-success ms-2">
+                <i class="fas fa-arrow-up fa-sm pe-1"></i>23,58%</small
+              >
+            </h5>
+
+            <hr />
+
+            <p class="text-uppercase text-muted small mb-2">Previous period</p>
+            <h5 class="text-muted mb-0">38 454</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="text-uppercase small mb-2">
+              <strong>AVERAGE TIME</strong>
+            </p>
+            <h5 class="mb-0">
+              <strong>00:04:20</strong>
+              <small class="text-danger ms-2">
+                <i class="fas fa-arrow-down fa-sm pe-1"></i>23,58%</small
+              >
+            </h5>
+
+            <hr />
+
+            <p class="text-uppercase text-muted small mb-2">Previous period</p>
+            <h5 class="text-muted mb-0">00:05:20</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="text-uppercase small mb-2">
+              <strong>BOUNCE RATE</strong>
+            </p>
+            <h5 class="mb-0">
+              <strong>32.35%</strong>
+              <small class="text-danger ms-2">
+                <i class="fas fa-arrow-down fa-sm pe-1"></i>23,58%</small
+              >
+            </h5>
+
+            <hr />
+
+            <p class="text-uppercase text-muted small mb-2">Previous period</p>
+            <h5 class="text-muted mb-0">24.35%</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Design Block-->
+
+  <!--Section: Content-->
+  <section>
+    <div class="row">
+      <div class="col-md-8 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <mdb-tabs [pills]="true" [justified]="true">
+              <mdb-tab title="Users">
+                <canvas
+                  mdbChart
+                  [type]="'line'"
+                  [datasets]="userChartData"
+                  [labels]="userChartLabels"
+                ></canvas>
+              </mdb-tab>
+              <mdb-tab title="Page views">
+                <canvas
+                  mdbChart
+                  [type]="'line'"
+                  [datasets]="pageViewChartData"
+                  [labels]="pageViewsChartLabels"
+                ></canvas>
+              </mdb-tab>
+              <mdb-tab title="Average time">
+                <canvas
+                  mdbChart
+                  [type]="'line'"
+                  [datasets]="averageTimeChartData"
+                  [labels]="averageTimeChartLabels"
+                ></canvas>
+              </mdb-tab>
+              <mdb-tab title="Bounce rate">
+                <canvas
+                  mdbChart
+                  [type]="'line'"
+                  [datasets]="bounceRateChartData"
+                  [labels]="bounceRateChartLabels"
+                ></canvas>
+              </mdb-tab>
+            </mdb-tabs>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <p class="text-center"><strong>Current period</strong></p>
+            <canvas
+              mdbChart
+              [type]="'pie'"
+              [datasets]="pieChartCurrentData"
+              [labels]="pieChartCurrentLabels"
+              [options]="pieChartOptions"
+              [plugins]="plugins"
+            ></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <p class="text-center"><strong>Previous period</strong></p>
+            <canvas
+              mdbChart
+              [type]="'pie'"
+              [datasets]="pieChartPreviousData"
+              [labels]="pieChartPreviousLabels"
+              [options]="pieChartOptions"
+              [plugins]="plugins"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Content-->
+</div>

@@ -1,0 +1,197 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let day of weekView.allDayRow" [ngClass]="{ today: day.isToday }">
+        <div class="weekday-field">{{ day.day }}</div>
+        <div class="day-field">{{ day.dayNumber }}</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="long-event-row">
+      <th></th>
+      <td
+        *ngFor="let day of weekView.allDayRow; let dayIndex = index"
+        [ngClass]="{ today: day.isToday }"
+        (click)="onDayClick(day)"
+        (mousedown)="onMouseDown($event, day)"
+        (mouseup)="onMouseUp($event, day)"
+        (mouseenter)="onMouseMove($event)"
+        (dragenter)="onDragEnter($event, day)"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+      >
+        <div class="events-wrapper">
+          <ng-container *ngFor="let event of day.events; let i = index">
+            <ng-container *ngIf="event.order > i + 1 && i === 0">
+              <div
+                class="fake-event"
+                *ngFor="let fakeEvent of [].constructor(event.order - 1); let index = index"
+                [ngStyle]="{ order: index + 1 }"
+              >
+                &nbsp;
+              </div>
+            </ng-container>
+            <ng-container *ngIf="event.order > i + 1 && i !== 0">
+              <div
+                class="fake-event"
+                *ngFor="
+                  let fakeEvent of [].constructor(event.order - 1 - day.events[i - 1].order);
+                  let index = index
+                "
+                [ngStyle]="{ order: event.order - day.events[i - 1].order + 1 }"
+              >
+                &nbsp;
+              </div>
+            </ng-container>
+            <div
+              draggable="true"
+              class="event"
+              [ngClass]="{
+                'event-blur': day.date < today && blur,
+                'event-long': !event.eventStart,
+                'event-end': event.eventEnd,
+                'event-readonly': readonly,
+                active: hoveredEventId === event.id,
+                dragging: draggedEventId === event.id
+              }"
+              [ngStyle]="{
+                backgroundColor: event.color.background,
+                color: event.color.foreground,
+                order: event.order
+              }"
+              *ngIf="event.allDay || event.longEvent"
+              id="{{ i === 0 ? event.id : '' }}"
+              html="true"
+              mdbTooltip="
+                <h6><strong>{{ event.summary }}</strong></h6>
+                <p><small><em>{{ event.description }}</em></small></p>
+                <p class='me-0'><small>
+                  <i class='fas fa-calendar-alt pe-1'></i>
+                  {{
+                twelveHours
+                  ? convertDateTo12hFormat(event.startData.string)
+                  : event.startData.string
+              }}
+                  - 
+                  {{
+                twelveHours ? convertDateTo12hFormat(event.endData.string) : event.endData.string
+              }}
+                </small></p>"
+              [tooltipDisabled]="!tooltips"
+              [offset]="15"
+              (click)="onEventClick(event); $event.stopPropagation()"
+              (dragstart)="onEventDragStart(event)"
+              (dragend)="onEventDragEnd(event)"
+              (mouseenter)="onMouseEnter(event)"
+              (mouseleave)="onMouseLeave()"
+            >
+              {{ event.eventStart || dayIndex === 0 ? event.summary : '&nbsp;' }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let event of day.events">
+            <div
+              draggable="true"
+              class="event event-short"
+              *ngIf="!event.allDay && !event.longEvent"
+              [ngClass]="{
+                'event-blur': day.date < today && blur,
+                'event-readonly': readonly,
+                active: hoveredEventId === event.id,
+                dragging: draggedEventId === event.id
+              }"
+              [ngStyle]="{ order: event.order }"
+              html="true"
+              mdbTooltip="
+                <h6><strong>{{ event.summary }}</strong></h6>
+                <p><small><em>{{ event.description }}</em></small></p>
+                <p class='me-0'><small>
+                  <i class='fas fa-calendar-alt pe-1'></i>
+                  {{
+                twelveHours
+                  ? convertDateTo12hFormat(event.startData.string)
+                  : event.startData.string
+              }}
+                  - 
+                  {{
+                twelveHours ? convertDateTo12hFormat(event.endData.string) : event.endData.string
+              }}
+                </small></p>"
+              [tooltipDisabled]="!tooltips"
+              [offset]="15"
+              (click)="onEventClick(event); $event.stopPropagation()"
+              (dragstart)="onEventDragStart(event)"
+              (dragend)="onEventDragEnd(event)"
+              (mouseenter)="onMouseEnter(event)"
+              (mouseleave)="onMouseLeave()"
+            >
+              <i
+                class="fas fa-circle pe-1 event-circle"
+                [ngStyle]="{ color: this.event.color.background }"
+              ></i>
+              {{ event.summary }}
+            </div>
+          </ng-container>
+        </div>
+      </td>
+    </tr>
+
+    <tr #hourEl *ngFor="let row of weekView.weekRows; let i = index">
+      <th class="hour-field" *ngIf="twelveHours">
+        {{ i === 0 ? '12' : i < 12 ? i : i - 12 === 0 ? '12' : i - 12 }}:00
+        {{ i < 12 ? 'am' : 'pm' }}
+      </th>
+      <th class="hour-field" *ngIf="!twelveHours">{{ i }}:00</th>
+      <td
+        *ngFor="let date of row.row"
+        (click)="onDayClick(date)"
+        (mousedown)="onMouseDown($event, date)"
+        (mouseup)="onMouseUp($event, date)"
+        (mouseenter)="onMouseMove($event)"
+        (dragenter)="onDragEnter($event, date)"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+      >
+        <div
+          draggable="true"
+          class="event event-short"
+          *ngFor="let event of date.events"
+          [ngClass]="{
+            'event-blur': date.date < today && blur,
+            'event-readonly': readonly,
+            active: hoveredEventId === event.id,
+            dragging: draggedEventId === event.id
+          }"
+          html="true"
+          mdbTooltip="
+            <h6><strong>{{ event.summary }}</strong></h6>
+            <p><small><em>{{ event.description }}</em></small></p>
+            <p class='me-0'><small>
+              <i class='fas fa-calendar-alt pe-1'></i>
+              {{
+            twelveHours ? convertDateTo12hFormat(event.startData.string) : event.startData.string
+          }}
+              - 
+              {{
+            twelveHours ? convertDateTo12hFormat(event.endData.string) : event.endData.string
+          }}
+            </small></p>"
+          [tooltipDisabled]="!tooltips"
+          [offset]="15"
+          (click)="onEventClick(event); $event.stopPropagation()"
+          (dragstart)="onEventDragStart(event)"
+          (dragend)="onHoursEventDragEnd(event)"
+          (mouseenter)="onMouseEnter(event)"
+          (mouseleave)="onMouseLeave()"
+        >
+          <i
+            class="fas fa-circle event-circle pe-1"
+            [ngStyle]="{ color: event.color.background }"
+          ></i>
+          {{ event.summary }}
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

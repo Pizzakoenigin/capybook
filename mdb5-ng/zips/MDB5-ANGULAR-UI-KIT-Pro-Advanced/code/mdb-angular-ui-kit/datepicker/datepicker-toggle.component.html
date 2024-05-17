@@ -1,0 +1,8 @@
+<button type="button" [disabled]="disabled" #button class="datepicker-toggle-button">
+  <ng-container *ngIf="!iconRef">
+    <i class="{{ icon }} datepicker-toggle-icon"></i>
+  </ng-container>
+  <ng-template [ngIf]="iconRef">
+    <ng-template [cdkPortalOutlet]="iconRef"></ng-template>
+  </ng-template>
+</button>

@@ -1,0 +1,113 @@
+.option-group-label {
+  --#{$prefix}option-group-label-padding-left: #{$option-group-label-padding-left};
+  --#{$prefix}option-group-label-padding-right: #{$option-group-label-padding-right};
+  --#{$prefix}option-group-label-font-size: #{$option-group-label-font-size};
+  --#{$prefix}option-group-label-font-weight: #{$option-group-label-font-weight};
+  --#{$prefix}option-group-label-color: #{$option-group-label-color};
+
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: var(--#{$prefix}option-group-label-padding-left);
+  padding-right: var(--#{$prefix}option-group-label-padding-right);
+  font-size: var(--#{$prefix}option-group-label-font-size);
+  font-weight: var(--#{$prefix}option-group-label-font-weight);
+  background-color: transparent;
+  color: var(--#{$prefix}option-group-label-color);
+  user-select: none;
+}
+
+.option-group > .option {
+  --#{$prefix}option-group-option-padding-left: #{$option-group-option-padding-left};
+
+  padding-left: var(--#{$prefix}option-group-option-padding-left);
+}
+
+.option {
+  --#{$prefix}option-color: #{$option-color};
+  --#{$prefix}option-padding-left: #{$option-padding-left};
+  --#{$prefix}option-padding-right: #{$option-padding-right};
+  --#{$prefix}option-font-size: #{$option-font-size};
+  --#{$prefix}option-font-weight: #{$option-font-weight};
+  --#{$prefix}option-hover-not-disabled-bg: #{$option-hover-not-disabled-bg};
+  --#{$prefix}option-active-bg: #{$option-active-bg};
+  --#{$prefix}option-selected-active-bg: #{$option-selected-active-bg};
+  --#{$prefix}option-selected-disabled-color: #{$option-selected-disabled-color};
+  --#{$prefix}option-selected-bg: #{$option-selected-bg};
+  --#{$prefix}option-disabled-color: #{$option-disabled-color};
+  --#{$prefix}option-text-form-check-input-margin-right: #{$option-text-form-check-input-margin-right};
+  --#{$prefix}option-secondary-text-font-size: #{$option-secondary-text-font-size};
+  --#{$prefix}option-secondary-text-color: #{$option-secondary-text-color};
+  --#{$prefix}option-icon-width: #{$option-icon-width};
+  --#{$prefix}option-icon-height: #{$option-icon-height};
+
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--#{$prefix}option-color);
+  padding-left: var(--#{$prefix}option-padding-left);
+  padding-right: var(--#{$prefix}option-padding-right);
+  font-size: var(--#{$prefix}option-font-size);
+  font-weight: var(--#{$prefix}option-font-weight);
+  background-color: transparent;
+  user-select: none;
+
+  &.hidden {
+    display: none;
+  }
+
+  &:hover:not(.disabled) {
+    background-color: var(--#{$prefix}option-hover-not-disabled-bg);
+  }
+
+  &.active {
+    background-color: var(--#{$prefix}option-active-bg);
+  }
+
+  &.selected.active {
+    background-color: var(--#{$prefix}option-selected-active-bg);
+  }
+
+  &.selected.disabled {
+    cursor: default;
+    color: var(--#{$prefix}option-selected-disabled-color);
+    background-color: transparent;
+  }
+
+  &.selected {
+    background-color: var(--#{$prefix}option-selected-bg);
+  }
+
+  &.disabled {
+    cursor: default;
+    color: var(--#{$prefix}option-disabled-color);
+  }
+}
+
+.option-text {
+  & .form-check-input {
+    margin-right: var(--#{$prefix}option-text-form-check-input-margin-right);
+  }
+}
+
+.option-secondary-text {
+  font-size: var(--#{$prefix}option-secondary-text-font-size);
+  color: var(--#{$prefix}option-secondary-text-color);
+  display: block;
+  line-height: normal;
+}
+
+.option-icon {
+  width: var(--#{$prefix}option-icon-width);
+  height: var(--#{$prefix}option-icon-height);
+}

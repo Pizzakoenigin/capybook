@@ -1,0 +1,278 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <h5 class="modal-title" id="{{event.id}}-modal">{{ mode === 'edit' ? options.editEventModalCaption : options.addEventModalCaption }}</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <mdb-form-control class="my-3">
+      <input 
+        mdbInput
+        mdbValidate
+        validateSuccess="false"
+        required
+        type="text"
+        id="eventModalSummary"
+        formControlName="summary"
+        class="form-control"
+      />
+      <label mdbLabel class="form-label" for="eventModalSummary">{{ options.summaryCaption }}</label>
+    </mdb-form-control>
+    <mdb-form-control  class="my-3">
+      <textarea mdbInput class="form-control" id="eventModalDescription" rows="2" formControlName="description"></textarea>
+      <label mdbLabel class="form-label" for="eventModalDescription">{{ options.descriptionCaption }}</label>
+    </mdb-form-control>
+    <div class="d-flex justify-content-between">
+      <div class="form-check mx-2">
+        <input
+          mdbCheckbox
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="eventModalAllDayCheckbox"
+          formControlName="allDay"
+        />
+        <label class="form-check-label" for="eventModalAllDayCheckbox">
+          {{ options.allDayCaption }}
+        </label>
+      </div>
+
+      <div class="text-center">
+        <div mdbDropdown class="dropdown">
+          <button
+            class="dropdown-toggle color-dropdown-toggle form-control w-auto"
+            type="button"
+            id="dropdownMenuButton"
+            aria-expanded="false"
+            mdbDropdownToggle
+          >
+          <i
+          class="fas fa-circle"
+          [ngStyle]="{ color: eventForm.controls.color.value.background }"
+        ></i>
+          </button>
+          <ul mdbDropdownMenu class="dropdown-menu color-dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundPrimary"
+                  [checked]="true"
+                  [value]="{background: '#cfe0fc', foreground: '#0a47a9'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundPrimary"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#cfe0fc' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundSecondary"
+                  [value]="{background: '#ebcdfe', foreground: '#6e02b1'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundSecondary"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#ebcdfe' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundSuccess"
+                  [value]="{background: '#c7f5d9', foreground: '#0b4121'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundSuccess"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#c7f5d9' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundDanger"
+                  [value]="{background: '#fdd8de', foreground: '#790619'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundDanger"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#fdd8de' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundWarning"
+                  [value]="{background: '#ffebc2', foreground: '#453008'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundWarning"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#ffebc2' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundInfo"
+                  [value]="{background: '#d0f0fb', foreground: '#084154'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundInfo"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#d0f0fb' }"></i>
+                </label>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item p-0">
+                <input
+                  mdbRadio
+                  class="dropdown-item btn-check"
+                  type="radio"
+                  id="eventModalRadioBackgroundDark"
+                  [value]="{background: '#292929', foreground: '#f5f5f5'}"
+                  formControlName="color"
+                />
+                <label
+                  class="form-check-label"
+                  for="eventModalRadioBackgroundDark"
+                >
+                  <i class="fas fa-circle" [ngStyle]="{ color: '#292929' }"></i>
+                </label>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div [ngClass]="eventForm.value.allDay ? 'col-12' : 'col-6'">
+        <mdb-form-control>
+          <input
+            mdbInput
+            mdbValidate
+            validateSuccess="false"
+            required
+            formControlName="startDate"
+            [mdbDatepicker]="datepickerStartDate"
+            type="text"
+            class="form-control"
+            id="eventModalStartDate"
+          />
+          <label mdbLabel for="eventModalStartDate" class="form-label">{{ options.startCaption }}</label>
+          <mdb-datepicker-toggle [mdbDatepicker]="datepickerStartDate"></mdb-datepicker-toggle>
+          <mdb-datepicker #datepickerStartDate></mdb-datepicker>
+        </mdb-form-control>
+      </div>
+      <div *ngIf="!eventForm.value.allDay" class="col-6">
+        <mdb-form-control>
+          <input
+            mdbInput
+            formControlName="startTime"
+            type="text"
+            id="eventModalStartTime"
+            class="form-control"
+            [mdbTimepicker]="timepickerStartTime"
+            required
+          />
+          <label mdbLabel class="form-label" for="eventModalStartTime">{{ options.startCaption }}</label>
+          <mdb-timepicker-toggle [mdbTimepickerToggle]="timepickerStartTime"></mdb-timepicker-toggle>
+          <mdb-timepicker #timepickerStartTime [format24]="!twelveHours"></mdb-timepicker>
+        </mdb-form-control>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div [ngClass]="eventForm.value.allDay ? 'col-12' : 'col-6'">
+        <mdb-form-control>
+          <input
+            mdbInput
+            mdbValidate
+            validateSuccess="false"
+            required
+            [mdbDatepicker]="datepickerEndDate"
+            type="text"
+            class="form-control"
+            id="eventModalEndDate"
+            formControlName="endDate"
+          />
+          <label mdbLabel for="eventModalEndDate" class="form-label">{{ options.endCaption }}</label>
+          <mdb-datepicker-toggle [mdbDatepicker]="datepickerEndDate"></mdb-datepicker-toggle>
+          <mdb-datepicker #datepickerEndDate></mdb-datepicker>
+        </mdb-form-control>
+      </div>
+      <div *ngIf="!eventForm.value.allDay" class="col-6">
+        <mdb-form-control>
+          <input
+            mdbInput
+            formControlName="endTime"
+            type="text"
+            id="eventModalEndTime"
+            class="form-control"
+            [mdbTimepicker]="timepickerEndTime"
+            required
+          />
+          <label mdbLabel class="form-label" for="eventModalEndTime">{{ options.endCaption }}</label>
+          <mdb-timepicker-toggle [mdbTimepickerToggle]="timepickerEndTime"></mdb-timepicker-toggle>
+          <mdb-timepicker #timepickerEndTime [format24]="!twelveHours"></mdb-timepicker>
+        </mdb-form-control>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <ng-container *ngIf="mode !== 'edit'">
+      <button type="button" class="btn btn-danger" (click)="modalRef.close()">
+        {{ options.closeCaption }}
+      </button>
+      <button type="submit" class="btn btn-primary" >{{ options.addCaption }}</button>
+    </ng-container>
+    <ng-container *ngIf="mode === 'edit'">
+      <button type="button" class="btn btn-danger" (click)="onRemoveClick()">
+        {{ options.deleteCaption }}
+      </button>
+      <button type="submit" class="btn btn-primary">{{ options.editCaption }}</button>
+    </ng-container>
+  </div>
+</form>

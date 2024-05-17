@@ -1,0 +1,308 @@
+<div class="container py-5">
+  <!--Section: Chat-->
+  <section>
+    <div class="card">
+      <div class="card-body" style="position: relative; overflow: hidden">
+        <!--Section: Users-->
+        <section>
+          <mdb-sidenav-layout>
+            <mdb-sidenav
+              #sidenav="mdbSidenav"
+              [mode]="mode"
+              [hidden]="hidden"
+              [position]="'absolute'"
+              class="sidenav-inner"
+            >
+              <div class="p-3">
+                <input
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
+              </div>
+              <ul class="sidenav-menu">
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Anna Doe</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Alan Turing</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Veronica Smith</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Tom Johnson</span>
+                  </a>
+                </mdb-sidenav-item>
+              </ul>
+            </mdb-sidenav>
+            <mdb-sidenav-content #sidenavContent>
+              <!--Section: Messages-->
+              <section class="inner-content">
+                <div class="d-flex">
+                  <button
+                    class="btn shadow-0 p-0 me-3 d-block d-lg-none"
+                    aria-controls="#sidenav-inner"
+                    aria-haspopup="true"
+                    (click)="sidenav.toggle()"
+                  >
+                    <i class="fas fa-bars fa-lg"></i>
+                  </button>
+
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                    class="rounded-circle me-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+
+                  <span>Anna Doe</span>
+                </div>
+
+                <hr />
+
+                <!-- Single message - interlocutor -->
+                <div class="d-flex justify-content-start w-100">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                    class="rounded-circle me-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                  <p
+                    class="p-3 bg-light rounded-lg shadow-1 shadow-1"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore, necessitatibus rem possimus quam ratione sit neque
+                    quidem officia dolorum nostrum enim dignissimos eum.
+                    <small class="float-right text-dark mt-4">14:52</small>
+                  </p>
+                </div>
+                <!-- Single message - interlocutor -->
+
+                <!-- Single message - me -->
+                <div class="d-flex justify-content-end ms-auto">
+                  <p
+                    class="p-3 bg-primary shadow-1-strong text-white rounded-lg"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore, necessitatibus rem possimus quam ratione sit neque
+                    quidem officia dolorum nostrum enim dignissimos eum.
+                    <small class="float-right mt-4">14:53</small>
+                  </p>
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+                    class="rounded-circle ms-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                </div>
+                <!-- Single message - me -->
+
+                <!-- Single message - interlocutor -->
+                <div class="d-flex justify-content-start w-100">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                    class="rounded-circle me-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                  <p
+                    class="p-3 bg-light rounded-lg shadow-1"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore.
+                    <small class="float-right text-dark mt-4">14:54</small>
+                  </p>
+                </div>
+                <!-- Single message - interlocutor -->
+
+                <!-- Single message - me -->
+                <div class="d-flex justify-content-end ms-auto">
+                  <p
+                    class="p-3 bg-primary shadow-1-strong text-white rounded-lg"
+                    style="max-width: 533px"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                    illo accusantium quibusdam quidem veniam inventore, libero
+                    distinctio eaque, qui molestiae architecto aspernatur.
+                    Praesentium natus maxime suscipit dolorem delectus,
+                    doloremque reprehenderit numquam distinctio quas repudiandae
+                    veritatis incidunt quo, consequatur quod laborum laboriosam.
+                    Quos ducimus, ad veritatis illo minus molestiae omnis
+                    pariatur.
+                    <small class="float-right mt-4">14:55</small>
+                  </p>
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+                    class="rounded-circle ms-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                </div>
+                <!-- Single message - me -->
+
+                <!-- Single message - interlocutor -->
+                <div class="d-flex justify-content-start w-100">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                    class="rounded-circle me-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                  <p
+                    class="p-3 bg-light rounded-lg shadow-1"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore, necessitatibus rem possimus quam ratione sit neque
+                    quidem officia dolorum nostrum enim dignissimos eum.
+                    <small class="float-right text-dark mt-4">14:52</small>
+                  </p>
+                </div>
+                <!-- Single message - interlocutor -->
+
+                <!-- Single message - me -->
+                <div class="d-flex justify-content-end ms-auto">
+                  <p
+                    class="p-3 bg-primary shadow-1-strong text-white rounded-lg"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore, necessitatibus rem possimus quam ratione sit neque
+                    quidem officia dolorum nostrum enim dignissimos eum.
+                    <small class="float-right mt-4">14:53</small>
+                  </p>
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+                    class="rounded-circle ms-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                </div>
+                <!-- Single message - me -->
+
+                <!-- Single message - interlocutor -->
+                <div class="d-flex justify-content-start w-100">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                    class="rounded-circle me-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                  <p
+                    class="p-3 bg-light rounded-lg shadow-1"
+                    style="max-width: 533px"
+                  >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde praesentium ad, dolores quaerat maxime architecto
+                    dolore.
+                    <small class="float-right text-dark mt-4">14:54</small>
+                  </p>
+                </div>
+                <!-- Single message - interlocutor -->
+
+                <!-- Single message - me -->
+                <div class="d-flex justify-content-end ms-auto">
+                  <p
+                    class="p-3 bg-primary shadow-1-strong text-white rounded-lg"
+                    style="max-width: 533px"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                    illo accusantium quibusdam quidem veniam inventore, libero
+                    distinctio eaque, qui molestiae architecto aspernatur.
+                    Praesentium natus maxime suscipit dolorem delectus,
+                    doloremque reprehenderit numquam distinctio quas repudiandae
+                    veritatis incidunt quo, consequatur quod laborum laboriosam.
+                    Quos ducimus, ad veritatis illo minus molestiae omnis
+                    pariatur.
+                    <small class="float-right mt-4">14:55</small>
+                  </p>
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+                    class="rounded-circle ms-2"
+                    style="width: 30px; height: 30px"
+                    alt=""
+                  />
+                </div>
+                <!-- Single message - me -->
+              </section>
+              <!--Section: Messages-->
+            </mdb-sidenav-content>
+          </mdb-sidenav-layout>
+        </section>
+        <!--Section: Users-->
+      </div>
+    </div>
+  </section>
+  <!--Section: Chat-->
+</div>
+
+<!--Section: Message input-->
+<footer id="message-input" class="message-input fixed-bottom card bg-light">
+  <div class="card-body">
+    <form class="d-flex">
+      <button type="button" class="btn btn-primary px-3">
+        <i class="fas fa-plus-circle"></i>
+      </button>
+
+      <div class="w-100 mx-2">
+        <mdb-form-control>
+          <textarea
+            mdbInput
+            class="form-control"
+            id="textAreaExample"
+            rows="1"
+            placeholder="Type a message"
+          ></textarea>
+        </mdb-form-control>
+      </div>
+
+      <button type="button" class="btn btn-primary px-3">
+        <i class="fas fa-thumbs-up"></i>
+      </button>
+    </form>
+  </div>
+</footer>
+<!--Section: Message input-->

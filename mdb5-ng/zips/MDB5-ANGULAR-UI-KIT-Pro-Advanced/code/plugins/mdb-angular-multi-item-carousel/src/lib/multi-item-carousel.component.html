@@ -1,0 +1,108 @@
+<div class="multi-carousel" [ngClass]="{'vertical': vertical}">
+  <div 
+    #carouselInner
+    class="multi-carousel-inner"
+  >
+    <ng-container *ngFor="let slide of slides; index as i" >
+      <div 
+        #carouselItem
+        #carouselItemCopyBefore
+        class="multi-carousel-item"
+        [ngStyle]="
+          vertical ?
+          {'height': 100 / items + '%', 'display': 'flex'} :
+          {'width': 100 / items + '%'}
+        "
+      >
+        <img 
+          class="w-100"
+          [src]="slide.src"
+          [alt]="slide.alt"
+          (click)="lightbox && openLightbox(i)"
+        >
+      </div>
+    </ng-container>
+    <ng-container *ngTemplateOutlet="lightbox ? lightboxTpl : deafultTpl"></ng-container>
+    <ng-container *ngFor="let slide of slides; index as i" >
+      <div 
+        #carouselItem
+        #carouselItemCopyAfter
+        class="multi-carousel-item"
+        [ngStyle]="
+          vertical ?
+          {'height': 100 / items + '%', 'display': 'flex'} :
+          {'width': 100 / items + '%'}
+        "
+      >
+        <img 
+          class="w-100"
+          [src]="slide.src"
+          [alt]="slide.alt"
+          (click)="lightbox && openLightbox(i)"
+        >
+      </div>
+    </ng-container>
+  </div> <!-- /.owl-dots -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    tabindex="0"
+    (click)="slideLeft()"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    tabindex="0"
+    (click)="slideRight()"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+<ng-template #deafultTpl>
+  <div 
+    #carouselItem
+    #carouselItemDefault
+    class="multi-carousel-item"
+    [ngStyle]="
+      vertical ?
+      {'height': 100 / items + '%', 'display': 'flex'} :
+      {'width': 100 / items + '%'}
+    "
+    *ngFor="let slide of slides; index as i"
+  >
+    <img class="w-100" [src]="slide.src" [alt]="slide.alt">
+  </div>
+</ng-template>
+
+<ng-template #lightboxTpl>
+  <mdb-lightbox
+    class="lightbox"
+    [zoomLevel]="slide.zoomLevel || 1"
+    [fontAwesome]="slide.fontAwesome || 'free'"
+  >
+    <div
+      #carouselItem
+      #carouselItemDefault
+      class="multi-carousel-item"
+      [ngStyle]="
+        vertical ?
+        {'height': 100 / items + '%', 'display': 'flex'} :
+        {'width': 100 / items + '%'}
+      "
+      *ngFor="let slide of slides; index as i"
+    >
+      <img 
+        mdbLightboxItem
+        class="w-100"
+        [src]="slide.src"
+        [alt]="slide.alt"
+        [img]="slide.img"
+        [disabled]="slide.disabled"
+        [caption]="slide.caption"
+      >
+    </div>
+  </mdb-lightbox>
+</ng-template>

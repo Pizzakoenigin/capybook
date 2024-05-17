@@ -1,0 +1,98 @@
+<div class="container">
+  <h1 class="h5 text-center py-5 mb-0">User management</h1>
+
+  <!--Section: Content-->
+  <section>
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-end mb-4">
+          <mdb-form-control>
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="search-input"
+              (keyup)="search($event)"
+            />
+            <label mdbLabel class="form-label" for="search-input">Search</label>
+          </mdb-form-control>
+          <button
+            mdbRipple
+            class="btn btn-primary btn-sm ms-3"
+            (click)="openModal('add')"
+          >
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+        <hr />
+        <div class="datatable table-editor mt-4">
+          <div class="datatable-inner" mdbScrollbar style="position: relative">
+            <table
+              class="table datatable-table"
+              mdbTable
+              mdbTableSort
+              #table="mdbTable"
+              #sort="mdbTableSort"
+              [dataSource]="dataSource"
+              [sort]="sort"
+              [pagination]="pagination"
+              [responsive]="true"
+            >
+              <thead class="datatable-header">
+                <tr>
+                  <th
+                    *ngFor="let header of headers"
+                    [mdbTableSortHeader]="header"
+                    scope="col"
+                  >
+                    {{ header | titlecase }}
+                  </th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="datatable-body">
+                <tr
+                  *ngFor="let data of table.data; let index = index"
+                  scope="row"
+                >
+                  <td style="min-width: 250px; max-width: 250px">
+                    {{ data.company }}
+                  </td>
+                  <td style="min-width: 250px; max-width: 250px">
+                    {{ data.office }}
+                  </td>
+                  <td style="min-width: 250px; max-width: 250px">
+                    {{ data.employees }}
+                  </td>
+                  <td style="min-width: 100px; max-width: 100px">
+                    {{ data.international }}
+                  </td>
+
+                  <td>
+                    <button
+                      class="me-2 m-0 p-0 shadow-0 btn btn-lg text-dark"
+                      (click)="openModal('edit', data)"
+                    >
+                      <i class="far fa-edit"></i>
+                    </button>
+                    <button
+                      class="m-0 p-0 shadow-0 btn btn-lg text-dark"
+                      (click)="onDeleteClick(data)"
+                    >
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <mdb-table-pagination
+            #pagination
+            [entries]="5"
+          ></mdb-table-pagination>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Content-->
+</div>

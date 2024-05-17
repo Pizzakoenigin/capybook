@@ -1,0 +1,41 @@
+$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+/* You can add global styles to this file, and also import other style files */
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "mdb-angular-ui-kit/assets/scss/mdb.scss";
+@import "mdb-angular-file-upload/scss/file-upload.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fbfbfb;
+  margin: 0;
+}
+
+.table > thead > tr > th {
+  border-bottom-width: 2px;
+}
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: inherit;
+}
+
+.sidenav-inner .sidenav {
+  z-index: 1000;
+}
+
+.sidenav-inner ~ .sidenav-backdrop {
+  z-index: 999 !important;
+}
+
+@media (min-width: 1400px) {
+  #main-navbar,
+  footer.fixed-bottom {
+    padding-left: 240px;
+  }
+}

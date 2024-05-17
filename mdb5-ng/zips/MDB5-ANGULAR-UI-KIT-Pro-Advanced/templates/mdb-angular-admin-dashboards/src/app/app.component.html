@@ -1,0 +1,277 @@
+<mdb-sidenav-layout>
+  <mdb-sidenav #sidenav="mdbSidenav" [mode]="mode" [position]="'fixed'" [hidden]="hidden">
+    <a class="d-flex justify-content-center py-4" href="#!" mdbRipple rippleColor="primary" style="min-width: 240px;">
+      <img id="MDB-logo" src="https://mdbootstrap.com/wp-content/uploads/2018/06/logo-mdb-jquery-small.png" alt="MDB Logo" draggable="false">
+    </a>
+    <ul class="sidenav-menu">
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <i class="fas fa-chart-area fa-fw me-3"></i
+          ><span>SEO dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/ecommerce-1" routerLinkActive="active">
+          <i class="fas fa-chart-pie fa-fw me-3"></i
+          ><span>eCommerce dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/ecommerce-2" routerLinkActive="active">
+          <i class="fas fa-chart-line fa-fw me-3"></i
+          ><span>eCommerce dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/ads" routerLinkActive="active">
+          <i class="fas fa-chart-pie fa-fw me-3"></i
+          ><span>Ads dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/order" routerLinkActive="active">
+          <i class="fas fa-chart-bar fa-fw me-3"></i
+          ><span>Order dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/traffic" routerLinkActive="active">
+          <i class="fas fa-chart-area fa-fw me-3"></i
+          ><span>Traffic dashboard</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link" routerLink="/invoice" routerLinkActive="active">
+          <i class="fas fa-money-bill-alt fa-fw me-3"></i
+          ><span>Invoice page</span></a
+        >
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link"
+        ><i class="fas fa-tablet-alt fa-fw me-3"></i><span>Apps</span></a
+      >
+      <ul mdbCollapse class="sidenav-collapse">
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/chat" routerLinkActive="active">Chat app</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/mailbox" routerLinkActive="active">Mailbox app</a>
+        </li>
+      </ul>
+      </mdb-sidenav-item>
+      <mdb-sidenav-item>
+        <a class="sidenav-link"
+        ><i class="fas fa-cogs fa-fw me-3"></i><span>Management</span></a
+      >
+      <ul mdbCollapse class="sidenav-collapse">
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/user-profile" routerLinkActive="active">User profile</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/user-management" routerLinkActive="active">User management</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/login-register" routerLinkActive="active">Login / register page</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/forgot-password" routerLinkActive="active">Forgot password page</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/change-password" routerLinkActive="active">Change password page</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link" routerLink="/error" routerLinkActive="active">404 page</a>
+        </li>
+      </ul>
+      </mdb-sidenav-item>
+    </ul>
+  </mdb-sidenav>
+  <mdb-sidenav-content #sidenavContent>
+    <!-- Navbar -->
+    <nav
+      id="main-navbar"
+      class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+    >
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggler -->
+        <button
+          class="btn shadow-0 p-0 me-3 d-block d-xxl-none"
+          aria-controls="#sidenav-1"
+          aria-haspopup="true"
+          (click)="sidenav.toggle()"
+        >
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input
+            autocomplete="off"
+            type="search"
+            class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)'
+            style="min-width: 225px"
+          />
+          <span class="input-group-text border-0"
+            ><i class="fas fa-search"></i
+          ></span>
+        </form>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li mdbDropdown class="nav-item dropdown">
+            <a
+              mdbDropdownToggle
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+
+              id="navbarDropdownMenuLink"
+              role="button"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger"
+                >1</span
+              >
+            </a>
+            <ul
+              mdbDropdownMenu
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li><a class="dropdown-item">Some news</a></li>
+              <li><a class="dropdown-item">Another news</a></li>
+              <li>
+                <a class="dropdown-item">Something else here</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Icon -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0">
+              <i class="fas fa-fill-drip"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+
+          <!-- Icon dropdown -->
+          <li mdbDropdown class="nav-item dropdown">
+            <a
+              mdbDropdownToggle
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+
+              id="navbarDropdown"
+              role="button"
+              aria-expanded="false"
+            >
+              <i class="flag flag-united-kingdom m-0"></i>
+            </a>
+            <ul
+              mdbDropdownMenu
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdown"
+            >
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-united-kingdom"></i>English
+                  <i class="fa fa-check text-success ms-2"></i
+                ></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-poland"></i>Polski</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-china"></i>中文</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-japan"></i>日本語</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-germany"></i>Deutsch</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-france"></i>Français</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-spain"></i>Español</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-russia"></i>Русский</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  ><i class="flag flag-portugal"></i>Português</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Avatar -->
+          <li mdbDropdown class="nav-item dropdown">
+            <a
+              mdbDropdownToggle
+              class="
+                nav-link
+                dropdown-toggle
+                hidden-arrow
+                d-flex
+                align-items-center
+              "
+
+              id="navbarDropdownMenuLink"
+              role="button"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                class="rounded-circle"
+                height="22"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+            <ul
+              mdbDropdownMenu
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li><a class="dropdown-item">My profile</a></li>
+              <li><a class="dropdown-item">Settings</a></li>
+              <li><a class="dropdown-item">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <main style="margin-top: 58px" class="pb-5">
+      <router-outlet></router-outlet>
+    </main>
+  </mdb-sidenav-content>
+</mdb-sidenav-layout>

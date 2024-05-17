@@ -1,0 +1,9 @@
+<i
+  *ngIf="!disableSort"
+  class="datatable-sort-icon fas fa-arrow-up"
+  [style.transform]="rotate"
+  [class.active]="direction === 'asc' || direction === 'desc'"
+>
+</i>
+
+<ng-content></ng-content>

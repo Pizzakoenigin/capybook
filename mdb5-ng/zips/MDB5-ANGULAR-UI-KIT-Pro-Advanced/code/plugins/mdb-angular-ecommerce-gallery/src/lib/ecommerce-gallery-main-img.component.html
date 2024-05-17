@@ -1,0 +1,17 @@
+<div #mainImageWrapper>
+  <mdb-lightbox #lightbox class="lightbox d-block" (lightboxSlided)="setSlideAsActive(lightbox.activeSlideIndex)">
+    <img
+      *ngFor="let slide of slides; let i = index"
+      #mainImages
+      mdbLightboxItem
+      [img]="slide.img"
+      [src]="slide.img"
+      [alt]="slide.alt"
+      class="w-100 ecommerce-gallery-main-img"
+      [@fadeIn]="animationState"
+      (@fadeIn.done)="onAnimationDone()"
+      [ngClass]="{ 'active' : i === activeSlideIndex }"
+      [ngStyle]="{height: autoHeight ? 'auto' : ''}"
+    />
+  </mdb-lightbox>
+</div>

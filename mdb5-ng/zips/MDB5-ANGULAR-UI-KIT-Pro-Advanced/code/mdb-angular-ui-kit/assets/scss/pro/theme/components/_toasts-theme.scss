@@ -1,0 +1,32 @@
+@mixin mdb-toasts-theme($theme) {
+  $primary: map-get($theme, primary);
+  $secondary: map-get($theme, secondary);
+  $onPrimary: map-get($theme, onPrimary);
+  $onSecondary: map-get($theme, onSecondary);
+  $divider: map-get($theme, divider);
+  $toastShadow: map-get($theme, toastShadow);
+
+  .toast.toast-primary {
+    background-color: $primary;
+    color: $onPrimary;
+    box-shadow: $toastShadow;
+  }
+
+  .toast-header.toast-primary {
+    background-color: $primary;
+    color: $onPrimary;
+    border-bottom-color: $divider;
+  }
+
+  .toast.toast-secondary {
+    background-color: $secondary;
+    color: $onSecondary;
+    box-shadow: $toastShadow;
+  }
+
+  .toast-header.toast-secondary {
+    background-color: $secondary;
+    color: $onSecondary;
+    border-bottom-color: $divider;
+  }
+}

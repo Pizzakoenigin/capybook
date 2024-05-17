@@ -1,0 +1,206 @@
+<div class="container py-5">
+  <!--Section: Chat-->
+  <section>
+    <div class="card">
+      <div class="card-body" style="position: relative; overflow: hidden">
+        <!--Section: Users-->
+        <section>
+          <mdb-sidenav-layout>
+            <mdb-sidenav
+              #sidenav="mdbSidenav"
+              [mode]="mode"
+              [hidden]="hidden"
+              [position]="'absolute'"
+              class="sidenav-inner"
+            >
+              <div class="p-3">
+                <button type="button" class="btn btn-primary btn-block">
+                  <i class="fas fa-plus me-2"></i>Compose
+                </button>
+              </div>
+
+              <ul class="sidenav-menu">
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-inbox me-2 fa-fw"></i><span>Inbox</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-clock me-2 fa-fw"></i
+                    ><span>Snoozed</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link"
+                    ><i class="fas fa-paper-plane me-2 fa-fw"></i
+                    ><span>Sent</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-file me-2 fa-fw"></i><span>Drafts</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-envelope me-2 fa-fw"></i
+                    ><span>All mail</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-trash me-2 fa-fw"></i><span>Trash</span></a
+                  >
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link">
+                    <i class="fas fa-exclamation-circle me-2 fa-fw"></i
+                    ><span>Spam</span></a
+                  >
+                </mdb-sidenav-item>
+              </ul>
+
+              <hr />
+
+              <p class="text-center mb-1"><strong>Contacts</strong></p>
+
+              <ul class="sidenav-menu">
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Anna Doe</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Alan Turing</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Veronica Smith</span>
+                  </a>
+                </mdb-sidenav-item>
+                <mdb-sidenav-item>
+                  <a class="sidenav-link" href="">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                      class="rounded-circle me-2"
+                      style="width: 30px; height: 30px"
+                      alt=""
+                    />
+                    <span class="d-block">Tom Johnson</span>
+                  </a>
+                </mdb-sidenav-item>
+              </ul>
+            </mdb-sidenav>
+            <mdb-sidenav-content #sidenavContent>
+              <!--Section: Messages-->
+              <section class="inner-content">
+                <div class="datatable mt-4">
+                  <div
+                    class="datatable-inner"
+                    mdbScrollbar
+                    style="position: relative"
+                  >
+                    <table
+                      class="table datatable-table"
+                      mdbTable
+                      mdbTableSort
+                      #table="mdbTable"
+                      #sort="mdbTableSort"
+                      [dataSource]="dataSource"
+                      [sort]="sort"
+                      [pagination]="pagination"
+                    >
+                      <thead class="datatable-header">
+                        <tr>
+                          <th scope="col">
+                            <div
+                              class="form-check d-flex align-items-center mb-0"
+                            >
+                              <input
+                                mdbCheckbox
+                                class="
+                                  datatable-header-checkbox
+                                  form-check-input
+                                "
+                                type="checkbox"
+                                [checked]="allRowsSelected()"
+                                (checkboxChange)="toggleAll($event)"
+                              />
+                            </div>
+                          </th>
+                          <th
+                            *ngFor="let header of headers"
+                            [mdbTableSortHeader]="header"
+                            scope="col"
+                          >
+                            {{ header | titlecase }}
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="datatable-body">
+                        <tr
+                          *ngFor="let data of table.data"
+                          scope="row"
+                          [class.active]="selections.has(data)"
+                        >
+                          <td>
+                            <div class="form-check">
+                              <input
+                                mdbCheckbox
+                                (click)="$event.stopPropagation()"
+                                (checkboxChange)="toggleSelection($event, data)"
+                                [checked]="selections.has(data)"
+                                class="datatable-row-checkbox form-check-input"
+                                type="checkbox"
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            {{ data.sender }}
+                          </td>
+                          <td>
+                            {{ data.title }}
+                          </td>
+                          <td>
+                            {{ data.message }}
+                          </td>
+                          <td>
+                            {{ data.date }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <mdb-table-pagination #pagination></mdb-table-pagination>
+                </div>
+              </section>
+            </mdb-sidenav-content>
+          </mdb-sidenav-layout>
+        </section>
+        <!--Section: Users-->
+      </div>
+    </div>
+  </section>
+  <!--Section: Chat-->
+</div>

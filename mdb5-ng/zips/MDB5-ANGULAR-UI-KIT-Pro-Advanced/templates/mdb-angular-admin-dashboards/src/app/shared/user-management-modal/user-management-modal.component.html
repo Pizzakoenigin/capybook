@@ -1,0 +1,76 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modalRef.close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="my-4 table-editor_input-wrapper">
+    <mdb-form-control>
+      <input
+        mdbInput
+        type="text"
+        id="company-input"
+        class="form-control"
+        [(ngModel)]="company"
+      />
+      <label mdbLabel class="form-label" for="company-input">Company</label>
+    </mdb-form-control>
+  </div>
+  <div class="my-4 table-editor_input-wrapper">
+    <mdb-form-control>
+      <mdb-select [(ngModel)]="office">
+        <mdb-option *ngFor="let option of options" [value]="option.value">{{
+          option.label
+        }}</mdb-option>
+      </mdb-select>
+      <label mdbLabel class="form-label">Office</label>
+    </mdb-form-control>
+  </div>
+  <div class="my-4 table-editor_input-wrapper">
+    <mdb-form-control>
+      <input
+        mdbInput
+        type="text"
+        id="employees-input"
+        class="form-control"
+        [(ngModel)]="employees"
+      />
+      <label mdbLabel class="form-label" for="employees-input">Employees</label>
+    </mdb-form-control>
+  </div>
+  <div class="my-4 table-editor_input-wrapper">
+    <div class="form-check ms-1 mt-1">
+      <input
+        mdbCheckbox
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="international-checkbox"
+        [(ngModel)]="international"
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        International
+      </label>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="shadow-0 btn btn-md btn-outline-primary"
+    (click)="modalRef.close()"
+  >
+    Cancel
+  </button>
+  <button
+    type="button"
+    class="shadow-0 btn btn-md btn-primary"
+    (click)="saveData()"
+  >
+    Save
+  </button>
+</div>
