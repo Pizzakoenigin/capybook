@@ -18,20 +18,8 @@ import { LikeService } from './like.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  capyTexts = [
-    'Mein Name ist Carlos und ich bin sehr müde',
-    'Ich bin Horst und fresse gerne Gras.',
-    'Hallo, ich bin Frederik das Capybara.',
-    'Hey, bist du auch ein Capybara?'
-  ]
 
-  images = [
-    'assets/img/capybara1.jpg',
-    'assets/img/capybara2.jpg',
-    'assets/img/capybara3.jpg',
-    'assets/img/capybara4.jpg',
-  ]
   constructor(public ls: LikeService) {
-    this.ls.likes = [0, 0, 0, 0]
+    // this.ls.likes = [0, 0, 0, 0]
   }
 }
