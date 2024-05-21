@@ -2,7 +2,11 @@
     // height: 100%;
 
     // width: 50%;
-    margin: 0 auto;
+    margin: 2em auto;
+
+    .author {
+        font-style: italic;
+    }
 
     img {
         width: 100%;
@@ -10,7 +14,7 @@
     }
 
     p {
-        padding: 0.5em;
+        margin: 0.5em;
     }
 
     .buttons {
