@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LikeService {
-  likes: number = 0
+  likes: number[] = []
   canLike: boolean = true
   constructor() { }
 
-  addLike(){
+  addLike(cardIndex: number){
     if (this.canLike){
-      this.likes += 1
+      this.likes[cardIndex] = (this.likes[cardIndex] || 0) + 1;
       this.canLike = false
     }
     

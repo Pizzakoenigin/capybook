@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  hamsterTexts = [
+  capyTexts = [
     'Mein Name ist Carlos und ich bin sehr müde',
     'Ich bin Horst und fresse gerne Gras.',
     'Hallo, ich bin Frederik das Capybara.',

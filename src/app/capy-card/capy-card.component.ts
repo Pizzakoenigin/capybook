@@ -13,6 +13,7 @@ import { LikeService } from '../like.service';
 export class CapyCardComponent {
   @Input() text: string = '';
   @Input() source: string = '';
+  @Input() cardIndex: number = 0
 
   constructor(public ls: LikeService) {
 
