@@ -17,7 +17,7 @@ export const POSTS: Post[] = [
     }, {
         id: 3,
         author: 'Frederik',
-        content: 'Hallo, ich bin Frederik das Capybara.',
+        content: '📷🌿 Hallo Freunde! Ich bin ein Capybara, das größte Nagetier der Welt 🌎 und ich möchte euch mein Leben zeigen! 🥰 Heute möchte ich euch mein Lieblingsgras zeigen - es ist so lecker, dass ich nicht widerstehen kann! 🌾🍃 Ich liebe es, Zeit mit meinen Freunden zu verbringen, sei es beim Plantschen im Wasser 💦 oder beim Kuscheln unter der Sonne ☀️. Wir Capybaras sind sehr soziale Tiere und lieben es, in Gruppen zu leben. Zusammen sind wir stark! 💪Was sind eure Lieblingsbeschäftigungen? Schreibt sie in die Kommentare und lasst uns darüber plaudern! Ich bin neugierig, was ihr so macht! 😄Folgt mir, um mehr von meinem aufregenden Capybara-Leben zu erfahren! Bleibt gespannt auf weitere Abenteuer und lustige Momente aus meinem Alltag! 🐾💚#CapybaraLeben #Grasliebe #BesteFreunde #Abenteuer #Tierliebe #CapybaraLiebe',
         source: 'assets/img/capybara3.jpg',
         likes: 0
     }, {
