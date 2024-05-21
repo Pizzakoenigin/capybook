@@ -1,9 +1,11 @@
 <div class="card default-card">
-    <img src={{source}} alt="">
+    <img src={{post.source}} alt="">
 
-    <p>{{text}}</p>
+    <p>{{post.author}} schreibt</p>
 
-    <p>{{ls.likes[cardIndex] || 0}} Likes</p>
+    <p>{{post.content}}</p>
+
+    <p>{{post.likes || 0}} Likes</p>
 
     <div class="buttons">
         <button (click)="ls.addLike(cardIndex)">
