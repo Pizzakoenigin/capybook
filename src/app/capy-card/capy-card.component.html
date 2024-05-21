@@ -3,8 +3,10 @@
 
     <p>{{text}}</p>
 
+    <p>{{ls.likes}} Likes</p>
+
     <div class="buttons">
-        <button>
+        <button (click)="ls.addLike()">
             Like
             <mat-icon>favorite</mat-icon>
 

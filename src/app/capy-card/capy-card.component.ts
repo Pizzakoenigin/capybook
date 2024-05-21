@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { LikeService } from '../like.service';
 
 @Component({
   selector: 'app-capy-card',
@@ -7,8 +8,13 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatIconModule],
   templateUrl: './capy-card.component.html',
   styleUrl: './capy-card.component.scss'
+  
 })
 export class CapyCardComponent {
   @Input() text: string = '';
   @Input() source: string = '';
+
+  constructor(public ls: LikeService) {
+
+  }
 }
