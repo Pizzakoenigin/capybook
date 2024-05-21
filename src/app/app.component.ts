@@ -7,6 +7,7 @@ import { ProposalsComponent } from './proposals/proposals.component';
 import { ProfileRowComponent } from './profile-row/profile-row.component';
 import { FriendboxComponent } from './friendbox/friendbox.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LikeService } from './like.service';
 
 
 @Component({
@@ -30,4 +31,7 @@ export class AppComponent {
     'assets/img/capybara3.jpg',
     'assets/img/capybara4.jpg',
   ]
+  constructor(public ls: LikeService) {
+    this.ls.likes = [0, 0, 0, 0]
+  }
 }

@@ -10,10 +10,12 @@ export class LikeService {
 
   addLike(cardIndex: number){
     if (this.canLike){
+      
+      
       this.likes[cardIndex] = (this.likes[cardIndex] || 0) + 1;
       this.canLike = false
     }
     
-    
+    console.log(this.likes);
   }
 }
