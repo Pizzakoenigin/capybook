@@ -32,11 +32,14 @@
         justify-content: space-around;
         // padding-bottom: 0.5em;
 
-              .liked {
-                color: red;
-                    // background-color: white;
-            }
-      
+        .liked {
+            color: red;
+
+        }
+
+        .liked:hover {
+            color: grey !important;
+        }
 
         button {
             width: 50%;

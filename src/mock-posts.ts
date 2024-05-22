@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
         hashtags: '#CapybaraLife #GemütlichSchlafen #FutterschüsselLiebe',
         source: 'assets/img/capybara1.jpg',
         likes: 23,
-        liked: false
+        liked: false,
     },
     {
         id: 2,

@@ -15,7 +15,10 @@
 
     <div class="buttons">
         <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)" [class.liked]="post.liked">
-            Like
+            <span *ngIf="post.liked; else elseBlock">
+                Liked
+            </span>
+            <ng-template #elseBlock> Like </ng-template>
             <mat-icon>favorite</mat-icon>
 
         </button>

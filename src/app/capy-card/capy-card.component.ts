@@ -3,14 +3,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { Post } from '../posts';
 import { POSTS } from '../../mock-posts';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-capy-card',
   standalone: true,
   imports: [
     MatIconModule,
-    NgFor
+    NgFor,
+    NgIf
   ],
   templateUrl: './capy-card.component.html',
   styleUrl: './capy-card.component.scss'
