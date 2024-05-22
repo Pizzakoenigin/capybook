@@ -14,7 +14,7 @@
 
 
     <div class="buttons">
-        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)">
+        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)" [class.liked]="post.liked">
             Like
             <mat-icon>favorite</mat-icon>
 
