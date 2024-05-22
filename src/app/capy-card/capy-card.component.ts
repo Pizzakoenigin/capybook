@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { Post } from '../posts';
 import { POSTS } from '../../mock-posts';
 import { NgFor, NgIf } from '@angular/common';
+import { FormsModule, NgModel } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-capy-card',
@@ -11,7 +13,8 @@ import { NgFor, NgIf } from '@angular/common';
   imports: [
     MatIconModule,
     NgFor,
-    NgIf
+    NgIf,
+    FormsModule
   ],
   templateUrl: './capy-card.component.html',
   styleUrl: './capy-card.component.scss'
@@ -26,7 +29,14 @@ export class CapyCardComponent {
 
   comment: boolean
 
+  newComment: string = ''
+
   constructor(public ls: LikeService) {
 
+  }
+
+  addComment(post: any) {
+    post.comments.push(this.newComment);
+    this.newComment = '';
   }
 }

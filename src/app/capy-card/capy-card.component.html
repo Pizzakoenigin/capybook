@@ -24,8 +24,9 @@
 
         <div *ngIf="comment" class="comment">
             <label for="capyComment">Kommentar verfassen</label>
+            <!-- <input type="text" id="capyComment" [(ngmodel)] = "newComment"> -->
             <input type="text" id="capyComment">
-            <button (click)="comment = false">Kommentar posten</button>
+            <button (click)="comment = false; addComment(post)">Kommentar posten</button>
         </div>
 
     <div class="buttons">
@@ -42,8 +43,5 @@
             Kommentar schreiben
             <mat-icon>chat</mat-icon>
         </button>
-
-
     </div>
-
 </div>
