@@ -6,19 +6,21 @@
 
         <p>{{post.content}}</p>
 
+        <p class="hashtags">{{post.hashtags}}</p>
+
         <p>{{post.likes || 0}} Likes</p>
     </div>
 
 
 
     <div class="buttons">
-        <button (click)="ls.addLike(cardIndex)">
+        <button (click)="ls.addLike(post.id)">
             Like
             <mat-icon>favorite</mat-icon>
 
         </button>
         <button>
-            Nachricht schreiben
+            Kommentar schreiben
             <mat-icon>chat</mat-icon>
         </button>
     </div>

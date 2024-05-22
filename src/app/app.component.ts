@@ -20,6 +20,6 @@ import { LikeService } from './like.service';
 export class AppComponent {
 
   constructor(public ls: LikeService) {
-    // this.ls.likes = [0, 0, 0, 0]
+    
   }
 }
