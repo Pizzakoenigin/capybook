@@ -6,4 +6,5 @@ export interface Post {
     source: string;
     likes: number;
     liked: boolean;
+    comments: string[]
 }

@@ -24,6 +24,8 @@ export class CapyCardComponent {
 
   posts = POSTS
 
+  comment: boolean
+
   constructor(public ls: LikeService) {
 
   }

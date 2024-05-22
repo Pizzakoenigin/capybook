@@ -9,12 +9,28 @@
         <p class="hashtags">{{post.hashtags}}</p>
 
         <p>{{post.likes}} Likes</p>
+
+
     </div>
 
+    <div class="comments" >
+        <h3>Kommentare</h3>
+        <div *ngFor="let comment of post.comments">
+                  
+        <p>{{comment}}</p>  
+        </div>
 
+    </div>
+
+        <div *ngIf="comment" class="comment">
+            <label for="capyComment">Kommentar verfassen</label>
+            <input type="text" id="capyComment">
+            <button (click)="comment = false">Kommentar posten</button>
+        </div>
 
     <div class="buttons">
-        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)" [class.liked]="post.liked">
+        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)"
+            [class.liked]="post.liked">
             <span *ngIf="post.liked; else elseBlock">
                 Liked
             </span>
@@ -22,10 +38,12 @@
             <mat-icon>favorite</mat-icon>
 
         </button>
-        <button>
+        <button (click)="comment = true">
             Kommentar schreiben
             <mat-icon>chat</mat-icon>
         </button>
+
+
     </div>
 
 </div>
