@@ -5,5 +5,5 @@ export interface Post {
     hashtags: string;
     source: string;
     likes: number;
-
+    liked: boolean
 }

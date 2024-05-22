@@ -23,14 +23,6 @@ export class CapyCardComponent {
 
   posts = POSTS
 
-  // post: Post = {
-  //   id: 1,
-  //   author: 'Carlos',
-  //   content: 'Mein Name ist Carlos und ich bin sehr müde',
-  //   source: 'assets/img/capybara1.jpg',
-  //   likes: 0,
-  // }
-
   constructor(public ls: LikeService) {
 
   }

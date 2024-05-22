@@ -8,13 +8,13 @@
 
         <p class="hashtags">{{post.hashtags}}</p>
 
-        <p>{{post.likes || 0}} Likes</p>
+        <p>{{post.likes}} Likes</p>
     </div>
 
 
 
     <div class="buttons">
-        <button (click)="ls.addLike(post.id)">
+        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)">
             Like
             <mat-icon>favorite</mat-icon>
 
