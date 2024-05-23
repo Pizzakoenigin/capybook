@@ -3,10 +3,13 @@ header {
     background-color: rgba(224, 166, 89, 0.901);
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     font-size: 2em;
     text-transform: uppercase;
     color: rgb(20, 19, 69);
     padding: 0.3em;
+
 
     .logo {
         height: 10vh;
