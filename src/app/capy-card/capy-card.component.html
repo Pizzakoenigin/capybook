@@ -16,7 +16,11 @@
         </div>
         <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
             <p>Du: {{userComment}}</p>
-            <button class="removeCommentButton" (click)="removeComment(post, i)">entfernen</button>
+            <div>
+                <button class="editCommentButton"> bearbeiten</button>
+                <button class="removeCommentButton" (click)="removeComment(post, i)">entfernen</button>
+            </div>
+
         </div>
     </div>
 
