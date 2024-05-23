@@ -41,6 +41,10 @@ export class CapyCardComponent {
     console.log(post.userComment);
   }
 
+  editComment(post: any, index) {
+    
+  }
+
   removeComment(post: any, index) {
     post.userComment.splice(index, 1)
   }
