@@ -6,14 +6,14 @@
         <b>Freundesvorschläge</b>
 
 
-        <div  *ngFor="let capybara of capybaras.slice(1); let i =index">
+        <div  *ngFor = "let capybara of capybaras; let i =index">
             <div class="profile-row" *ngIf="capybara.canFollow">
                 <img src={{capybara.image}} alt="">
                 <div>
                     <b>{{capybara.name}}</b>
                     <span> {{capybara.description}}</span> <br>
                     <a *ngIf="capybara.canFollow"
-                        (click)="fs.addFriend(capybara.name, capybara.description, capybara.image); capybara.canFollow=false">adden</a>
+                        (click)="capybara.canFollow=false">adden</a>
 
                     <!-- <a *ngIf="capybara.canFollow" (click)="fs.addFriend(name, text, source); capybara=false">adden</a> -->
                 </div>

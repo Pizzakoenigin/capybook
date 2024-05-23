@@ -10,7 +10,7 @@ export const POSTS: Post[] = [
         likes: 23,
         liked: false,
         commentPossible: false,
-        comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
+        comments: ["Frederik: Was für eine tolle Schüssel 😍", "noch ein Kommentar"],
         userComment: []
     },
     {

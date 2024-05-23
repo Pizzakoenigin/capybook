@@ -1,17 +1,17 @@
 <div class="friendrow">
-    
-    <div *ngIf="fs.names.length === 0">
+
+    <!-- <div>
         <p>Du hast noch keine Freunde.</p>
-    </div>
+    </div> -->
 
 
-    <div  *ngFor = "let capybara of capybaras; let i =index">
-        <div class="friend default-card" *ngIf="capybara.canFollow">
-                  <img src={{capybara.image}} alt="">
-        <p>{{capybara.name}}</p>
-        <a (click)="fs.removeFriend(i); capybara.canFollow=true">entfernen</a>  
+    <div *ngFor="let capybara of capybaras; let i = index">
+        <div class="friend default-card" *ngIf="!capybara.canFollow && capybara.id !=0">
+            <img src={{capybara.image}} alt="">
+            <p>{{capybara.name}}</p>
+            <a (click)="capybara.canFollow=true">entfernen</a>
         </div>
 
-        
+
     </div>
 </div>
