@@ -23,10 +23,10 @@
             </div>
 
             <div *ngIf="post.editComment" class="editComment">
-                <label for="">Kommentar editieren</label>
+                <label for="{{post.userComment[i]}}">Kommentar editieren</label>
                 <div class="editCommentText">
                     <!-- <input type="text" placeholder="post.userComment[i]" [ngModel]="post.userComment[index]"> -->
-                    <input type="text" [ngModel]="post.userComment[i]">
+                    <input type="text" id="{{post.userComment[i]}}" [(ngModel)]="post.userComment[i]">
                     <button (click)="post.editComment = false">Kommentar bearbeitet</button>
                 </div>
 
@@ -34,6 +34,8 @@
 
 
         </div>
+
+        
     </div>
 
 
