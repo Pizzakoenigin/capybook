@@ -14,9 +14,9 @@
         <div *ngFor="let comment of post.comments">
             <p>{{comment}}</p>
         </div>
-        <div *ngFor="let userComment of post.userComment" class="userComments">
-            <p>{{userComment}}  </p>
-            <button class="removeCommentButton">entfernen</button>
+        <div *ngFor = "let userComment of post.userComment; let i = index" class="userComments">
+            <p>Du: {{userComment}}</p>
+            <button class="removeCommentButton" (click)="removeComment(post, i)">entfernen</button>
         </div>
     </div>
 

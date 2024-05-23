@@ -37,9 +37,11 @@ export class CapyCardComponent {
     if (this.newComment !== '') {
       post.userComment.push(this.newComment);
     }
-    
     this.newComment = '';
     console.log(post.userComment);
-    
+  }
+
+  removeComment(post: any, index) {
+    post.userComment.splice(index, 1)
   }
 }
