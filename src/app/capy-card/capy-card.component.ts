@@ -25,7 +25,7 @@ export class CapyCardComponent {
 
   posts = POSTS
 
-  comment: boolean
+  
 
   newComment: string = ''
 
@@ -34,7 +34,14 @@ export class CapyCardComponent {
   }
 
   addComment(post: any) {
-    post.comments.push(this.newComment);
+    if (this.newComment !== '') {
+      post.userComment.push(this.newComment);
+    }
     this.newComment = '';
+    console.log(post.userComment);
+  }
+
+  removeComment(post: any, index) {
+    post.userComment.splice(index, 1)
   }
 }

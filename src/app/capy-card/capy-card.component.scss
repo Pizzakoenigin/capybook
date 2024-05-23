@@ -33,13 +33,42 @@
             display: inline;
             font-size: 1.2em;
         }
+
+        .removeCommentButton {
+            border: unset;
+            cursor: pointer;
+            align-self: center;
+            padding: 0.5em;
+            margin: 0 0.75em;
+            display: inline;
+            font-size: 0.7em;
+            color: grey;
+            &:hover {
+                background-color: grey;
+                color: white;
+
+            }
+        }
+
+        .userComments{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
-    .comment {
+    .composeComment {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+        .composeCommentText {
+            display: flex;
+            gap: 1em;
+            input {
+                width: -webkit-fill-available;
+            }
+        }
 
         button {
             width: 20%;
