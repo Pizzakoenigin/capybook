@@ -3,5 +3,5 @@ export interface Capybara {
     name: string;
     description: string;
     image: string
-
+    canFollow: boolean
 }
