@@ -10,7 +10,7 @@ export const POSTS: Post[] = [
         likes: 23,
         liked: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
-        // newComment: ''
+        userComment: ['Bla Bla', 'Bla bla']
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const POSTS: Post[] = [
         likes: 12,
         liked: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
-        // newComment: ''
+        userComment: ['', '']
     }, {
         id: 3,
         author: 'Frederik',
@@ -31,7 +31,7 @@ export const POSTS: Post[] = [
         likes: 7,
         liked: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
-        // newComment: ''
+        userComment: ['', '']
     }, {
         id: 4,
         author: 'Matilde',
@@ -41,6 +41,6 @@ export const POSTS: Post[] = [
         likes: 5,
         liked: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
-        // newComment: ''
+        userComment: ['', '']
     },
 ]

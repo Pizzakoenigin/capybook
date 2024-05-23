@@ -7,5 +7,5 @@ export interface Post {
     likes: number;
     liked: boolean;
     comments: string[];
-    // newComment: string
+    userComment: string[];
 }

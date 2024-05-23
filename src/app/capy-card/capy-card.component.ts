@@ -34,7 +34,9 @@ export class CapyCardComponent {
   }
 
   addComment(post: any) {
-    post.comments.push(this.newComment);
+    post.userComment.push(this.newComment);
     this.newComment = '';
+    console.log(post.userComment);
+    
   }
 }

@@ -17,7 +17,13 @@
         <h3>Kommentare</h3>
         <div *ngFor="let comment of post.comments">
                   
-        <p>{{comment}}</p>  
+        <p>{{comment}}</p> 
+
+        <div *ngFor="let userComment of post.userComment">
+            
+            <p>{{userComment}}</p>
+        </div>
+        <!-- <button *ngIf="comment">Kommentar entfernen</button>  -->
         </div>
 
     </div>
