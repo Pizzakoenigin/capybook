@@ -24,8 +24,8 @@
 
         <div *ngIf="comment" class="comment">
             <label for="capyComment">Kommentar verfassen</label>
-            <!-- <input type="text" id="capyComment" [(ngmodel)] = "newComment"> -->
-            <input type="text" id="capyComment">
+            <input type="text" id="capyComment" [(ngModel)] = "newComment">
+            <!-- <input type="text" id="capyComment"> -->
             <button (click)="comment = false; addComment(post)">Kommentar posten</button>
         </div>
 
