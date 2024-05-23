@@ -5,10 +5,13 @@
     </div>
 
 
-    <div class="friend default-card" *ngFor = "let capybara of capybaras; let i =index">
-        <img src={{capybara.image}} alt="">
+    <div  *ngFor = "let capybara of capybaras; let i =index">
+        <div class="friend default-card" *ngIf="capybara.canFollow">
+                  <img src={{capybara.image}} alt="">
         <p>{{capybara.name}}</p>
-        <a (click)="fs.removeFriend(i); capybara.canFollow=true">entfernen</a>
+        <a (click)="fs.removeFriend(i); capybara.canFollow=true">entfernen</a>  
+        </div>
+
         
     </div>
 </div>
