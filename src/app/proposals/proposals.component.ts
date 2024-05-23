@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ProfileRowComponent } from '../profile-row/profile-row.component';
+import { CAPYBARAS } from '../../mock-capybara';
 
 @Component({
   selector: 'app-proposals',
@@ -11,11 +12,5 @@ import { ProfileRowComponent } from '../profile-row/profile-row.component';
   styleUrl: './proposals.component.scss'
 })
 export class ProposalsComponent {
-  names = ['Patrick', 'Daniel', 'Rebecca', 'Peter']
-  texts = ['taucht gerne', 'spielt', 'freundlich', 'haarig']
-  images = ['assets/img/capybara5.jpg',
-    'assets/img/capybara6.jpg',
-    'assets/img/capybara7.jpg',
-    'assets/img/capybara8.jpg'
-  ]
+  capybaras = CAPYBARAS
 }

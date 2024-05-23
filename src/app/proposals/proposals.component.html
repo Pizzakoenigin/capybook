@@ -4,8 +4,8 @@
     
     <div class="proposals-container">
         <b>Freundesvorschläge</b>
-        <app-profile-row *ngFor="let i of [0,1,2,3]" [name]="names[i]" [source]="images[i]"
-            [text]="texts[i]"></app-profile-row>
+        <app-profile-row *ngFor="let capybara of capybaras" [name]="capybara.name" [source]="capybara.image"
+            [text]="capybara.description"></app-profile-row>
     </div>
 
 </div>  
