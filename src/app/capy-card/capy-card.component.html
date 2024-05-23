@@ -13,26 +13,26 @@
 
     </div>
 
-    <div class="comments" >
+    <div class="comments">
         <h3>Kommentare</h3>
         <div *ngFor="let comment of post.comments">
-                  
-        <p>{{comment}}</p> 
+            <p>{{comment}}</p>
+        </div>
 
         <div *ngFor="let userComment of post.userComment">
-            
             <p>{{userComment}}</p>
+            <button>Kommentar entfernen</button>
         </div>
-        <!-- <button *ngIf="comment">Kommentar entfernen</button>  -->
-        </div>
+
+
 
     </div>
 
-        <div *ngIf="comment" class="comment">
-            <label for="capyComment">Kommentar verfassen</label>
-            <input type="text" id="capyComment" [(ngModel)] = "newComment">
-            <button (click)="comment = false; addComment(post)">Kommentar posten</button>
-        </div>
+    <div *ngIf="comment" class="comment">
+        <label for="capyComment">Kommentar verfassen</label>
+        <input type="text" id="capyComment" [(ngModel)]="newComment">
+        <button (click)="comment = false; addComment(post)">Kommentar posten</button>
+    </div>
 
     <div class="buttons">
         <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)"
