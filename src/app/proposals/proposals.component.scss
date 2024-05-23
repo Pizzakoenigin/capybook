@@ -8,3 +8,17 @@
 .proposals-container {
     margin: 1.5em 0;
 }
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    // margin:2em;
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin: 1em;
+    }
+}
