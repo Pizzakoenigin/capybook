@@ -56,11 +56,19 @@
         }
     }
 
-    .comment {
+    .composeComment {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+        .composeCommentText {
+            display: flex;
+            gap: 1em;
+            input {
+                width: -webkit-fill-available;
+            }
+        }
 
         button {
             width: 20%;
