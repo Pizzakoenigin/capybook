@@ -17,7 +17,8 @@
         <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
             <p>Du: {{userComment}}</p>
             <div>
-                <button class="editCommentButton" (click)="editComment(post, i); post.editComment = true"> bearbeiten</button>
+                <button class="editCommentButton" (click)="editComment(post, i); post.editComment = true">
+                    bearbeiten</button>
                 <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
             </div>
 
@@ -26,8 +27,11 @@
 
     <div *ngIf="post.editComment" class="editComment">
         <label for="">Kommentar editieren</label>
+        <div class="editCommentText">
             <input type="text" placeholder="post.userComment[i]">
             <button (click)="post.editComment = false">Kommentar bearbeitet</button>
+        </div>
+
     </div>
 
 
