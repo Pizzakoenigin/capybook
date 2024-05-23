@@ -20,8 +20,9 @@
         </div>
 
         <div *ngFor="let userComment of post.userComment">
-            <p>{{userComment}}</p>
+            <p>{{userComment}}  </p>
             <button>Kommentar entfernen</button>
+            
         </div>
 
 
@@ -29,8 +30,8 @@
     </div>
 
     <div *ngIf="comment" class="comment">
-        <label for="capyComment">Kommentar verfassen</label>
-        <input type="text" id="capyComment" [(ngModel)]="newComment">
+        <label for="{{post.id}}">Kommentar verfassen</label>
+        <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
         <button (click)="comment = false; addComment(post)">Kommentar posten</button>
     </div>
 
