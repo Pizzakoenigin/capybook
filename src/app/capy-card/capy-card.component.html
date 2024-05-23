@@ -22,18 +22,20 @@
                 <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
             </div>
 
+            <div *ngIf="post.editComment" class="editComment">
+                <label for="">Kommentar editieren</label>
+                <div class="editCommentText">
+                    <!-- <input type="text" placeholder="post.userComment[i]" [ngModel]="post.userComment[index]"> -->
+                    <input type="text" [ngModel]="post.userComment[i]">
+                    <button (click)="post.editComment = false">Kommentar bearbeitet</button>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 
-    <div *ngIf="post.editComment" class="editComment">
-        <label for="">Kommentar editieren</label>
-        <div class="editCommentText">
-            <!-- <input type="text" placeholder="post.userComment[i]" [ngModel]="post.userComment[index]"> -->
-            <input type="text" [ngModel]="post.userComment">
-            <button (click)="post.editComment = false">Kommentar bearbeitet</button>
-        </div>
-
-    </div>
 
 
     <div *ngIf="post.commentPossible" class="composeComment">
