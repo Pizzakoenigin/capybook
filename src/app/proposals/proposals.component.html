@@ -1,11 +1,28 @@
 <div class="container">
     <b>Dein Profil</b>
-    <app-profile-row [canFollow]="false"></app-profile-row>
-    
+    <app-profile-row></app-profile-row>
+
     <div class="proposals-container">
         <b>Freundesvorschläge</b>
-        <app-profile-row *ngFor="let i of [0,1,2,3]" [name]="names[i]" [source]="images[i]"
-            [text]="texts[i]"></app-profile-row>
+
+
+        <div  *ngFor = "let capybara of capybaras; let i =index">
+            <div class="profile-row" *ngIf="capybara.canFollow">
+                <img src={{capybara.image}} alt="">
+                <div>
+                    <b>{{capybara.name}}</b>
+                    <span> {{capybara.description}}</span> <br>
+                    <a *ngIf="capybara.canFollow"
+                        (click)="capybara.canFollow=false">adden</a>
+
+                    <!-- <a *ngIf="capybara.canFollow" (click)="fs.addFriend(name, text, source); capybara=false">adden</a> -->
+                </div>
+            </div>
+
+
+        </div>
+
+
     </div>
 
-</div>  
+</div>

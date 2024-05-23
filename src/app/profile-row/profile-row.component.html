@@ -1,9 +1,9 @@
 <div class="profile-row">
-    <img src={{source}} alt="">
+    <img src={{capybaras[0].image}} alt="">
     <div>
-        <b>{{name}}</b>
-        <span> {{text}}</span> <br>
-        <a *ngIf="canFollow" (click)="fs.addFriend(name, text, source); canFollow=false">adden</a>
+        <b>{{capybaras[0].name}}</b>
+        <span> {{capybaras[0].description}}</span> <br>
+        <!-- <a *ngIf="capybaras[0].canFollow" (click)="fs.addFriend(name, text, source); canFollow=false">adden</a> -->
     </div>
     
 </div>

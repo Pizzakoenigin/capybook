@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { FriendService } from '../friend.service';
+import { NgFor, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ProfileRowComponent } from '../profile-row/profile-row.component';
+import { CAPYBARAS } from '../../mock-capybara';
 
 @Component({
   selector: 'app-proposals',
   standalone: true,
-  imports: [RouterOutlet, ProfileRowComponent, NgFor],
+  imports: [RouterOutlet, ProfileRowComponent, NgFor, NgIf],
   templateUrl: './proposals.component.html',
   styleUrl: './proposals.component.scss'
 })
 export class ProposalsComponent {
-  names = ['Patrick', 'Daniel', 'Rebecca', 'Peter']
-  texts = ['taucht gerne', 'spielt', 'freundlich', 'haarig']
-  images = ['assets/img/capybara5.jpg',
-    'assets/img/capybara6.jpg',
-    'assets/img/capybara7.jpg',
-    'assets/img/capybara8.jpg'
-  ]
+  capybaras = CAPYBARAS
+
+  constructor(public fs:FriendService) {
+
+  }
 }
