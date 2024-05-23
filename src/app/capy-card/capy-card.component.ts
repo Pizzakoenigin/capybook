@@ -1,11 +1,9 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
-import { Post } from '../posts';
 import { POSTS } from '../../mock-posts';
 import { NgFor, NgIf } from '@angular/common';
-import { FormsModule, NgModel } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-capy-card',

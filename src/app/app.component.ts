@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { CapyCardComponent } from './capy-card/capy-card.component';
@@ -8,9 +8,7 @@ import { ProfileRowComponent } from './profile-row/profile-row.component';
 import { FriendboxComponent } from './friendbox/friendbox.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from './like.service';
-import { FormsModule, NgModel } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
