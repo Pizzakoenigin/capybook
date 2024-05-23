@@ -19,9 +19,9 @@
             <p>{{comment}}</p>
         </div>
 
-        <div *ngFor="let userComment of post.userComment">
+        <div *ngFor="let userComment of post.userComment" class="userComments">
             <p>{{userComment}}  </p>
-            <button>Kommentar entfernen</button>
+            <button class="removeCommentButton">Kommentar entfernen</button>
             
         </div>
 

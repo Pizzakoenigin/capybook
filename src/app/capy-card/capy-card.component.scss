@@ -33,6 +33,26 @@
             display: inline;
             font-size: 1.2em;
         }
+
+        .removeCommentButton {
+            width: 20%;
+            border: unset;
+            cursor: pointer;
+            align-self: center;
+            padding: 0.5em;
+            margin: 0 0.75em;
+            display: inline;
+            &:hover {
+                background-color: grey;
+                color: white;
+
+            }
+        }
+
+        .userComments{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     .comment {
