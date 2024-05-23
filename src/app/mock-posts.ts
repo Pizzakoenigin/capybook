@@ -1,4 +1,4 @@
-import { Post } from "./app/posts";
+import { Post } from "./posts";
 
 export const POSTS: Post[] = [
     {
