@@ -9,6 +9,7 @@ export const POSTS: Post[] = [
         source: 'assets/img/capybara1.jpg',
         likes: 23,
         liked: false,
+        commentPossible: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
         userComment: []
     },
@@ -20,6 +21,7 @@ export const POSTS: Post[] = [
         source: 'assets/img/capybara2.jpg',
         likes: 12,
         liked: false,
+        commentPossible: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
         userComment: []
     }, {
@@ -30,6 +32,7 @@ export const POSTS: Post[] = [
         source: 'assets/img/capybara3.jpg',
         likes: 7,
         liked: false,
+        commentPossible: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
         userComment: []
     }, {
@@ -40,6 +43,7 @@ export const POSTS: Post[] = [
         source: 'assets/img/capybara4.jpg',
         likes: 5,
         liked: false,
+        commentPossible: false,
         comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
         userComment: []
     },

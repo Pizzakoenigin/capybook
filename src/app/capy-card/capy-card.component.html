@@ -3,37 +3,30 @@
 
     <div class="post">
         <p class="author">{{post.author}} schreibt:</p>
-
         <p>{{post.content}}</p>
-
         <p class="hashtags">{{post.hashtags}}</p>
-
         <p>{{post.likes}} Likes</p>
-
-
     </div>
+
 
     <div class="comments">
         <h3>Kommentare</h3>
         <div *ngFor="let comment of post.comments">
             <p>{{comment}}</p>
         </div>
-
         <div *ngFor="let userComment of post.userComment" class="userComments">
             <p>{{userComment}}  </p>
             <button class="removeCommentButton">Kommentar entfernen</button>
-            
         </div>
-
-
-
     </div>
 
-    <div *ngIf="comment" class="comment">
+
+    <div *ngIf="post.commentPossible" class="comment">
         <label for="{{post.id}}">Kommentar verfassen</label>
         <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
-        <button (click)="comment = false; addComment(post)">Kommentar posten</button>
+        <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
     </div>
+
 
     <div class="buttons">
         <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)"
@@ -43,9 +36,9 @@
             </span>
             <ng-template #elseBlock> Like </ng-template>
             <mat-icon>favorite</mat-icon>
-
         </button>
-        <button (click)="comment = true">
+
+        <button (click)="post.commentPossible= true">
             Kommentar schreiben
             <mat-icon>chat</mat-icon>
         </button>

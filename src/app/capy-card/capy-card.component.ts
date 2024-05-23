@@ -25,7 +25,7 @@ export class CapyCardComponent {
 
   posts = POSTS
 
-  comment: boolean
+  
 
   newComment: string = ''
 

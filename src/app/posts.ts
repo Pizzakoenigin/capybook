@@ -6,6 +6,7 @@ export interface Post {
     source: string;
     likes: number;
     liked: boolean;
+    commentPossible: boolean;
     comments: string[];
     userComment: string[];
 }
