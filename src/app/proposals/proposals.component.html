@@ -4,7 +4,7 @@
         <div class="profile-row" *ngIf="capybara.canFollow">
             <img src={{capybara.image}} alt="">
             <div>
-                <b>{{capybara.name}}</b>
+                <a routerLink="/profile, {{capybara.id}}"><b>{{capybara.name}}</b></a>
                 <span> {{capybara.description}}</span> <br>
                 <a *ngIf="capybara.canFollow" (click)="capybara.canFollow=false">adden</a>
 
