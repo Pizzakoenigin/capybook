@@ -11,7 +11,7 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: ["Frederik: Was für eine tolle Schüssel 😍", "noch ein Kommentar"],
+        comments: ["Frederik: Was für eine tolle Schüssel 😍"],
         userComment: []
     },
     {
@@ -24,7 +24,7 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: ["Hier werden später Kommentare stehen", "noch ein Kommentar"],
+        comments: ["Carlos: Langes Gras schmeckt am besten", "Rebecca: Da kriege ich richtig Apettit 🤤"],
         userComment: []
     }, {
         id: 3,
