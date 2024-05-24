@@ -26,7 +26,7 @@
                 <label for="{{post.userComment[i]}}">Kommentar editieren</label>
                 <div class="editCommentText">
                     <!-- <input type="text" placeholder="post.userComment[i]" [ngModel]="post.userComment[index]"> -->
-                    <textarea id="{{post.userComment[i]}}" [(ngModel)]="post.userComment[i]">
+                    <input id="{{post.userComment[i]}}" [(ngModel)]="post.userComment[i]">
                     <button (click)="post.editComment = false">Kommentar bearbeitet</button>
                 </div>
             </div>
@@ -36,7 +36,7 @@
     <div *ngIf="post.commentPossible" class="composeComment">
         <label for="{{post.id}}">Kommentar verfassen</label>
         <div class="composeCommentText">
-            <textarea id="{{post.id}}" [(ngModel)]="newComment">
+            <input id="{{post.id}}" [(ngModel)]="newComment">
             <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
         </div>
 
