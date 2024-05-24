@@ -1,7 +1,8 @@
 <div class="profile-row">
     <img src={{capybaras[0].image}} alt="">
     <div>
-        <b>{{capybaras[0].name}}</b>
+        <a routerLink="/profile"><b>{{capybaras[0].name}}</b></a>
+        
         <span> {{capybaras[0].description}}</span> <br>
         <!-- <a *ngIf="capybaras[0].canFollow" (click)="fs.addFriend(name, text, source); canFollow=false">adden</a> -->
     </div>

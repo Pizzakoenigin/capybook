@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="profile">
+    <div class="container">
+        <a routerLink="/main">Zurück zum Feed</a>
+    <img src="{{capybaras[0].image}}" alt="" class="profilePicture">
+    <h2>{{capybaras[0].name}}</h2>
+    <h3>Beschreibung {{capybaras[0].description}}</h3>
+    <ul>
+        <li>Hobbies: {{capybaras[0].hobbies}}</li>
+        <li>Alter: {{capybaras[0].age}}</li>
+    </ul>
+
+    <app-friendbox></app-friendbox>
+    </div>
+
+
+<app-proposals>
+
+</app-proposals>
+</div>
+
