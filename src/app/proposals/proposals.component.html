@@ -1,7 +1,5 @@
 <div class="proposals-container">
     <b>Freundesvorschläge</b>
-
-
     <div *ngFor="let capybara of capybaras; let i =index">
         <div class="profile-row" *ngIf="capybara.canFollow">
             <img src={{capybara.image}} alt="">
@@ -13,9 +11,5 @@
                 <!-- <a *ngIf="capybara.canFollow" (click)="fs.addFriend(name, text, source); capybara=false">adden</a> -->
             </div>
         </div>
-
-
     </div>
-
-
 </div>

@@ -1,9 +1,8 @@
 .container {
+     display: flex;
+    justify-content: center;
+    margin: 0 auto;
 
-    
-    display: flex;
-    // justify-content: center;
-    // margin: 0 auto;
 
     .feed {
         padding: 1.5em;
@@ -15,6 +14,7 @@
 
     }
 
+
 .flexrow {
     padding: 1.5em 0;
     // position: -webkit-sticky; /* Safari */
@@ -22,6 +22,7 @@
     top: 0;
 
 }    
+
     
 }
 
