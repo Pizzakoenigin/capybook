@@ -17,21 +17,26 @@
         <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
             <p>Du: {{userComment}}</p>
             <div>
-                <button class="editCommentButton" (click)="editComment(post, i)">
+                <button class="editCommentButton" (click)="editComment(post, i); post.id = i">
                     bearbeiten</button>
                 <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
             </div>
-
-            <div *ngIf="post.editComment" class="editComment">
-                <label for="{{post.userComment[i]}}">Kommentar editieren</label>
+        </div>
+    
+        <div *ngFor="let userComment of post.userComment; let i = index" class="editComment">
+            <div *ngIf="post.editComment && post.id === i">
+                <label for="{{userComment}}">Kommentar editieren</label>
                 <div class="editCommentText">
-                    <!-- <input type="text" placeholder="post.userComment[i]" [ngModel]="post.userComment[index]"> -->
-                    <input id="{{post.userComment[i]}}" [(ngModel)]="post.userComment[i]">
+                    <input id="{{userComment}}" [(ngModel)]="post.userComment[i]">
                     <button (click)="post.editComment = false">Kommentar bearbeitet</button>
                 </div>
             </div>
         </div>
     </div>
+    
+
+
+
 
     <div *ngIf="post.commentPossible" class="composeComment">
         <label for="{{post.id}}">Kommentar verfassen</label>

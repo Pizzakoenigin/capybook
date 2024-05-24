@@ -43,6 +43,7 @@ export class CapyCardComponent {
 
   editComment(post: any, index: number) {
     post.editComment = true
+    // post.editCommentIndex = i
     const commentToEdit = post.userComment[index]
   }
 
