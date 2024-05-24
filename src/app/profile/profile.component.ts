@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { ProposalsComponent } from '../proposals/proposals.component';
 import { FriendboxComponent } from '../friendbox/friendbox.component';
+import { CAPYBARAS } from '../../mock-capybara';
 
 @Component({
   selector: 'app-profile',
@@ -11,5 +12,5 @@ import { FriendboxComponent } from '../friendbox/friendbox.component';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
-
+  capybaras = CAPYBARAS
 }
