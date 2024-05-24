@@ -7,6 +7,7 @@ export interface Post {
     likes: number;
     liked: boolean;
     commentPossible: boolean;
+    editComment: boolean;
     comments: string[];
     userComment: string[];
 }

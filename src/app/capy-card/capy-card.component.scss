@@ -34,7 +34,7 @@
             font-size: 1.2em;
         }
 
-        .removeCommentButton {
+        .removeCommentButton, .editCommentButton {
             border: unset;
             cursor: pointer;
             align-self: center;
@@ -53,16 +53,17 @@
         .userComments{
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
     }
 
-    .composeComment {
+    .composeComment, .editComment {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
         gap: 1em;
 
-        .composeCommentText {
+        .composeCommentText, .editCommentText {
             display: flex;
             gap: 1em;
             input {
