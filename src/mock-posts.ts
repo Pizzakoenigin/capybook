@@ -24,7 +24,7 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: ["Carlos: Langes Gras schmeckt am besten", "Rebecca: Da kriege ich richtig Apettit 🤤"],
+        comments: ["Carlos: Langes Gras schmeckt am besten", "Rebecca: Da kriege ich richtig Appetit 🤤"],
         userComment: []
     }, {
         id: 3,
