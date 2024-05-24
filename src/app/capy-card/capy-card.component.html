@@ -27,7 +27,7 @@
             <div *ngIf="post.editComment && post.id === i">
                 <label for="{{userComment}}">Kommentar editieren</label>
                 <div class="editCommentText">
-                    <input id="{{userComment}}" [(ngModel)]="post.userComment[i]">
+                    <input type="text" id="{{userComment}}" [(ngModel)]="post.userComment[i]" autofocus>
                     <button (click)="post.editComment = false">Kommentar bearbeitet</button>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <div *ngIf="post.commentPossible" class="composeComment">
         <label for="{{post.id}}">Kommentar verfassen</label>
         <div class="composeCommentText">
-            <input id="{{post.id}}" [(ngModel)]="newComment">
+            <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
             <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
         </div>
 
