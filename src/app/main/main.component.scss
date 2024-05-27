@@ -1,5 +1,5 @@
 .container {
-     display: flex;
+    display: flex;
     justify-content: center;
     margin: 0 auto;
 
@@ -15,14 +15,14 @@
     }
 
 
-.flexrow {
-    padding: 1.5em 0;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    .flexrow {
+        padding: 1.5em 0;
+        position: -webkit-sticky;
+        /* Safari */
+        position: sticky;
+        top: 0;
 
-}    
+    }
 
-    
+
 }
-

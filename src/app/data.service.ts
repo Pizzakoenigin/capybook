@@ -4,5 +4,5 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
 })
 export class DataService {
-    sharedData: number = 0;
+    profileIndex: number = 0;
 }

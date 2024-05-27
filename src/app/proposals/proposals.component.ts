@@ -28,10 +28,10 @@ export class ProposalsComponent {
 
   constructor(public fs:FriendService, public dataService: DataService) {}
 
-    setSharedData() {
+    setprofileIndex() {
       console.log('klick');
-      console.log(this.dataService.sharedData);
+      console.log(this.dataService.profileIndex);
       
-      this.dataService.sharedData = 420;
+      this.dataService.profileIndex = 420;
     }
 }
