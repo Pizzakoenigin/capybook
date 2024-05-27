@@ -2,12 +2,20 @@
 <div class="profile">
     <div class="container">
         <a routerLink="/main">Zurück zum Feed</a>
-    <img src="{{capybaras[data.id].image}}" alt="" class="profilePicture">
-    <h2>{{capybaras[data.id].name}}</h2>
-    <h3>Beschreibung {{capybaras[data.id].description}}</h3>
+    <img src="{{capybaras[dataService.sharedData].image}}" alt="" class="profilePicture">
+    <h2>{{capybaras[dataService.sharedData].name}}</h2>
+    <h3>Beschreibung {{capybaras[dataService.sharedData].description}}</h3>
+
+    <!-- <button (click)="setSharedData()"> set shared data</button> -->
+    <!-- <button (click)="setSharedData()"> set shared data</button> -->
+    <div>
+        {{dataService.sharedData}}
+    </div>
+    
+    <!-- <button (click)="newMessage()">New message</button> -->
     <ul>
-        <li>Hobbies: {{capybaras[data.id].hobbies}}</li>
-        <li>Alter: {{capybaras[data.id].age}}</li>
+        <li>Hobbies: {{capybaras[dataService.sharedData].hobbies}}</li>
+        <li>Alter: {{capybaras[dataService.sharedData].age}}</li>
     </ul>
 
     <app-friendbox></app-friendbox>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from '../data.service';
+import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
 import { ProposalsComponent } from '../proposals/proposals.component';
 import { FriendboxComponent } from '../friendbox/friendbox.component';
@@ -12,20 +14,31 @@ import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent{
   capybaras = CAPYBARAS
 
-  data: any;
+  dataI: any;
+  subscription: Subscription;
 
-  constructor(private route: ActivatedRoute) {
+  message: string;
+
+  sharedData: number;
+
+
+  constructor(private route: ActivatedRoute, public dataService: DataService) {
     
+    this.sharedData = this.dataService.sharedData;
   }
 
   ngOnInit(): void {
+    this.sharedData = 0
     this.route.params.subscribe(params => {
-      this.data = params['id']
-      console.log(this.data);
-      
+      this.dataI = params['id']
+      console.log(this.dataI);
     })
   }
+
+
+
+
 }

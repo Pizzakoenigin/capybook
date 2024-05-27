@@ -4,7 +4,10 @@
         <div class="profile-row" *ngIf="capybara.canFollow">
             <img src={{capybara.image}} alt="">
             <div>
-                {{message}}
+                <button (click)="setSharedData()"> Klick mich</button>
+                <button (click)="dataService.sharedData = capybara.id"> Klick mich und zeige capy.id</button>
+                {{dataService.sharedData}}
+
                 <a routerLink="/profile"><b>{{capybara.name}}</b></a>
                 <span> {{capybara.description}}</span> <br>
                 <a *ngIf="capybara.canFollow" (click)="capybara.canFollow=false">adden</a>

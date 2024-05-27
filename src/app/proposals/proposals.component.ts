@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FriendService } from '../friend.service';
 import { DataService } from '../data.service';
 import { Subscription } from 'rxjs';
@@ -19,22 +19,19 @@ import { CAPYBARAS } from '../../mock-capybara';
 
 
 
-export class ProposalsComponent implements OnInit, OnDestroy{
+export class ProposalsComponent {
   
   message: string;
   subscription: Subscription;
 
   capybaras = CAPYBARAS
 
-  constructor(public fs:FriendService, private data: DataService) {
+  constructor(public fs:FriendService, public dataService: DataService) {}
 
-  }
-
-  ngOnInit() {
-    this.subscription = this.data.currentMessage.subscribe(message => this.message = message)
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+    setSharedData() {
+      console.log('klick');
+      console.log(this.dataService.sharedData);
+      
+      this.dataService.sharedData = 420;
+    }
 }
