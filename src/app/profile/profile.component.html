@@ -1,16 +1,21 @@
 <app-header></app-header>
+<a routerLink="/main">Zurück zum Feed</a>
 <div class="container">
-    <div class="profile">
-        <a routerLink="/main">Zurück zum Feed</a>
+    
+    <div class="profile card default-card">
+        <img src="{{capybaras[dataService.profileIndex].image}}" alt="" class="profilePicture">
+        <div class="profileDescription">
         <h2>{{capybaras[dataService.profileIndex].name}}</h2>
          <p><b>Beschreibung:</b> {{capybaras[dataService.profileIndex].description}}</p>
 
-        <img src="{{capybaras[dataService.profileIndex].image}}" alt="" class="profilePicture">
+        
 
 
         <p><b>Hobbies:</b> {{capybaras[dataService.profileIndex].hobbies}}</p>
         <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
         <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox>
+        </div>
+
     </div>
 
     <div class="flexrow">

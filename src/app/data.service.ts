@@ -5,4 +5,5 @@ import { Injectable } from "@angular/core";
 })
 export class DataService {
     profileIndex: number = 0;
+    friendCount: number = 0;
 }
