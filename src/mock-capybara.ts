@@ -1,4 +1,5 @@
 import { Capybara } from "./app/capybara";
+import { POSTS } from "./mock-posts";
 
 export const CAPYBARAS: Capybara[] = [
     {
@@ -8,7 +9,8 @@ export const CAPYBARAS: Capybara[] = [
         image: 'assets/img/capybara12.jpg',
         hobbies: 'Capybook',
         age: 5,
-        canFollow: false
+        canFollow: false,
+        posts: null,
     },
     {
         id: 1,
@@ -18,6 +20,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'tauchen',
         age: 5,
         canFollow: true,
+        posts: null,
     }, {
         id: 2,
         name: 'Daniel',
@@ -26,6 +29,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'spielen',
         age: 5,
         canFollow: true,
+        posts: null,
     }, {
         id: 3,
         name: 'Rebecca',
@@ -34,6 +38,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Capybaras treffen',
         age: 5,
         canFollow: true,
+        posts: null,
     }, {
         id: 4,
         name: 'Peter',
@@ -42,6 +47,43 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
+        posts: null,
+    }, {
+        id: 5,
+        name: 'Carlos',
+        description: 'schläft',
+        image: 'assets/img/capybara1.jpg',
+        hobbies: 'Schüsseln',
+        age: 5,
+        canFollow: true,
+        posts: POSTS[1],
+    }, {
+        id: 6,
+        name: 'Horst',
+        description: 'isst',
+        image: 'assets/img/capybara2.jpg',
+        hobbies: 'Gras',
+        age: 5,
+        canFollow: true,
+        posts: POSTS[2],
+    }, {
+        id: 7,
+        name: 'Frederik',
+        description: 'müde',
+        image: 'assets/img/capybara3.jpg',
+        hobbies: 'Capybook',
+        age: 5,
+        canFollow: true,
+        posts: POSTS[3],
+    }, {
+        id: 8,
+        name: 'Matilde',
+        description: 'unterwegs',
+        image: 'assets/img/capybara8.jpg',
+        hobbies: 'Capybook',
+        age: 5,
+        canFollow: true,
+        posts: POSTS[4],
     }
 
 ]

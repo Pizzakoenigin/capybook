@@ -2,6 +2,7 @@ import { Component, Input} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { POSTS } from '../../mock-posts';
+import { CAPYBARAS } from '../../mock-capybara';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -25,7 +26,7 @@ export class CapyCardComponent {
 
   posts = POSTS
 
-  
+  capybaras = CAPYBARAS
 
   newComment: string = ''
 
