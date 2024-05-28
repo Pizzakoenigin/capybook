@@ -1,3 +1,5 @@
+import { Post } from "./post";
+
 export interface Capybara {
     id: number;
     name: string;
@@ -5,5 +7,8 @@ export interface Capybara {
     image: string;
     hobbies: string;
     age: number;
-    canFollow: boolean
+    canFollow: boolean;
+    posts?: Post | null
 }
+
+// ? sorgt dafür das die Eigenschaft optional ist und nicht für jedes Element angegeben werden muss.

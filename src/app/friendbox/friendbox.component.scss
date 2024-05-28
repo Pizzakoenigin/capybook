@@ -1,6 +1,7 @@
 .friendrow{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     .friend{
         font-size: 1em;

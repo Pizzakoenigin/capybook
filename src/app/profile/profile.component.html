@@ -1,21 +1,32 @@
 <app-header></app-header>
-<div class="profile">
-    <div class="container">
-        <a routerLink="/main">Zurück zum Feed</a>
-    <img src="{{capybaras[0].image}}" alt="" class="profilePicture">
-    <h2>{{capybaras[0].name}}</h2>
-    <h3>Beschreibung {{capybaras[0].description}}</h3>
-    <ul>
-        <li>Hobbies: {{capybaras[0].hobbies}}</li>
-        <li>Alter: {{capybaras[0].age}}</li>
-    </ul>
-
-    <app-friendbox></app-friendbox>
+    <div>
+       <a routerLink="/main">Zurück zum Feed</a> 
+       <h2>Profil</h2>
     </div>
 
+<div class="container">
 
-<app-proposals>
+    
+    <div class="profile card default-card">
+        <img src="{{capybaras[dataService.profileIndex].image}}" alt="" class="profilePicture">
+        <div class="profileDescription">
+        <h2>{{capybaras[dataService.profileIndex].name}}</h2>
+         <p><b>Beschreibung:</b> {{capybaras[dataService.profileIndex].description}}</p>
 
-</app-proposals>
+        
+
+
+        <p><b>Hobbies:</b> {{capybaras[dataService.profileIndex].hobbies}}</p>
+        <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
+        <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox>
+        </div>
+
+    </div>
+
+    <div class="flexrow">
+        <b>Dein Profil</b>
+        <app-profile-row></app-profile-row>
+        <app-proposals></app-proposals>
+    </div>
+
 </div>
-

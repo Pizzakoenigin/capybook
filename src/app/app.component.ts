@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -16,9 +16,6 @@ import { ProfileComponent } from './profile/profile.component';
 
 
 
-export class AppComponent {
+export class AppComponent{
 
-  constructor() {
-    
-  }
 }
