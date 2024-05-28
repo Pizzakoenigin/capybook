@@ -1,3 +1,7 @@
+a {
+    padding: 3 em;
+}
+
 .container {
     display: flex;
     align-items: flex-start;
@@ -23,7 +27,7 @@
         // border-radius: 25px;
         object-fit: cover;
         // object-position: center;
-        // margin: 1em;
+        // margin: 1em auto;
     }
 
     .profileDescription {
@@ -42,6 +46,7 @@
         /* Safari */
         position: sticky;
         top: 0;
+        margin: 0 auto;
 
     }
 }

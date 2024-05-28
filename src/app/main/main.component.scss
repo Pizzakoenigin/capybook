@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    
 
 
     .feed {
@@ -11,7 +11,7 @@
         justify-content: center;
         gap: 1.5em;
         max-width: 70%;
-
+margin: 0 auto;
     }
 
 
@@ -21,7 +21,7 @@
         /* Safari */
         position: sticky;
         top: 0;
-
+        margin: 0 auto;
     }
 
 
