@@ -1,66 +1,76 @@
-<div class="card default-card" *ngFor="let post of posts">
-    <img src={{post.source}} alt="">
-
-    <div class="post">
-        <p class="author">{{post.author}} schreibt:</p>
-        <p>{{post.content}}</p>
-        <p class="hashtags">{{post.hashtags}}</p>
-        <p>{{post.likes}} Likes</p>
-    </div>
+<div  *ngFor="let capybara of capybaras">
+    <div *ngIf="capybara.posts as post" class="card default-card">
 
 
-    <div class="comments">
-        <h3>Kommentare</h3>
-        <div *ngFor="let comment of post.comments">
-            <p>{{comment}}</p>
-        </div>
-        <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
-            <p>Du: {{userComment}}</p>
-            <div>
-                <button class="editCommentButton" (click)="post.editComment = true; post.id = i">
-                    bearbeiten</button>
-                <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
+        <img src={{post.source}} alt="">
+
+        <div class="post">
+            <div class="postUser">
+            <img src="{{capybara.image}}" alt="" class="postUserPicture">
+            <p class="author">{{capybara.name}} schreibt:</p>
             </div>
+            <p>{{post.date}} </p>
+            <p>{{post.content}}</p>
+            <p class="hashtags">{{post.hashtags}}</p>
+            <p>{{post.likes}} Likes</p>
         </div>
 
-        <div *ngFor="let userComment of post.userComment; let i = index; trackBy: trackByFn"  > 
-            <div *ngIf="post.editComment && post.id === i" class="editComment">
-                <label for="{{userComment}}">Kommentar editieren</label>
-                <div class="editCommentText">
-                    <input type="text" id="{{userComment}}" [(ngModel)]="post.userComment[i]">
-                    <button (click)="post.editComment = false">Kommentar bearbeitet</button>
+
+        <div class="comments">
+            <h3>Kommentare</h3>
+            <div *ngFor="let comment of post.comments">
+                <p>{{comment}}</p>
+            </div>
+            <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
+                <p>Du: {{userComment}}</p>
+                <div>
+                    <button class="editCommentButton" (click)="post.editComment = true; post.id = i">
+                        bearbeiten</button>
+                    <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
+                </div>
+            </div>
+
+            <div *ngFor="let userComment of post.userComment; let i = index; trackBy: trackByFn">
+                <div *ngIf="post.editComment && post.id === i" class="editComment">
+                    <label for="{{userComment}}">Kommentar editieren</label>
+                    <div class="editCommentText">
+                        <input type="text" id="{{userComment}}" [(ngModel)]="post.userComment[i]">
+                        <button (click)="post.editComment = false">Kommentar bearbeitet</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
 
 
-    <div *ngIf="post.commentPossible" class="composeComment">
-        <label for="{{post.id}}">Kommentar verfassen</label>
-        <div class="composeCommentText">
-            <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
-            <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
+        <div *ngIf="post.commentPossible" class="composeComment">
+            <label for="{{post.id}}">Kommentar verfassen</label>
+            <div class="composeCommentText">
+                <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
+                <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
+            </div>
+
         </div>
 
-    </div>
+
+        <div class="buttons">
+            <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)"
+                [class.liked]="post.liked">
+                <span *ngIf="post.liked; else elseBlock">
+                    Liked
+                </span>
+                <ng-template #elseBlock> Like </ng-template>
+                <mat-icon>favorite</mat-icon>
+            </button>
+
+            <button (click)="post.commentPossible= true">
+                Kommentar schreiben
+                <mat-icon>chat</mat-icon>
+            </button>
+        </div>
 
 
-    <div class="buttons">
-        <button (click)="post.likes = ls.addLike(post.likes, post.liked); post.liked = ls.checkLiked(post.liked)"
-            [class.liked]="post.liked">
-            <span *ngIf="post.liked; else elseBlock">
-                Liked
-            </span>
-            <ng-template #elseBlock> Like </ng-template>
-            <mat-icon>favorite</mat-icon>
-        </button>
-
-        <button (click)="post.commentPossible= true">
-            Kommentar schreiben
-            <mat-icon>chat</mat-icon>
-        </button>
     </div>
 </div>

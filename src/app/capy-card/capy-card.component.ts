@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { POSTS } from '../../mock-posts';
 import { CAPYBARAS } from '../../mock-capybara';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -30,9 +30,12 @@ export class CapyCardComponent {
 
   newComment: string = ''
 
-  constructor(public ls: LikeService) {
+  currentDate: Date 
 
-  }
+  // constructor(public ls: LikeService, private datePipe: DatePipe) {
+  //   this.currentDate = new Date();
+  //   return(this.datePipe.transform(this.currentDate, 'short'));
+  // }
 
   addComment(post: any) {
     if (this.newComment !== '') {

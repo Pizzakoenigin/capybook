@@ -4,9 +4,28 @@
     // width: 50%;
     margin: 2em auto;
 
+    .postUser {
+        display: flex;
+        vertical-align: center;
+    
+        .postUserPicture {
+        width: 3em;
+        height: 3em;
+        border-radius: 15em;
+        object-fit: cover;
+        margin: 0.7em 0.7em 0.3em 0.7em;
+        display: inline;
+    }
+
     .author {
         font-style: italic;
+        margin: auto 0;
     }
+    
+    
+    }
+
+
 
     img {
         width: 100%;
