@@ -23,8 +23,8 @@
             </div>
         </div>
 
-        <div *ngFor="let userComment of post.userComment; let i = index" class="editComment">
-            <div *ngIf="post.editComment && post.id === i">
+        <div *ngFor="let userComment of post.userComment; let i = index" >
+            <div *ngIf="post.editComment && post.id === i" class="editComment">
                 <label for="{{userComment}}">Kommentar editieren</label>
                 <div class="editCommentText">
                     <input type="text" id="{{userComment}}" [(ngModel)]="post.userComment[i]" autofocus>
