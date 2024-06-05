@@ -22,7 +22,7 @@
                 <button class="removeCommentButton" (click)="removeComment(post, i) "> entfernen</button>
             </div>
         </div>
-    
+
         <div *ngFor="let userComment of post.userComment; let i = index" class="editComment">
             <div *ngIf="post.editComment && post.id === i">
                 <label for="{{userComment}}">Kommentar editieren</label>
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 

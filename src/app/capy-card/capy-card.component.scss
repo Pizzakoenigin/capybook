@@ -57,7 +57,13 @@
         }
     }
 
-    .composeComment, .editComment {
+    // .editComment {
+    //     // display: block;
+    //     margin: 1.5em 2em;
+    //     gap: 1em;
+    // }
+
+    .composeComment, .editComment  {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
