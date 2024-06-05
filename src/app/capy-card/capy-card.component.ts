@@ -39,7 +39,6 @@ export class CapyCardComponent {
       post.userComment.push(this.newComment);
     }
     this.newComment = '';
-    console.log(post.userComment);
   }
 
   editComment(post: any, index: number) {
