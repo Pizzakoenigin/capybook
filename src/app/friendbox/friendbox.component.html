@@ -14,7 +14,7 @@
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id">{{capybara.name}}</a>
             </p>
             <!-- <div *ngIf="capybaras[dataService.profileIndex].id == 0"> -->
-                <a (click)="friendService.removeFriend(capybaras, i)">entfernen</a>
+                <a (click)="friendService.removeFriend(capybaras, dataService.profileIndex)">entfernen</a>
             <!-- </div> -->
 
         </div>

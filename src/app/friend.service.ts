@@ -12,11 +12,15 @@ export class FriendService {
 addFriend(capybaras, i) {
     capybaras[0].friends.push(capybaras[i])
     capybaras[i].canFollow=false;
+
+
     capybaras[i].friends.push(capybaras[0])
     this.dataService.friendListLength = capybaras[0].friends.length+2
   }
 
   removeFriend(capybaras, i) {
+    console.log(capybaras[0]);
+    
     capybaras[0].friends.splice(i, 1)
     capybaras[i].canFollow=true;
     // capybaras[i].friends.splice(capybaras[i], 1)  
