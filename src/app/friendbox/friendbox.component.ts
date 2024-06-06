@@ -26,6 +26,19 @@ export class FriendboxComponent {
       capy.friends.push(this.capybaras[friendNumber]);
       dataService.initAddFriendsToCapies = false
     }
+
+    for (let i = 0; i < this.capybaras.length; i++) {
+      const capy = this.capybaras[friendNumber].friends[i];
+      if (i === friendNumber) {
+        ; continue; // Skip the execution for the fifth index we don't want to add the capy to it's own profile
+      }
+      this.capybaras[friendNumber].friends.push(this.capybaras[i]);
+      dataService.initAddFriendsToCapies = false
+    }
+
+    this.capybaras[3].friends.push(this.capybaras[2])
+    this.capybaras[2].friends.push(this.capybaras[3])
+    this.capybaras[0].friends.push(this.capybaras[friendNumber])
   };
 
   constructor(public dataService: DataService) {
@@ -37,7 +50,5 @@ export class FriendboxComponent {
   removeFriend(i) {
     this.capybaras[0].friends.splice(i, 1)
     this.dataService.friendListLength = this.capybaras[0].friends.length+2
-    console.log(this.dataService.friendListLength, this.capybaras.length);
-
   }
 }

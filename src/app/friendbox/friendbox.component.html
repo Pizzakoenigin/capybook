@@ -2,18 +2,23 @@
 
 <div class="friendrow">
 
-    <div *ngIf="capybaras[0].friends.length == 0">
+    <div *ngIf="capybaras[dataService.profileIndex].friends.length == 0  && capybaras[dataService.profileIndex].id==0">
         <p>Füge Freunde aus den Vorschläge rechts hinzu!</p>
     </div>
 
 
-    <div *ngFor="let capybara of capybaras[0].friends; let i = index">
-        <div class="friend default-card" *ngIf="!capybara.canFollow">
+    <div *ngFor="let capybara of capybaras[dataService.profileIndex].friends; let i = index">
+        <div class="friend default-card">
             <img src={{capybara?.image}} alt="">
             <p>{{capybara?.name}}</p>
-            <a (click)="capybara.canFollow=true; removeFriend(i)">entfernen</a>
+            <div *ngIf="capybaras[dataService.profileIndex].id == 0">
+                <a (click)="capybara.canFollow=true; removeFriend(i)">entfernen</a>
+            </div>
+
         </div>
 
 
     </div>
 </div>
+
+<!-- *ngIf="!capybara.canFollow" -->

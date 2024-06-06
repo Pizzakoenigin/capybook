@@ -24,6 +24,12 @@ import { CAPYBARAS } from '../../mock-capybara'
 
 export class MainComponent {
 
+  capybaras = CAPYBARAS
 
+
+
+  constructor() {
+    
+  }
 
 }
