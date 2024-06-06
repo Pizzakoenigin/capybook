@@ -9,7 +9,7 @@
             <div>
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id"><b>{{capybara.name}}</b></a>
                 <span> {{capybara.description}}</span> <br>
-                <a (click)="capybara.canFollow=false; addFriend(i) ">adden</a>
+                <a (click)="capybara.canFollow=false; friendService.addFriend(capybaras, i) ">adden</a>
             </div>
         </div>
         

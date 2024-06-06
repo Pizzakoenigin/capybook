@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { FriendService } from '../friend.service';
 import { Subscription } from 'rxjs';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -28,7 +29,7 @@ export class ProposalsComponent {
 
   
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, public friendService: FriendService) { }
 
   setprofileIndex() {
     console.log('klick');
@@ -37,10 +38,10 @@ export class ProposalsComponent {
     this.dataService.profileIndex = 0;
   }
 
-  addFriend(i) {
-    this.capybaras[0].friends.push(this.capybaras[i] )
-    this.dataService.friendListLength = this.capybaras[0].friends.length+2
-  }
+  // addFriend(i) {
+  //   this.capybaras[0].friends.push(this.capybaras[i] )
+  //   this.dataService.friendListLength = this.capybaras[0].friends.length+2
+  // }
 }
 
 
