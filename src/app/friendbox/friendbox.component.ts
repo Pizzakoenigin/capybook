@@ -1,6 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { FriendService } from '../friend.service';
 import { CAPYBARAS } from '../../mock-capybara';
 
 @Component({
@@ -15,7 +14,7 @@ export class FriendboxComponent {
   capybaras = CAPYBARAS
 
   @Input() canFollow = true;
-  constructor(public fs: FriendService) {
+  constructor() {
 
   }
 
