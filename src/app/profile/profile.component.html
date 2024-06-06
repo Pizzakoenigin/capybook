@@ -15,6 +15,7 @@
                 <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
                 <!-- <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox> -->
                 <app-friendbox ></app-friendbox>
+                <button *ngIf="capybaras[dataService.profileIndex].id != 0 && capybaras[dataService.profileIndex].canFollow == true" (click)="friendService.addFriend(capybaras, dataService.profileIndex)">Als Freund hinzufügen</button>
             </div>
         </div>
     </div>
