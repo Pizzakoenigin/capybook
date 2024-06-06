@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CAPYBARAS } from '../../mock-capybara';
 import { DataService } from '../data.service';
+import { FriendService } from '../friend.service';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -46,14 +47,11 @@ export class FriendboxComponent {
 
   };
 
-  constructor(public dataService: DataService) {
+  constructor(public dataService: DataService, public friendService: FriendService) {
     if (dataService.initAddFriendsToCapies) {
       this.addFriendsToCapies(dataService)
     }
   }
 
-  removeFriend(i) {
-    this.capybaras[0].friends.splice(i, 1)
-    this.dataService.friendListLength = this.capybaras[0].friends.length+2
-  }
+
 }

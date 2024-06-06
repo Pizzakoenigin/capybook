@@ -14,7 +14,7 @@
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id">{{capybara.name}}</a>
             </p>
             <div *ngIf="capybaras[dataService.profileIndex].id == 0">
-                <a (click)="capybara.canFollow=true; removeFriend(i)">entfernen</a>
+                <a (click)="capybara.canFollow=true; friendService.removeFriend(capybaras, i)">entfernen</a>
             </div>
 
         </div>
