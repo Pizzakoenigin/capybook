@@ -9,13 +9,14 @@
         flex-direction: column;
         margin: 0.5em;
         align-items: center;
+        padding: 1em 0.25em;
         &:first-child {
             margin-left: 0;
         }
 
         img {
-            width: 5em;
-            height: 5em;
+            width: 5.5em;
+            height: 5.5em;
             border-radius: 15em;
             object-fit: cover;
             margin: 0.7em 0.7em 0.3em 0.7em;
