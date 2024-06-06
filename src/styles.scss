@@ -1,3 +1,8 @@
+:root {
+    --main-color: rgba(224, 166, 89, 0.901);
+}
+
+
 body {
     margin: 0;
     background-color: rgba($color: #c9b449, $alpha: 0.1);
@@ -14,7 +19,7 @@ body {
         &:hover {
             cursor: pointer;
             text-decoration: underline;
-            color: orange;
+            color: var(--main-color);
         }
     }
     
