@@ -5,22 +5,22 @@
     </div>
 
 <div class="container">
+    <div class="feed">
+        <!-- <div> -->
+            <a routerLink="">Zurück zum Feed</a>
+            <h2>Profil</h2>
+        <!-- </div> -->
 
-    
-    <div class="profile card default-card">
-        <img src="{{capybaras[dataService.profileIndex].image}}" alt="" class="profilePicture">
-        <div class="profileDescription">
-        <h2>{{capybaras[dataService.profileIndex].name}}</h2>
-         <p><b>Beschreibung:</b> {{capybaras[dataService.profileIndex].description}}</p>
-
-        
-
-
-        <p><b>Hobbies:</b> {{capybaras[dataService.profileIndex].hobbies}}</p>
-        <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
-        <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox>
+        <div class="profile card default-card">
+            <img src="{{capybaras[dataService.profileIndex].image}}" alt="" class="profilePicture">
+            <div class="profileDescription">
+                <h2>{{capybaras[dataService.profileIndex].name}}</h2>
+                <p><b>Beschreibung:</b> {{capybaras[dataService.profileIndex].description}}</p>
+                <p><b>Hobbies:</b> {{capybaras[dataService.profileIndex].hobbies}}</p>
+                <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
+                <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox>
+            </div>
         </div>
-
     </div>
 
     <div class="flexrow">
@@ -28,5 +28,4 @@
         <app-profile-row></app-profile-row>
         <app-proposals></app-proposals>
     </div>
-
 </div>

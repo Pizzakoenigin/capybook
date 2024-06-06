@@ -4,9 +4,28 @@
     // width: 50%;
     margin: 2em auto;
 
+    .postUser {
+        display: flex;
+        // vertical-align: center;
+    
+        .postUserPicture {
+        width: 3em;
+        height: 3em;
+        border-radius: 15em;
+        object-fit: cover;
+        margin: 0.7em 0.7em 0.3em 0.7em;
+        display: inline;
+    }
+
     .author {
         font-style: italic;
+        margin: 1.5em 0 0 0;
     }
+    
+    
+    }
+
+
 
     img {
         width: 100%;
@@ -26,7 +45,7 @@
     }
 
     .comments {
-        margin: 1.5em 1em 0 1em;
+        margin: 1.5em 1em;
 
         h3 {
             margin: 0 0.75em;
@@ -57,11 +76,21 @@
         }
     }
 
-    .composeComment, .editComment {
+    // .editComment {
+    //     // display: block;
+    //     margin: 1.5em 2em;
+    //     gap: 1em;
+    // }
+
+
+
+    .composeComment, .editComment  {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+
 
         .composeCommentText, .editCommentText {
             display: flex;
@@ -85,7 +114,9 @@
         }
     }
 
-
+          .editComment {
+            margin: 1.5em 1em;
+        }  
 
     .buttons {
         display: flex;

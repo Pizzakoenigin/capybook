@@ -56,7 +56,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Schüsseln',
         age: 5,
         canFollow: true,
-        posts: POSTS[1],
+        posts: POSTS[0],
     }, {
         id: 6,
         name: 'Horst',
@@ -65,7 +65,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Gras',
         age: 5,
         canFollow: true,
-        posts: POSTS[2],
+        posts: POSTS[1],
     }, {
         id: 7,
         name: 'Frederik',
@@ -74,7 +74,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        posts: POSTS[3],
+        posts: POSTS[2],
     }, {
         id: 8,
         name: 'Matilde',
@@ -83,7 +83,7 @@ export const CAPYBARAS: Capybara[] = [
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        posts: POSTS[4],
+        posts: POSTS[3],
     }
 
 ]

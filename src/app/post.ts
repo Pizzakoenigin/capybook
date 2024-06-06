@@ -1,6 +1,7 @@
 export interface Post {
     id: number;
-    author: string;
+    // author: string;
+    date: Date;
     content: string;
     hashtags: string;
     source: string;
