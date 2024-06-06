@@ -13,8 +13,12 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     NgFor,
     NgIf,
+    DatePipe,
     FormsModule
   ],
+  providers: [
+    DatePipe
+  ],  
   templateUrl: './capy-card.component.html',
   styleUrl: './capy-card.component.scss'
   
@@ -30,12 +34,13 @@ export class CapyCardComponent {
 
   newComment: string = ''
 
-  currentDate: Date 
+  // currentDate: Date 
 
-  // constructor(public ls: LikeService, private datePipe: DatePipe) {
-  //   this.currentDate = new Date();
-  //   return(this.datePipe.transform(this.currentDate, 'short'));
-  // }
+  constructor(public ls: LikeService, private datePipe: DatePipe) {
+
+    // this.currentDate = new Date();
+    // console.log(this.datePipe.transform(this.currentDate, 'short'));
+  }
 
   addComment(post: any) {
     if (this.newComment !== '') {
