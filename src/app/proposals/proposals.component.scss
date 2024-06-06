@@ -4,12 +4,19 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+
+    b {
+        // padding-bottom: 1em;
+    }    
 }
 
 .profile-row {
     display: flex;
     align-items: center;
     // margin:2em;
+
+
+
     img {
         width: 60px;
         height: 60px;

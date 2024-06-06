@@ -9,10 +9,11 @@
             <div>
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id"><b>{{capybara.name}}</b></a>
                 <span> {{capybara.description}}</span> <br>
-                <a *ngIf="capybara.canFollow; " (click)="capybara.canFollow=false; ">adden</a>
+                <a (click)="capybara.canFollow=false; addFriend(i) ">adden</a>
             </div>
         </div>
         
     </div>
 </div>
 
+<!-- , capybaras[0].friends.push(capybaras[capybara.id]) -->

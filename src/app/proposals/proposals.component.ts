@@ -36,6 +36,14 @@ export class ProposalsComponent {
     this.dataService.profileIndex = 0;
   }
 
+  addFriend(i) {
+    this.capybaras[0].friends.push(this.capybaras[i] )
+    console.log(this.capybaras[0].friends);
+    
+  }
+
+
+
   // friendCount() {
   //   this.capybaras.forEach(capy => {
   //     if (capy.canFollow) {

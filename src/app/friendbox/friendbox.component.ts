@@ -19,4 +19,7 @@ export class FriendboxComponent {
 
   }
 
+  removeFriend(i) {
+    this.capybaras[0].friends.splice(i, 1)
+  }
 }

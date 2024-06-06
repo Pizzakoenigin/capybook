@@ -7,11 +7,11 @@
     </div> -->
 
 
-    <div *ngFor="let capybara of capybaras; let i = index">
-        <div class="friend default-card" *ngIf="!capybara.canFollow && capybara.id !=0">
-            <img src={{capybara.image}} alt="">
-            <p>{{capybara.name}}</p>
-            <a (click)="capybara.canFollow=true">entfernen</a>
+    <div *ngFor="let capybara of capybaras[0].friends; let i = index">
+        <div class="friend default-card" *ngIf="!capybara.canFollow">
+            <img src={{capybara?.image}} alt="">
+            <p>{{capybara?.name}}</p>
+            <a (click)="capybara.canFollow=true; removeFriend(i)">entfernen</a>
         </div>
 
 

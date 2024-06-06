@@ -1,8 +1,8 @@
 import { Capybara } from "./app/capybara";
 import { POSTS } from "./mock-posts";
 
-export const CAPYBARAS: Capybara[] = [
-    {
+export const CAPYBARAS: Capybara[] = [] // capybara needs to be declared befored declaring capybaras. after that the data get pushed into the Capybaras object
+CAPYBARAS.push(    {
         id: 0,
         name: 'Capybara',
         description: 'Das bist du',
@@ -11,6 +11,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: false,
         posts: null,
+        friends: []
     },
     {
         id: 1,
@@ -19,8 +20,9 @@ export const CAPYBARAS: Capybara[] = [
         image: 'assets/img/capybara5.jpg',
         hobbies: 'tauchen',
         age: 5,
-        canFollow: true,
+        canFollow: false,
         posts: null,
+        friends: []
     }, {
         id: 2,
         name: 'Daniel',
@@ -30,6 +32,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: null,
+        friends: []
     }, {
         id: 3,
         name: 'Rebecca',
@@ -39,6 +42,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: null,
+        friends: []
     }, {
         id: 4,
         name: 'Peter',
@@ -48,6 +52,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: null,
+        friends: []
     }, {
         id: 5,
         name: 'Carlos',
@@ -57,6 +62,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: POSTS[0],
+        friends: []
     }, {
         id: 6,
         name: 'Horst',
@@ -66,6 +72,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: POSTS[1],
+        friends: []
     }, {
         id: 7,
         name: 'Frederik',
@@ -75,6 +82,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: POSTS[2],
+        friends: []
     }, {
         id: 8,
         name: 'Matilde',
@@ -84,6 +92,7 @@ export const CAPYBARAS: Capybara[] = [
         age: 5,
         canFollow: true,
         posts: POSTS[3],
+        friends: []
     }
 
-]
+)
