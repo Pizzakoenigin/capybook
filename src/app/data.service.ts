@@ -6,4 +6,6 @@ import { Injectable } from "@angular/core";
 export class DataService {
     profileIndex: number = 0;
     friendCount: number = 0;
+    friendListLength: number = 0; 
+    initAddFriendsToCapies: boolean = true;
 }

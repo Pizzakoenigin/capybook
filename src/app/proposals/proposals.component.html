@@ -1,6 +1,6 @@
-<div class="proposals-container">
+<div class="proposals-container" *ngIf="dataService.friendListLength != capybaras.length">
 
-    <div>
+    <div >
         <b >Freundesvorschläge</b>
     </div>    
     <div *ngFor="let capybara of capybaras; let i =index">
@@ -15,5 +15,3 @@
         
     </div>
 </div>
-
-<!-- , capybaras[0].friends.push(capybaras[capybara.id]) -->

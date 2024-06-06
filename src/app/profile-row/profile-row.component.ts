@@ -17,14 +17,9 @@ export class ProfileRowComponent {
   capybaras = CAPYBARAS
 
   constructor(public dataService: DataService) {
+  }
 
-    }
-  
-
-    setprofileIndex() {
-      console.log('klick');
-      console.log(this.dataService.profileIndex);
-      
-      this.dataService.profileIndex = 420;
-}
+  setprofileIndex() {
+    this.dataService.profileIndex = 0;
+  }
 }

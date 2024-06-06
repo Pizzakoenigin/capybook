@@ -26,6 +26,8 @@ export class ProposalsComponent {
 
   capybaras = CAPYBARAS
 
+  
+
   constructor(public dataService: DataService) { }
 
   setprofileIndex() {
@@ -37,25 +39,8 @@ export class ProposalsComponent {
 
   addFriend(i) {
     this.capybaras[0].friends.push(this.capybaras[i] )
-    console.log(this.capybaras[0].friends);
-    
+    this.dataService.friendListLength = this.capybaras[0].friends.length+2
   }
-
-
-
-  // friendCount() {
-  //   this.capybaras.forEach(capy => {
-  //     if (capy.canFollow) {
-  //       this.dataService.friendCount--;
-
-
-  //     } else {
-  //       this.dataService.friendCount++;
-  //     }
-  //   });
-
-  //   console.log(this.dataService.friendCount);
-  // }
 }
 
 

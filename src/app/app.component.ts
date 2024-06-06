@@ -1,7 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
+
 
 
 @Component({
@@ -10,12 +11,13 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
-  
+
 })
 
 
 
 
-export class AppComponent{
+export class AppComponent {
+
 
 }

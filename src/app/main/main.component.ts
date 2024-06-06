@@ -8,6 +8,7 @@ import { FriendboxComponent } from '../friendbox/friendbox.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { FormsModule} from '@angular/forms';
+import { CAPYBARAS } from '../../mock-capybara'
 
 @Component({
   selector: 'app-root',
@@ -22,5 +23,7 @@ import { FormsModule} from '@angular/forms';
 
 
 export class MainComponent {
+
+
 
 }

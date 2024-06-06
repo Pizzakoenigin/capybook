@@ -2,9 +2,9 @@
 
 <div class="friendrow">
 
-    <!-- <div>
-        <p>Du hast noch keine Freunde.</p>
-    </div> -->
+    <div *ngIf="capybaras[0].friends.length == 0">
+        <p>Füge Freunde aus den Vorschläge rechts hinzu!</p>
+    </div>
 
 
     <div *ngFor="let capybara of capybaras[0].friends; let i = index">
