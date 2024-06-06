@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { FormsModule} from '@angular/forms';
 import { CAPYBARAS } from '../../mock-capybara'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-root',
@@ -28,8 +29,8 @@ export class MainComponent {
 
 
 
-  constructor() {
-    
+  constructor(public dataService: DataService) {
+    dataService.profileIndex = 0
   }
 
 }
