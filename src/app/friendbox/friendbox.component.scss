@@ -47,6 +47,12 @@
             background-color: rgba(128, 128, 128, 0.1);
             // background-color-alpha: 0.1;
             color: black;
+
+            &:hover {
+                background-color: rgb(128, 128, 128);
+                color: white;
+
+            }
         }
         
     }
