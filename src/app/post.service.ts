@@ -17,6 +17,8 @@ export class PostService {
 
     capybaras = CAPYBARAS
 
+    showInput: boolean = false
+
     // postCount: number = ;
 
     // postDate = new Date()
@@ -61,7 +63,12 @@ export class PostService {
             this.posts.push(newPost)
             // console.log(this.posts);
 
-            // this.capybaras[0].posts.push(this.posts[this.posts.length + 1])
+            this.capybaras[0].posts.push(this.posts[this.posts.length + 1])
+
+            this.content !== '';
+
+            this.showInput = false
+            
             
 
         }

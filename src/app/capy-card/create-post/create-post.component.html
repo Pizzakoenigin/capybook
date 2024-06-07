@@ -1,8 +1,8 @@
-<button *ngIf="!showInput" (click)="createInput()" class="createPost">
+<button *ngIf="!postService.showInput" (click)="postService.showInput = true" class="createPost">
     Verfasse einen neuen Post
 </button>
 
-<form *ngIf="showInput"  action="">
+<form *ngIf="postService.showInput"  action="">
     <label for="content">Schreibe deinen Post</label>
     <input type="text" id="content" [(ngModel)] = "postService.content" name="content"> 
 
@@ -10,7 +10,7 @@
     <input type="text" id="hashtags">
 </form>
 
-<div *ngIf="showInput" (click)="showInput=false" class="buttons">
+<div *ngIf="postService.showInput" (click)="postService.showInput=false" class="buttons">
 <button class="discard">
     Abbrechen
 </button>

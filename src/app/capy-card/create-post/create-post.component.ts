@@ -11,14 +11,14 @@ import { PostService } from '../../post.service';
   styleUrl: './create-post.component.scss'
 })
 export class CreatePostComponent {
-  showInput: boolean = false
+  
 
   constructor(public postService: PostService) {
 
     
   }
 
-  createInput() {
-    this.showInput = !this.showInput
-  }
+  // createInput() {
+  
+  // }
 }

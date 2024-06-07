@@ -2,7 +2,7 @@
 
 <div  *ngFor="let capybara of capybaras">
 
-    <div *ngIf="capybara.posts as post" class="card default-card">
+    <div *ngFor="let post of capybara.posts" class="card default-card">
 
         
 
