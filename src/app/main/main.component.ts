@@ -30,6 +30,7 @@ export class MainComponent {
 
 
   constructor(public dataService: DataService) {
+    dataService.onMainPage = true
     dataService.profileIndex = 0
   }
 

@@ -43,6 +43,8 @@ export class FriendService {
     }
 
 
+  capybaras[i].canFollow = true;
+
     this.dataService.friendListLength = capybaras[0].friends.length + 2
   }
 
