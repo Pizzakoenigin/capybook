@@ -4,7 +4,7 @@
 
 <form *ngIf="showInput"  action="">
     <label for="content">Schreibe deinen Post</label>
-    <input type="text" id="content"> 
+    <input type="text" id="content" [(ngModel)] = "postService.content"> 
 
     <label for="hastags">Hashtags (optional)</label>
     <input type="text" id="hashtags">

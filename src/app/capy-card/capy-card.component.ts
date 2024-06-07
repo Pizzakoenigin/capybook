@@ -26,9 +26,9 @@ import { CreatePostComponent } from './create-post/create-post.component';
   
 })
 export class CapyCardComponent {
-  @Input() text: string = '';
-  @Input() source: string = '';
-  @Input() cardIndex: number = 0
+  // @Input() text: string = '';
+  // @Input() source: string = '';
+  // @Input() cardIndex: number = 0
 
   posts = POSTS
 
@@ -40,11 +40,6 @@ export class CapyCardComponent {
 
   constructor(public ls: LikeService, private datePipe: DatePipe) {
 
-    // this.capybaras[0].friends.push(this.capybaras[1], this.capybaras[2]),  //friends get pushed to the objects after they got declared in mock.capybaras
-    // this.capybaras[0].friends.push() 
-    
-
-    
   }
 
   addComment(post: any) {
