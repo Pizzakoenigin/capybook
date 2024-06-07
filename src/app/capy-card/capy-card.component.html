@@ -6,7 +6,7 @@
 
         
 
-        <img src={{post.source}} alt="">
+        <img *ngIf="post.source" src={{post.source}} alt="">
 
         <div class="post">
             <div class="postUser">
