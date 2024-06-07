@@ -1,6 +1,10 @@
+<app-create-post></app-create-post>
+
 <div  *ngFor="let capybara of capybaras">
+
     <div *ngIf="capybara.posts as post" class="card default-card">
 
+        
 
         <img src={{post.source}} alt="">
 

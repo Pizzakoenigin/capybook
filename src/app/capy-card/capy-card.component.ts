@@ -5,6 +5,7 @@ import { POSTS } from '../../mock-posts';
 import { CAPYBARAS } from '../../mock-capybara';
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @Component({
   selector: 'app-capy-card',
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     NgFor,
     NgIf,
     DatePipe,
-    FormsModule
+    FormsModule,
+    CreatePostComponent
   ],
   providers: [
     DatePipe
