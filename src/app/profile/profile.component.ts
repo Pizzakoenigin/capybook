@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { FriendService } from '../friend.service';
 import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
 import { ProposalsComponent } from '../proposals/proposals.component';
@@ -27,9 +28,10 @@ export class ProfileComponent{
   profileIndex: number;
 
 
-  constructor(private route: ActivatedRoute, public dataService: DataService) {
+  constructor(private route: ActivatedRoute, public dataService: DataService, public friendService: FriendService) {
 
     this.profileIndex = this.dataService.profileIndex;
+    dataService.onMainPage = false
   }
 
   ngOnInit(): void {

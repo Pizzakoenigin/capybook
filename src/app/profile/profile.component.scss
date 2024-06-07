@@ -29,7 +29,7 @@ margin: 0 auto;
         margin: 0;
 
         h3, p, ul, li {
-            margin: 0.2em 0;
+            margin: 0.4em 0;
         }
 
             .profilePicture {
@@ -42,8 +42,16 @@ margin: 0 auto;
     }
 
     .profileDescription {
+
         justify-content: center;
         padding: 1.5em;
+        h2{
+            display: inline;
+            font-size: 2em;
+        }
+
+
+        
     }
 
     }
@@ -60,4 +68,26 @@ margin: 0 auto;
         margin: 0 auto;
 
     }
+}
+
+.addFriendButton {
+    border: unset;
+    cursor: pointer;
+    // align-self: center;
+    // padding: 0.75em;
+    margin:  1em 0 0.75em 0;
+    display: inline;
+    // font-size: 0.7em;
+    // color: white;
+    // background-color: var(--main-color);
+    color: var(--main-color);
+    background-color: white;
+    border-radius: 10em;
+    font-size: 1em;
+
+    // &:hover {
+    //     background-color: white;
+    //     color: var(--main-color);
+
+    // }
 }

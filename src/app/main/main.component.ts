@@ -8,6 +8,8 @@ import { FriendboxComponent } from '../friendbox/friendbox.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LikeService } from '../like.service';
 import { FormsModule} from '@angular/forms';
+import { CAPYBARAS } from '../../mock-capybara'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-root',
@@ -22,5 +24,14 @@ import { FormsModule} from '@angular/forms';
 
 
 export class MainComponent {
+
+  capybaras = CAPYBARAS
+
+
+
+  constructor(public dataService: DataService) {
+    dataService.onMainPage = true
+    dataService.profileIndex = 0
+  }
 
 }

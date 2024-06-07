@@ -4,6 +4,10 @@
     // width: 50%;
     margin: 2em auto;
 
+    &:first-child {
+        margin-top: 0;
+    }
+
     .postUser {
         display: flex;
         // vertical-align: center;

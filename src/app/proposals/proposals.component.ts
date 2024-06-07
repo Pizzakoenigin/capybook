@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FriendService } from '../friend.service';
 import { DataService } from '../data.service';
+import { FriendService } from '../friend.service';
 import { Subscription } from 'rxjs';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -27,7 +27,9 @@ export class ProposalsComponent {
 
   capybaras = CAPYBARAS
 
-  constructor(public fs: FriendService, public dataService: DataService) { }
+  
+
+  constructor(public dataService: DataService, public friendService: FriendService) { }
 
   setprofileIndex() {
     console.log('klick');
@@ -36,18 +38,9 @@ export class ProposalsComponent {
     this.dataService.profileIndex = 0;
   }
 
-  // friendCount() {
-  //   this.capybaras.forEach(capy => {
-  //     if (capy.canFollow) {
-  //       this.dataService.friendCount--;
-
-
-  //     } else {
-  //       this.dataService.friendCount++;
-  //     }
-  //   });
-
-  //   console.log(this.dataService.friendCount);
+  // addFriend(i) {
+  //   this.capybaras[0].friends.push(this.capybaras[i] )
+  //   this.dataService.friendListLength = this.capybaras[0].friends.length+2
   // }
 }
 

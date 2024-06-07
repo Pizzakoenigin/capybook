@@ -8,7 +8,8 @@ export interface Capybara {
     hobbies?: string;
     age?: number;
     canFollow: boolean;
-    posts?: Post | null
+    posts?: Post | null;
+    friends?: any[]
 }
 
 // ? sorgt dafür das die Eigenschaft optional ist und nicht für jedes Element angegeben werden muss.

@@ -2,18 +2,30 @@
 
 <div class="friendrow">
 
-    <!-- <div>
-        <p>Du hast noch keine Freunde.</p>
-    </div> -->
+    <div *ngIf="capybaras[dataService.profileIndex].friends.length == 0  && capybaras[dataService.profileIndex].id==0">
+        <p>Füge Freunde aus den Vorschläge rechts hinzu!</p>
+    </div>
 
 
-    <div *ngFor="let capybara of capybaras; let i = index">
-        <div class="friend default-card" *ngIf="!capybara.canFollow && capybara.id !=0">
-            <img src={{capybara.image}} alt="">
-            <p>{{capybara.name}}</p>
-            <a (click)="capybara.canFollow=true">entfernen</a>
+    <div *ngFor="let capybara of capybaras[dataService.profileIndex].friends; let i = index">
+        <div class="friend default-card">
+            <img src={{capybara?.image}} alt="">
+            <p>
+                <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id">{{capybara.name}}</a>
+            </p>
+            <div *ngIf="capybaras[dataService.profileIndex].id == 0 && dataService.onMainPage == false" class="buttons">
+                <button (click)="capybara.canFollow=true; friendService.removeFriend(capybaras, capybara.id)">entfernen</button> 
+               
+            </div>
+
         </div>
 
 
     </div>
 </div>
+
+<!-- *ngIf="!capybara.canFollow" --> 
+
+
+
+<!-- i ist der index des capybaras in der auflistung von friendrow. nicht aber der index im array friends von capybara[0] -->
