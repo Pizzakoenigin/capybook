@@ -25,26 +25,18 @@ export class PostService {
 
   constructor() {
     // console.log(this.posts.length);
-    this.capybaras.forEach((capy) => console.log(capy.posts)    )
+    this.capybaras.forEach((capy) => console.log(capy.posts))
     }
     // console.log(this.capybaras.posts);
     
    
-
+    // clearInput() {
+    //   this.content = ''
+    // }
 
 
     addPost() {
         if (this.content !== '') {
-            // new POSTS
-            // this.capybaras[0].posts.push()
-
-
-
-            // take this.content push it to new made Post.content
-            // push new post to capybaras[0]
-            
-
-
             const newPost: Post = {
                 id:  this.posts.length + 1,
                 date: new Date(),
@@ -58,19 +50,9 @@ export class PostService {
                 comments: [],
                 userComment: [],
             };
-
-
-            // this.posts.push(newPost)
-            // console.log(this.posts);
-
             this.capybaras[0].posts.push(newPost)
-
-            this.content !== '';
-
+            this.content = '';
             this.showInput = false
-            
-            
-
         }
 
 
