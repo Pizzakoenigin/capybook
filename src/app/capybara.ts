@@ -8,7 +8,7 @@ export interface Capybara {
     hobbies?: string;
     age?: number;
     canFollow: boolean;
-    posts?: Post | null;
+    posts?: any[];
     friends?: any[]
 }
 
