@@ -3,8 +3,8 @@ export interface Post {
     // author: string;
     date: Date;
     content: string;
-    hashtags: string;
-    source: string;
+    hashtags?: string;
+    source?: string;
     likes: number;
     liked: boolean;
     commentPossible: boolean;

@@ -4,7 +4,7 @@
 
 <form *ngIf="showInput"  action="">
     <label for="content">Schreibe deinen Post</label>
-    <input type="text" id="content" [(ngModel)] = "postService.content"> 
+    <input type="text" id="content" [(ngModel)] = "postService.content" name="content"> 
 
     <label for="hastags">Hashtags (optional)</label>
     <input type="text" id="hashtags">
@@ -15,7 +15,7 @@
     Abbrechen
 </button>
 
-<button class="compose">
+<button class="compose" (click)="postService.addPost()">
     Post verfassen
 </button>
 </div>

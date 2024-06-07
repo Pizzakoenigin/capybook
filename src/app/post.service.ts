@@ -13,20 +13,57 @@ export class PostService {
 
     // post = Post
 
-    // posts = POSTS
+    posts = POSTS
 
     capybaras = CAPYBARAS
 
-  constructor() { }
+    // postCount: number = ;
+
+    // postDate = new Date()
+
+  constructor() {
+    // console.log(this.posts.length);
+    
+   }
+
+
 
     addPost() {
         if (this.content !== '') {
             // new POSTS
-            this.capybaras[0].posts.push()
+            // this.capybaras[0].posts.push()
+
+
+
+            // take this.content push it to new made Post.content
+            // push new post to capybaras[0]
+            
+
+
+            const newPost: Post = {
+                id:  this.posts.length + 1,
+                date: new Date(),
+                content: this.content,
+                // hashtags: 'angular, coding',
+                // source: 'You.com',
+                likes: 0,
+                liked: false,
+                commentPossible: true,
+                editComment: false,
+                comments: [],
+                userComment: [],
+            };
+
+
+            this.posts.push(newPost)
+            // console.log(this.posts);
+
+            // this.capybaras[0].posts.push(this.posts[this.posts.length + 1])
+            
 
         }
 
 
-        this.content = ''
+        // this.content = ''
     }
 }
