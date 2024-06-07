@@ -1,0 +1,45 @@
+.createPost {
+    width: 100%;
+    border: solid 1px grey;
+    cursor: pointer;
+    align-self: center;
+    padding: 2em;
+    margin: 2em auto;
+    background-color: transparent;
+    color: gray;
+    border-radius: 1em;
+
+    &:hover {
+        background-color: grey;
+        color: white;
+    }
+
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0;
+
+}
+
+.discard {
+    border: none;
+    background-color: red;
+    color: white;
+    width: 20%;
+    padding: 0.5em;
+    border-radius: 0em;
+}
+
+.compose {
+    color: white;
+    border: unset;
+    cursor: pointer;
+    width: 20%;
+    padding: 0.5em;
+    border-radius: 0em;
+    background-color: grey;
+}
