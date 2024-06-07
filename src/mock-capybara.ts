@@ -10,7 +10,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: false,
-        // posts: [],
+        posts: [],
         friends: []
     },
     {
@@ -21,7 +21,7 @@ CAPYBARAS.push(    {
         hobbies: 'tauchen',
         age: 5,
         canFollow: false,
-        // posts: [],
+        posts: [],
         friends: []
     }, {
         id: 2,
@@ -31,7 +31,7 @@ CAPYBARAS.push(    {
         hobbies: 'spielen',
         age: 5,
         canFollow: true,
-        // posts: [],
+        posts: [],
         friends: []
     }, {
         id: 3,
@@ -51,7 +51,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        // posts: [],
+        posts: [],
         friends: []
     }, {
         id: 5,

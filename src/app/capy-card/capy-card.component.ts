@@ -39,7 +39,7 @@ export class CapyCardComponent {
   // currentDate: Date 
 
   constructor(public ls: LikeService, private datePipe: DatePipe) {
-
+    this.capybaras.forEach((capy) => console.log(capy.posts)    )
   }
 
   addComment(post: any) {

@@ -23,8 +23,11 @@ export class PostService {
 
   constructor() {
     // console.log(this.posts.length);
+    this.capybaras.forEach((capy) => console.log(capy.posts)    )
+    }
+    // console.log(this.capybaras.posts);
     
-   }
+   
 
 
 
