@@ -14,7 +14,7 @@
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id">{{capybara.name}}</a>
             </p>
             <div *ngIf="capybaras[dataService.profileIndex].id == 0" class="buttons">
-                <button (click)="capybara.canFollow=true; friendService.removeFriend(capybaras, i)">entfernen</button>
+                <button (click)="capybara.canFollow=true; friendService.removeFriend(capybaras, capybara.id)">entfernen</button> <!-- i ist der index des capybaras in der auflistung von friendrow. nicht aber der index im array friends von capybara[0] -->
             </div>
 
         </div>
