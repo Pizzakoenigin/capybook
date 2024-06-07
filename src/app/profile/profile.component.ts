@@ -31,6 +31,7 @@ export class ProfileComponent{
   constructor(private route: ActivatedRoute, public dataService: DataService, public friendService: FriendService) {
 
     this.profileIndex = this.dataService.profileIndex;
+    dataService.onMainPage = false
   }
 
   ngOnInit(): void {

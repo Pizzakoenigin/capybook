@@ -13,14 +13,18 @@
             <p>
                 <a routerLink="/profile" (click)="dataService.profileIndex = capybara.id">{{capybara.name}}</a>
             </p>
-            <!-- <div *ngIf="capybaras[dataService.profileIndex].id == 0"> -->
-                <a (click)="friendService.removeFriend(capybaras, dataService.profileIndex)">entfernen</a>
-            <!-- </div> -->
+            <div *ngIf="capybaras[dataService.profileIndex].id == 0 && dataService.onMainPage == false" class="buttons">
+                <button (click)="capybara.canFollow=true; friendService.removeFriend(capybaras, capybara.id)">entfernen</button> 
+               
+            </div>
 
         </div>
 
 
     </div>
 </div>
+<!-- *ngIf="!capybara.canFollow" --> 
 
-<!-- *ngIf="!capybara.canFollow" -->
+
+
+<!-- i ist der index des capybaras in der auflistung von friendrow. nicht aber der index im array friends von capybara[0] -->

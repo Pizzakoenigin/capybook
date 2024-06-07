@@ -1,4 +1,9 @@
 <app-header></app-header>
+    <!-- <div>
+       <a routerLink="">Zurück zum Feed</a> 
+       <h2>Profil</h2>
+    </div> -->
+
 <div class="container">
     <div class="feed">
         <!-- <div> -->
@@ -13,10 +18,9 @@
                 <p><b>Beschreibung:</b> {{capybaras[dataService.profileIndex].description}}</p>
                 <p><b>Hobbies:</b> {{capybaras[dataService.profileIndex].hobbies}}</p>
                 <p><b>Alter:</b> {{capybaras[dataService.profileIndex].age}}</p>
-                <!-- <app-friendbox *ngIf="capybaras[dataService.profileIndex].id == 0"></app-friendbox> -->
-                
+                <app-friendbox ></app-friendbox>
                 <button *ngIf="capybaras[dataService.profileIndex].id != 0 && capybaras[dataService.profileIndex].canFollow == true" (click)="friendService.addFriend(capybaras, dataService.profileIndex)" class="addFriendButton">Als Freund hinzufügen</button>
-                <button *ngIf="capybaras[dataService.profileIndex].id != 0 && capybaras[dataService.profileIndex].canFollow == false" (click)="friendService.removeFriend(capybaras, dataService.profileIndex)" class="addFriendButton">Als Freund entfernen</button>
+                <button *ngIf="capybaras[dataService.profileIndex].id != 0 && capybaras[dataService.profileIndex].canFollow == false" (click)="friendService.removeFriend(capybaras, capybaras[dataService.profileIndex].id)" class="addFriendButton">Als Freund entfernen</button>
 
 <app-friendbox ></app-friendbox>
             </div>
