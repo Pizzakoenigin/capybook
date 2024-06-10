@@ -42,9 +42,6 @@ export class FriendboxComponent {
     this.capybaras[2].friends.push(this.capybaras[3])
     this.capybaras[0].friends.push(this.capybaras[friendNumber])
     this.capybaras[friendNumber].canFollow = false;
-    // console.log(this.capybaras[friendNumber].canFollow);
-    
-
   };
 
   constructor(public dataService: DataService, public friendService: FriendService) {
@@ -52,6 +49,4 @@ export class FriendboxComponent {
       this.addFriendsToCapies(dataService)
     }
   }
-
-
 }

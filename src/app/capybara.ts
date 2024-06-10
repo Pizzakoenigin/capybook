@@ -11,5 +11,3 @@ export interface Capybara {
     posts?: Post[];
     friends?: any[]
 }
-
-// ? sorgt dafür das die Eigenschaft optional ist und nicht für jedes Element angegeben werden muss.

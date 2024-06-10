@@ -11,29 +11,13 @@ export class PostService {
 
     content: string = ''
 
-    // post = Post
-
     posts = POSTS
 
     capybaras = CAPYBARAS
 
     showInput: boolean = false
 
-    // postCount: number = ;
-
-    // postDate = new Date()
-
-  constructor() {
-    // console.log(this.posts.length);
-    this.capybaras.forEach((capy) => console.log(capy.posts))
-    }
-    // console.log(this.capybaras.posts);
-    
-   
-    // clearInput() {
-    //   this.content = ''
-    // }
-
+  constructor() { }
 
     addPost() {
         if (this.content !== '') {
@@ -54,8 +38,5 @@ export class PostService {
             this.content = '';
             this.showInput = false
         }
-
-
-        // this.content = ''
     }
 }

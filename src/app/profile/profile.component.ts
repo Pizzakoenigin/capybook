@@ -19,17 +19,12 @@ import { ProfileRowComponent } from '../profile-row/profile-row.component';
 })
 export class ProfileComponent{
   capybaras = CAPYBARAS
-
   dataI: any;
   subscription: Subscription;
-
   message: string;
-
   profileIndex: number;
 
-
   constructor(private route: ActivatedRoute, public dataService: DataService, public friendService: FriendService) {
-
     this.profileIndex = this.dataService.profileIndex;
     dataService.onMainPage = false
   }

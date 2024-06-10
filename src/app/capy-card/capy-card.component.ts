@@ -26,17 +26,11 @@ import { CreatePostComponent } from './create-post/create-post.component';
   
 })
 export class CapyCardComponent {
-  // @Input() text: string = '';
-  // @Input() source: string = '';
-  // @Input() cardIndex: number = 0
-
   posts = POSTS
 
   capybaras = CAPYBARAS
 
   newComment: string = ''
-
-  // currentDate: Date 
 
   constructor(public ls: LikeService, private datePipe: DatePipe) {
     this.capybaras.forEach((capy) => console.log(capy.posts)    )

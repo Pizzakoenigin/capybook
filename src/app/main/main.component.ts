@@ -17,21 +17,13 @@ import { DataService } from '../data.service';
   imports: [HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, FriendboxComponent, MatIconModule, NgFor, FormsModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
-  
 })
 
-
-
-
 export class MainComponent {
-
   capybaras = CAPYBARAS
-
-
 
   constructor(public dataService: DataService) {
     dataService.onMainPage = true
     dataService.profileIndex = 0
   }
-
 }
