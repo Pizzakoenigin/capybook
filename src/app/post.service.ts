@@ -35,6 +35,7 @@ export class PostService {
             };
             this.capybaras[0].posts.push(newPost)
             this.content = '';
+            this.hashtags = '';
             this.showInput = false
         }
     }
