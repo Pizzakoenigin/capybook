@@ -3,10 +3,10 @@
 </button>
 
 <form *ngIf="postService.showInput"  action="">
-    <label for="content">Schreibe deinen Post</label>
-    <input type="text" id="content" [(ngModel)] = "postService.content" name="content"> 
+    <label for="content">Schreibe deinen Post </label>
+    <input type="text" id="content" [(ngModel)] = "postService.content" name="content" class="contentInput"> 
 
-    <label for="hastags">Hashtags (optional)</label>
+    <label for="hastags">Hashtags (optional) </label>
     <input type="text" id="hashtags" [(ngModel)]="postService.hashtags" name="hashtags" (input)="postService.addHashtags()">
 </form>
 
