@@ -43,3 +43,7 @@
     border-radius: 0em;
     background-color: grey;
 }
+
+::ng-deep #hashtags::placeholder:before {
+    content: "#";
+}

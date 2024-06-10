@@ -8,35 +8,58 @@ import { Post } from "./post";
 })
 
 export class PostService {
-    content: string = ''
-    hashtags: string = ''
-    posts = POSTS
+  content: string = ''
+  hashtags: string = ''
+  wordsArray;
+  hashtagArray;
+  wordsString;
+  hashtagString: string = ''
 
-    capybaras = CAPYBARAS
+  posts = POSTS
 
-    showInput: boolean = false
+  capybaras = CAPYBARAS
+
+  showInput: boolean = false
 
   constructor() { }
 
-    addPost() {
-        if (this.content !== '') {
-            const newPost: Post = {
-                id:  this.posts.length + 1,
-                date: new Date(),
-                content: this.content,
-                hashtags: this.hashtags,
-                // source: 'You.com',
-                likes: 0,
-                liked: false,
-                commentPossible: true,
-                editComment: false,
-                comments: [],
-                userComment: [],
-            };
-            this.capybaras[0].posts.push(newPost)
-            this.content = '';
-            this.hashtags = '';
-            this.showInput = false
-        }
+  addHashtags() {
+    // debugger
+    console.log(this.hashtags);
+    
+    // this.hashtags = this.hashtags.replace(/\b/g,'#');
+    // console.log(this.hashtags);
+    // this.hashtags = this.hashtagString
+    
+    
+  }
+
+  addPost() {
+    if (this.content !== '') {
+      this.wordsArray = this.hashtags.split(' ');
+      const filteredArray = this.wordsArray.filter(element => element !== '');
+      this.wordsArray = filteredArray
+      this.hashtagArray = this.wordsArray.map(word => '#' + word);
+      this.wordsString = this.hashtagArray.join(' ');
+
+      const newPost: Post = {
+        id: this.posts.length + 1,
+        date: new Date(),
+        content: this.content,
+        // hashtags: this.hashtags,
+        hashtags: this.wordsString,
+        // source: 'You.com',
+        likes: 0,
+        liked: false,
+        commentPossible: true,
+        editComment: false,
+        comments: [],
+        userComment: [],
+      };
+      this.capybaras[0].posts.push(newPost)
+      this.content = '';
+      this.hashtags = '';
+      this.showInput = false
     }
+  }
 }
