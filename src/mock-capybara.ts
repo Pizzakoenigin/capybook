@@ -97,6 +97,7 @@ CAPYBARAS.push(    {
 
 )
 
+
 CAPYBARAS[1].posts.push(POSTS[0]);
 CAPYBARAS[1].posts.push(POSTS[1]);
 CAPYBARAS[2].posts.push(POSTS[2]);

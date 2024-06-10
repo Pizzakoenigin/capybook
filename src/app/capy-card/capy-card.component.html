@@ -21,7 +21,7 @@
         <div class="comments">
             <h3>Kommentare</h3>
             <div *ngFor="let comment of post.comments">
-                <p>{{comment}}</p>
+                <p>{{comment.user}} schreibt: {{comment.comment}}</p>
             </div>
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
                 <p>Du: {{userComment}}</p>

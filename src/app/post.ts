@@ -1,3 +1,5 @@
+import  {Comment} from "./comment"
+
 export interface Post {
     id: number;
     // author: string;
@@ -9,6 +11,6 @@ export interface Post {
     liked: boolean;
     commentPossible: boolean;
     editComment: boolean;
-    comments: string[];
+    comments: Comment[];
     userComment: string[];
 }
