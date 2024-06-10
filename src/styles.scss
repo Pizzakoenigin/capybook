@@ -2,17 +2,15 @@
     --main-color: rgba(224, 166, 89, 0.901);
 }
 
-
 body {
     margin: 0;
     background-color: rgba($color: #c9b449, $alpha: 0.1);
     font-family: sans-serif;
     color: rgb(97, 97, 94);
-
     h2 {
         margin: 0;
-    }
 
+    }
     a {
         color: black;
         text-decoration: none;
@@ -34,8 +32,6 @@ body {
     box-sizing: border-box;
     margin: 2em auto;
     color: black;
-
-
 }
 
 html, body { height: 100%; }

@@ -5,6 +5,7 @@ import { POSTS } from '../../mock-posts';
 import { CAPYBARAS } from '../../mock-capybara';
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @Component({
   selector: 'app-capy-card',
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     NgFor,
     NgIf,
     DatePipe,
-    FormsModule
+    FormsModule,
+    CreatePostComponent
   ],
   providers: [
     DatePipe
@@ -24,25 +26,14 @@ import { FormsModule } from '@angular/forms';
   
 })
 export class CapyCardComponent {
-  @Input() text: string = '';
-  @Input() source: string = '';
-  @Input() cardIndex: number = 0
-
   posts = POSTS
 
   capybaras = CAPYBARAS
 
   newComment: string = ''
 
-  // currentDate: Date 
-
   constructor(public ls: LikeService, private datePipe: DatePipe) {
 
-    // this.capybaras[0].friends.push(this.capybaras[1], this.capybaras[2]),  //friends get pushed to the objects after they got declared in mock.capybaras
-    // this.capybaras[0].friends.push() 
-    
-
-    
   }
 
   addComment(post: any) {

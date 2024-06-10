@@ -1,8 +1,6 @@
 .container {
     display: flex;
     justify-content: center;
-    
-
 
     .feed {
         padding: 1.5em;
@@ -11,9 +9,8 @@
         justify-content: center;
         gap: 1.5em;
         max-width: 70%;
-margin: 0 auto;
+        margin: 0 auto;
     }
-
 
     .flexrow {
         padding: 1.5em 0;
@@ -23,6 +20,4 @@ margin: 0 auto;
         top: 0;
         margin: 0 auto;
     }
-
-
 }

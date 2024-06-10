@@ -14,27 +14,18 @@ import { log } from 'console';
   imports: [RouterOutlet, RouterLink, ProfileRowComponent, NgFor, NgIf],
   templateUrl: './proposals.component.html',
   styleUrl: './proposals.component.scss'
-
-
 })
 
-
-
 export class ProposalsComponent {
-
   message: string;
   subscription: Subscription;
-
   capybaras = CAPYBARAS
-
-  
 
   constructor(public dataService: DataService, public friendService: FriendService) { }
 
   setprofileIndex() {
     console.log('klick');
     console.log(this.dataService.profileIndex);
-
     this.dataService.profileIndex = 0;
   }
 

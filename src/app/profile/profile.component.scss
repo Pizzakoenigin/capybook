@@ -15,11 +15,10 @@ a {
         // justify-content: center;
         gap: 1.5em;
         max-width: 70%;
-margin: 0 auto;
+        margin: 0 auto;
     }
 
     .profile {
-
         // padding: 1.5em;
         display: flex;
         flex-direction: row;
@@ -28,31 +27,35 @@ margin: 0 auto;
         width: 100%;
         margin: 0;
 
-        h3, p, ul, li {
+        h3,
+        p,
+        ul,
+        li {
             margin: 0.4em 0;
         }
 
-            .profilePicture {
-        width: 30%;
-        // height: 30vw;
-        // border-radius: 25px;
-        object-fit: cover;
-        // object-position: center;
-        // margin: 1em auto;
-    }
-
-    .profileDescription {
-
-        justify-content: center;
-        padding: 1.5em;
-        h2{
-            display: inline;
-            font-size: 2em;
+        .profilePicture {
+            width: 30%;
+            // height: 30vw;
+            // border-radius: 25px;
+            object-fit: cover;
+            // object-position: center;
+            // margin: 1em auto;
         }
 
+        .profileDescription {
 
-        
-    }
+            justify-content: center;
+            padding: 1.5em;
+
+            h2 {
+                display: inline;
+                font-size: 2em;
+            }
+
+
+
+        }
 
     }
 
@@ -75,7 +78,7 @@ margin: 0 auto;
     cursor: pointer;
     // align-self: center;
     // padding: 0.75em;
-    margin:  1em 0 0.75em 0;
+    margin: 1em 0 0.75em 0;
     display: inline;
     // font-size: 0.7em;
     // color: white;

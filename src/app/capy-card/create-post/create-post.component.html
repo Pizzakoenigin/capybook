@@ -1,0 +1,22 @@
+<button *ngIf="!postService.showInput" (click)="postService.showInput = true" class="createPost">
+    Verfasse einen neuen Post
+</button>
+
+<form *ngIf="postService.showInput"  action="">
+    <label for="content">Schreibe deinen Post </label>
+    <input type="text" id="content" [(ngModel)] = "postService.content" name="content" class="contentInput"> 
+
+    <label for="hastags">Hashtags (optional) </label>
+    <input type="text" id="hashtags" [(ngModel)]="postService.hashtags" name="hashtags" (input)="postService.addHashtags()">
+</form>
+
+<div *ngIf="postService.showInput" (click)="postService.showInput=false" class="buttons">
+<button class="discard">
+    Abbrechen
+</button>
+
+<button class="compose" (click)="postService.addPost()">
+    Post verfassen
+</button>
+</div>
+

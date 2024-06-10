@@ -1,8 +1,11 @@
+<app-create-post></app-create-post>
+
+<h2>Mein Feed</h2>
+
 <div  *ngFor="let capybara of capybaras">
-    <div *ngIf="capybara.posts as post" class="card default-card">
 
-
-        <img src={{post.source}} alt="">
+    <div *ngFor="let post of capybara.posts" class="card default-card">
+        <img *ngIf="post.source" src={{post.source}} alt="">
 
         <div class="post">
             <div class="postUser">
@@ -39,10 +42,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
 
         <div *ngIf="post.commentPossible" class="composeComment">
             <label for="{{post.id}}">Kommentar verfassen</label>

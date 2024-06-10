@@ -1,3 +1,8 @@
+h2 {
+    margin: 1em 0 1em 0;
+}
+
+
 .card {
     // height: 100%;
 
@@ -11,22 +16,20 @@
     .postUser {
         display: flex;
         // vertical-align: center;
-    
-        .postUserPicture {
-        width: 3em;
-        height: 3em;
-        border-radius: 15em;
-        object-fit: cover;
-        margin: 0.7em 0.7em 0.3em 0.7em;
-        display: inline;
-    }
 
-    .author {
-        font-style: italic;
-        margin: 1.5em 0 0 0;
-    }
-    
-    
+        .postUserPicture {
+            width: 3em;
+            height: 3em;
+            border-radius: 15em;
+            object-fit: cover;
+            margin: 0.7em 0.7em 0.3em 0.7em;
+            display: inline;
+        }
+
+        .author {
+            font-style: italic;
+            margin: 1.5em 0 0 0;
+        }
     }
 
 
@@ -57,7 +60,8 @@
             font-size: 1.2em;
         }
 
-        .removeCommentButton, .editCommentButton {
+        .removeCommentButton,
+        .editCommentButton {
             border: unset;
             cursor: pointer;
             align-self: center;
@@ -66,6 +70,7 @@
             display: inline;
             font-size: 0.7em;
             color: grey;
+
             &:hover {
                 background-color: grey;
                 color: white;
@@ -73,7 +78,7 @@
             }
         }
 
-        .userComments{
+        .userComments {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -88,7 +93,8 @@
 
 
 
-    .composeComment, .editComment  {
+    .composeComment,
+    .editComment {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
@@ -96,9 +102,11 @@
 
 
 
-        .composeCommentText, .editCommentText {
+        .composeCommentText,
+        .editCommentText {
             display: flex;
             gap: 1em;
+
             input {
                 width: -webkit-fill-available;
             }
@@ -118,9 +126,9 @@
         }
     }
 
-          .editComment {
-            margin: 1.5em 1em;
-        }  
+    .editComment {
+        margin: 1.5em 1em;
+    }
 
     .buttons {
         display: flex;

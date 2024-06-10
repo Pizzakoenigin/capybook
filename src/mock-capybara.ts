@@ -10,7 +10,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: false,
-        posts: null,
+        posts: [],
         friends: []
     },
     {
@@ -21,7 +21,7 @@ CAPYBARAS.push(    {
         hobbies: 'tauchen',
         age: 5,
         canFollow: false,
-        posts: null,
+        posts: [],
         friends: []
     }, {
         id: 2,
@@ -31,7 +31,7 @@ CAPYBARAS.push(    {
         hobbies: 'spielen',
         age: 5,
         canFollow: true,
-        posts: null,
+        posts: [],
         friends: []
     }, {
         id: 3,
@@ -41,7 +41,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybaras treffen',
         age: 5,
         canFollow: true,
-        posts: null,
+        posts: [],
         friends: []
     }, {
         id: 4,
@@ -51,7 +51,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        posts: null,
+        posts: [],
         friends: []
     }, {
         id: 5,
@@ -61,7 +61,7 @@ CAPYBARAS.push(    {
         hobbies: 'Schüsseln',
         age: 5,
         canFollow: true,
-        posts: POSTS[0],
+        posts: [],
         friends: []
     }, {
         id: 6,
@@ -71,7 +71,7 @@ CAPYBARAS.push(    {
         hobbies: 'Gras',
         age: 5,
         canFollow: true,
-        posts: POSTS[1],
+        posts: [],
         friends: []
     }, {
         id: 7,
@@ -81,7 +81,7 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        posts: POSTS[2],
+        posts: [],
         friends: []
     }, {
         id: 8,
@@ -91,8 +91,13 @@ CAPYBARAS.push(    {
         hobbies: 'Capybook',
         age: 5,
         canFollow: true,
-        posts: POSTS[3],
+        posts: [],
         friends: []
     }
 
 )
+
+CAPYBARAS[1].posts.push(POSTS[0]);
+CAPYBARAS[1].posts.push(POSTS[1]);
+CAPYBARAS[2].posts.push(POSTS[2]);
+CAPYBARAS[3].posts.push(POSTS[3])
