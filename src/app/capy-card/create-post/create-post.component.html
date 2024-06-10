@@ -7,7 +7,7 @@
     <input type="text" id="content" [(ngModel)] = "postService.content" name="content"> 
 
     <label for="hastags">Hashtags (optional)</label>
-    <input type="text" id="hashtags">
+    <input type="text" id="hashtags" [(ngModel)]="postService.hashtags" name="hashtags">
 </form>
 
 <div *ngIf="postService.showInput" (click)="postService.showInput=false" class="buttons">

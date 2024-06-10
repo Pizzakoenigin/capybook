@@ -8,9 +8,8 @@ import { Post } from "./post";
 })
 
 export class PostService {
-
     content: string = ''
-
+    hashtags: string = ''
     posts = POSTS
 
     capybaras = CAPYBARAS
@@ -25,7 +24,7 @@ export class PostService {
                 id:  this.posts.length + 1,
                 date: new Date(),
                 content: this.content,
-                // hashtags: 'angular, coding',
+                hashtags: this.hashtags,
                 // source: 'You.com',
                 likes: 0,
                 liked: false,
