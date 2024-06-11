@@ -13,14 +13,14 @@ CAPYBARAS.push(    {
         posts: [],
         friends: []
     },
-    {
+    {                       
         id: 1,
         name: 'Patrick',
         description: 'taucht gerne',
         image: 'assets/img/capybara5.jpg',
         hobbies: 'tauchen',
         age: 5,
-        canFollow: false,
+        canFollow: true,
         posts: [],
         friends: []
     }, {
