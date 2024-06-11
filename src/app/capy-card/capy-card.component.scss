@@ -78,6 +78,10 @@ h2 {
             }
         }
 
+        .removeCommentButton:hover {
+            background-color: red;
+        }
+
         .userComments {
             display: flex;
             justify-content: space-between;
