@@ -3,20 +3,20 @@ a {
 }
 
 .container {
-    display: flex;
-    // align-items: flex-start;
-    justify-content: center;
-    // margin: 0 auto;
+    // display: flex;
+    // // align-items: flex-start;
+    // justify-content: center;
+    // // margin: 0 auto;
 
-    .feed {
-        padding: 1.5em;
-        display: flex;
-        flex-direction: column;
-        // justify-content: center;
-        gap: 1.5em;
-        max-width: 70%;
-        margin: 0 auto;
-    }
+    // .feed {
+    //     padding: 1.5em;
+    //     display: flex;
+    //     flex-direction: column;
+    //     // justify-content: center;
+    //     gap: 1.5em;
+    //     width: 70%;
+    //     margin: 0 auto;
+    // }
 
     .profile {
         // padding: 1.5em;
@@ -63,12 +63,12 @@ a {
 
 
     .flexrow {
-        padding: 1.5em 0;
-        position: -webkit-sticky;
-        /* Safari */
-        position: sticky;
-        top: 0;
-        margin: 0 auto 0 0;
+        // padding: 1.5em 0;
+        // position: -webkit-sticky;
+        // /* Safari */
+        // position: sticky;
+        // top: 0;
+        // margin: 0 auto 0 0;
 
     }
 }
