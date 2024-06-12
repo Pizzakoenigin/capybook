@@ -28,7 +28,11 @@
                 
             </div>
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
-                <p>Du: {{userComment}}</p>
+                <div class="postUser">
+                    <img src="{{capybaras[0].image}}" alt="" class="postUserPicture">
+                    <p class="comment"> <b>Du: </b>{{userComment}}</p>
+                </div>
+                
                 <div>
                     <button class="editCommentButton" (click)="post.editComment = true; post.id = i">
                         bearbeiten</button>

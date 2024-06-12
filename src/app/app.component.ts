@@ -14,20 +14,13 @@ import { POSTS } from '../mock-posts';
   imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
-
 })
 
-
-
-
 export class AppComponent {
-
-
   constructor() {
     CAPYBARAS[1].posts.push(POSTS[0]);
     CAPYBARAS[4].posts.push(POSTS[1]);
     CAPYBARAS[2].posts.push(POSTS[2]);
     CAPYBARAS[1].posts.push(POSTS[3])
   }
-
 }
