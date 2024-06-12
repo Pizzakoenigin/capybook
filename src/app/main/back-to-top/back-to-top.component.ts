@@ -21,7 +21,6 @@ export class BackToTopComponent {
   @HostListener("window:scroll")
 
   onWindowScroll() {
-    console.log(window.scrollY);
     if (window.scrollY > 50) {
       this.isScrolled = true
     }
@@ -34,8 +33,4 @@ export class BackToTopComponent {
   backToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-
-  // backToTop() {document.body.scrollTop = 0; // For Safaridocument.documentElement.scrollTop = 0;
-  // }
 }

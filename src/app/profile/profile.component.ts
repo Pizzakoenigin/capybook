@@ -33,7 +33,6 @@ export class ProfileComponent{
     this.profileIndex = 0
     this.route.params.subscribe(params => {
       this.dataI = params['id']
-      console.log(this.dataI);
     })
   }
 
