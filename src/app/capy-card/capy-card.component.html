@@ -6,7 +6,6 @@
 
     <div *ngFor="let post of capybara.posts" class="card default-card">
         <img *ngIf="post.source" src={{post.source}} alt="">
-
         <div class="post">
             <div class="postUser">
             <img src="{{capybara.image}}" alt="" class="postUserPicture">
@@ -16,12 +15,14 @@
             <p class="hashtags">{{post.hashtags}}</p>
             <p>{{post.likes}} Likes</p>
         </div>
-
-
         <div class="comments">
             <h3>Kommentare</h3>
+            <div *ngIf="post.comments.length == 0 && post.userComment.length == 0" >
+                <p>Noch keine Kommentare</p>
+            </div>
             <div *ngFor="let comment of post.comments">
-                <p>{{comment}}</p>
+                
+                <p><b>{{comment.user}}:</b>  {{comment.comment}}</p>
             </div>
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
                 <p>Du: {{userComment}}</p>

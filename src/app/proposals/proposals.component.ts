@@ -24,8 +24,8 @@ export class ProposalsComponent {
   constructor(public dataService: DataService, public friendService: FriendService) { }
 
   setprofileIndex() {
-    console.log('klick');
-    console.log(this.dataService.profileIndex);
+    // console.log('klick');
+    // console.log(this.dataService.profileIndex);
     this.dataService.profileIndex = 0;
   }
 

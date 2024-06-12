@@ -43,11 +43,6 @@ export class CapyCardComponent {
     this.newComment = '';
   }
 
-  // editComment(post: any, index: number) {
-  //   post.editComment = true
-  //   const commentToEdit = post.userComment[index]
-  // }
-
   removeComment(post: any, index) {
     post.userComment.splice(index, 1)
   }
