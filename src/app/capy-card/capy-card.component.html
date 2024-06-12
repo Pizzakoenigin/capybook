@@ -9,7 +9,7 @@
         <div class="post">
             <div class="postUser">
             <img src="{{capybara.image}}" alt="" class="postUserPicture">
-            <p class="author"><a routerLink="/profile" (click)="dataService.profileIndex = capybara.id"> {{capybara.name}}</a> am {{post.date | date: 'dd.MM.yyyy'}}:</p>
+            <p class="author"><a [routerLink]="['/profile', capybara.id]" (click)="dataService.profileIndex = capybara.id"> {{capybara.name}}</a> am {{post.date | date: 'dd.MM.yyyy'}}:</p>
             </div>
             <p>{{post.content}}</p>
             <p class="hashtags">{{post.hashtags}}</p>
@@ -23,14 +23,14 @@
             <div *ngFor="let comment of post.comments">
                 <div class="postUser">
                     <img src="{{comment.image}}" alt="" class="postUserPicture">
-                    <p class="comment"><b><a routerLink="/profile" (click)="dataService.profileIndex = comment.userID"> {{comment.user}}:</a></b>  {{comment.comment}}</p >
+                    <p class="comment"><b><a [routerLink]="['/profile', capybaras[comment.userID].id]" (click)="dataService.profileIndex = comment.userID"> {{comment.user}}:</a></b>  {{comment.comment}}</p >
                 </div>
                 
             </div>
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
                 <div class="postUser">
                     <img src="{{capybaras[0].image}}" alt="" class="postUserPicture">
-                    <p class="comment"> <b><a routerLink="/profile" > Du: </a></b> {{userComment}}</p>
+                    <p class="comment"> <b><a [routerLink]="['/profile', capybaras[0].id]" > Du: </a></b> {{userComment}}</p>
                 </div>
                 
                 <div>
