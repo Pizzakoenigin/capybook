@@ -16,8 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './back-to-top.component.scss'
 })
 export class BackToTopComponent {
-
-
   isScrolled: boolean = false;
 
   @HostListener("window:scroll")
@@ -26,14 +24,11 @@ export class BackToTopComponent {
     console.log(window.scrollY);
     if (window.scrollY > 50) {
       this.isScrolled = true
-      console.log(this.isScrolled);
-      
     }
 
     if (window.scrollY < 50) {
       this.isScrolled = false
     }
-
   }
 
   backToTop() {
