@@ -10,11 +10,20 @@ import { LikeService } from '../like.service';
 import { FormsModule} from '@angular/forms';
 import { CAPYBARAS } from '../../mock-capybara'
 import { DataService } from '../data.service';
+import { BackToTopComponent } from './back-to-top/back-to-top.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CapyCardComponent, ProposalsComponent, ProfileRowComponent, FriendboxComponent, MatIconModule, NgFor, FormsModule],
+  imports: [HeaderComponent, 
+    CapyCardComponent, 
+    ProposalsComponent, 
+    ProfileRowComponent, 
+    FriendboxComponent, 
+    BackToTopComponent, 
+    MatIconModule, 
+    NgFor, 
+    FormsModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
