@@ -21,8 +21,11 @@
                 <p>Noch keine Kommentare</p>
             </div>
             <div *ngFor="let comment of post.comments">
+                <div class="postUser">
+                    <img src="{{comment.image}}" alt="" class="postUserPicture">
+                    <p class="comment"><b>{{comment.user}}:</b>  {{comment.comment}}</p >
+                </div>
                 
-                <p><b>{{comment.user}}:</b>  {{comment.comment}}</p>
             </div>
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
                 <p>Du: {{userComment}}</p>

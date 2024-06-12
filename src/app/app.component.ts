@@ -25,7 +25,7 @@ export class AppComponent {
 
   constructor() {
     CAPYBARAS[1].posts.push(POSTS[0]);
-    CAPYBARAS[3].posts.push(POSTS[1]);
+    CAPYBARAS[4].posts.push(POSTS[1]);
     CAPYBARAS[2].posts.push(POSTS[2]);
     CAPYBARAS[1].posts.push(POSTS[3])
   }

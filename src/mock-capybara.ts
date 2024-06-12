@@ -1,5 +1,4 @@
 import { Capybara } from "./app/capybara";
-import { POSTS } from "./mock-posts";
 
 export const CAPYBARAS: Capybara[] = [] // capybara needs to be declared befored declaring capybaras. after that the data get pushed into the Capybaras object
 CAPYBARAS.push(    {
