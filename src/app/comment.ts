@@ -1,5 +1,6 @@
 export interface Comment  {
     user: string,
-    image?: string 
+    userID: number,
+    image?: string, 
     comment: string
 }

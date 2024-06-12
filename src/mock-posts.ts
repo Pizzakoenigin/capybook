@@ -17,6 +17,7 @@ export const POSTS: Post[] = [
         comments: [
             {
                 user: CAPYBARAS[8].name,
+                userID: CAPYBARAS[8].id,
                 image: CAPYBARAS[8].image,
                 comment: "Was für eine tolle Schüssel 😍"
             }],
@@ -35,10 +36,12 @@ export const POSTS: Post[] = [
         editComment: false,
         comments: [{
             user: CAPYBARAS[6].name,
+            userID: CAPYBARAS[6].id,
             image: CAPYBARAS[6].image,
             comment: "Langes Gras schmeckt am besten"
         }, {
             user: CAPYBARAS[3].name,
+            userID: CAPYBARAS[3].id,
             image: CAPYBARAS[3].image,
             comment: "Da kriege ich richtig Appetit 🤤"
         }],
@@ -56,6 +59,7 @@ export const POSTS: Post[] = [
         editComment: false,
         comments: [{
             user: CAPYBARAS[3].name,
+            userID: CAPYBARAS[3].id,
             image: CAPYBARAS[3].image,
             comment: "Ich verabrede mich gerne mit meinen Freunden zum essen 🥰 🍽️ 🌱"
 
