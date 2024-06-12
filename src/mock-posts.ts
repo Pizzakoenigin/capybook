@@ -34,7 +34,7 @@ export const POSTS: Post[] = [
             user: CAPYBARAS[6].name,
             comment: "Langes Gras schmeckt am besten"
          }, {
-            user: CAPYBARAS[4].name,
+            user: CAPYBARAS[3].name,
             comment: "Da kriege ich richtig Appetit 🤤"
     }],
         userComment: []
