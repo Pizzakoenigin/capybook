@@ -49,7 +49,11 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: [],
+        comments: [{
+            user: CAPYBARAS[3].name,
+            comment: "Ich verabrede mich gerne mit meinen Freunden zum essen 🥰🍽️🌱"
+
+        }],
         userComment: []
     }, {
         id: 4,

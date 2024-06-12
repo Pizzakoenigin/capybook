@@ -33,7 +33,7 @@ export class CapyCardComponent {
   newComment: string = ''
 
   constructor(public ls: LikeService, private datePipe: DatePipe) {
-    console.log(this.posts[1]);
+    console.log(this.posts[0].comments);
     
   }
 
@@ -43,11 +43,6 @@ export class CapyCardComponent {
     }
     this.newComment = '';
   }
-
-  // editComment(post: any, index: number) {
-  //   post.editComment = true
-  //   const commentToEdit = post.userComment[index]
-  // }
 
   removeComment(post: any, index) {
     post.userComment.splice(index, 1)
