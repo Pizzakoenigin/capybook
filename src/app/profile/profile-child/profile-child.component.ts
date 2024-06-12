@@ -1,23 +1,32 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
-import { FriendService } from '../friend.service';
+import { DataService } from '../../data.service';
+import { FriendService } from '../../friend.service';
 import { Subscription } from 'rxjs';
-import { HeaderComponent } from '../header/header.component';
-import { ProposalsComponent } from '../proposals/proposals.component';
-import { FriendboxComponent } from '../friendbox/friendbox.component';
-import { CAPYBARAS } from '../../mock-capybara';
+import { HeaderComponent } from '../../header/header.component';
+import { ProposalsComponent } from '../../proposals/proposals.component';
+import { FriendboxComponent } from '../../friendbox/friendbox.component';
+import { CAPYBARAS } from '../../../mock-capybara';
 import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
-import { NgIf } from '@angular/common';
-import { ProfileRowComponent } from '../profile-row/profile-row.component';
+import { CommonModule, NgIf } from '@angular/common';
+import { ProfileRowComponent } from '../../profile-row/profile-row.component';
+
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profile-child',
   standalone: true,
-  imports: [HeaderComponent, ProposalsComponent, FriendboxComponent, ProfileRowComponent, RouterOutlet, RouterLink, NgIf],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  imports: [HeaderComponent, 
+    ProposalsComponent, 
+    FriendboxComponent, 
+    ProfileRowComponent,
+    RouterOutlet, 
+    RouterLink, 
+    NgIf,
+    CommonModule],
+  templateUrl: './profile-child.component.html',
+  styleUrl: './profile-child.component.scss'
 })
-export class ProfileComponent{
+export class ProfileChildComponent {
+
   capybaras = CAPYBARAS
   dataI: any;
   subscription: Subscription;
@@ -35,8 +44,5 @@ export class ProfileComponent{
       this.dataI = params['id']
     })
   }
-
-
-
 
 }
