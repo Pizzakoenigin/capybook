@@ -51,7 +51,7 @@ export const POSTS: Post[] = [
         editComment: false,
         comments: [{
             user: CAPYBARAS[3].name,
-            comment: "Ich verabrede mich gerne mit meinen Freunden zum essen 🥰🍽️🌱"
+            comment: "Ich verabrede mich gerne mit meinen Freunden zum essen 🥰 🍽️ 🌱"
 
         }],
         userComment: []
