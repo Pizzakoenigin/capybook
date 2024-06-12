@@ -33,7 +33,8 @@ export class CapyCardComponent {
   newComment: string = ''
 
   constructor(public ls: LikeService, private datePipe: DatePipe) {
-
+    console.log(this.posts[1]);
+    
   }
 
   addComment(post: any) {

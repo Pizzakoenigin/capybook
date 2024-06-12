@@ -14,9 +14,9 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: Comment[
-            CAPYBARAS[8].name,
-            "Was für eine tolle Schüssel 😍"],
+        comments: [
+            {user: CAPYBARAS[8].name,
+             comment: "Was für eine tolle Schüssel 😍"}],
         userComment: []
     },
     {
@@ -30,13 +30,13 @@ export const POSTS: Post[] = [
         liked: false,
         commentPossible: false,
         editComment: false,
-        comments: [Comment[
-            CAPYBARAS[6].name,
-            "Langes Gras schmeckt am besten"
-        ], Comment[
-        CAPYBARAS[4].name,
-        "Da kriege ich richtig Appetit 🤤"
-        ]],
+        comments: [{
+            user: CAPYBARAS[6].name,
+            comment: "Langes Gras schmeckt am besten"
+         }, {
+            user: CAPYBARAS[4].name,
+            comment: "Da kriege ich richtig Appetit 🤤"
+    }],
         userComment: []
     }, {
         id: 3,
