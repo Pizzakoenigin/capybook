@@ -7,7 +7,7 @@
         <div class="profile-row" *ngIf="capybara.canFollow">
             <img src={{capybara.image}} alt="">
             <div>
-                <a [routerLink]="['/profile', capybaras[i].name + capybaras[i].id]" (click)="dataService.profileIndex = capybara.id"><b>{{capybara.name}}</b></a>
+                <a [routerLink]="['/profile', capybaras[i].id]" (click)="dataService.profileIndex = capybaras[i].id">  <b>{{capybaras[i].name}}</b></a>
                 <span> {{capybara.description}}</span> <br>
                 <a (click)="friendService.addFriend(capybaras, capybara.id)">adden</a>
             </div>

@@ -6,6 +6,6 @@ import { ProfileChildComponent } from './profile/profile-child/profile-child.com
 export const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'profile', component: ProfileComponent, children: [
-        { path: 'profile/:username', component: ProfileChildComponent}
+        { path: ':username', component: ProfileChildComponent}
     ]}
 ];
