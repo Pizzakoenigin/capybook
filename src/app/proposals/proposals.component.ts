@@ -24,15 +24,13 @@ export class ProposalsComponent {
   constructor(public dataService: DataService, public friendService: FriendService) { }
 
   setprofileIndex() {
-    // console.log('klick');
-    // console.log(this.dataService.profileIndex);
     this.dataService.profileIndex = 0;
   }
 
-  // addFriend(i) {
-  //   this.capybaras[0].friends.push(this.capybaras[i] )
-  //   this.dataService.friendListLength = this.capybaras[0].friends.length+2
-  // }
+
+
+
+
 }
 
 

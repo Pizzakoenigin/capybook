@@ -8,13 +8,12 @@ import { on } from "events";
 
 export class FriendService {
 
-  constructor(public dataService: DataService) { }
+  constructor() { }
 
   addFriend(capybaras, i) {
     capybaras[0].friends.push(capybaras[i])
     capybaras[i].canFollow = false;
     capybaras[i].friends.push(capybaras[0])
-    this.dataService.friendListLength = capybaras[0].friends.length + 2
   }
 
   removeFriend(capybaras, i) {
@@ -29,10 +28,11 @@ export class FriendService {
         capybaras[i].friends.splice(j, 1)
       }
     }
-
-  capybaras[i].canFollow = true;
-    this.dataService.friendListLength = capybaras[0].friends.length + 2
+    capybaras[i].canFollow = true;
   }
+
+;
+  
 
 }
 
