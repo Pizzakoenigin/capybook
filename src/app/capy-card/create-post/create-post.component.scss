@@ -45,15 +45,16 @@
 
 .discard {
     border: none;
-    background-color: red;
+    background-color: rgba(128, 128, 128, 0.1);
     cursor: pointer;
-    color: white;
+    color: red;
     width: 20%;
     padding: 0.5em;
     border-radius: 0em;
 
     &:hover{
-        background-color: darkred;
+        background-color: red;
+        color: white;
     }
 }
 
