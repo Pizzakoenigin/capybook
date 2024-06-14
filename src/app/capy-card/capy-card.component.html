@@ -15,6 +15,7 @@
             <p class="hashtags">{{post.hashtags}}</p>
             <p>{{post.likes}} Likes</p>
         </div>
+
         <div class="comments">
             <h3>Kommentare</h3>
             <div *ngIf="post.comments.length == 0 && post.userComment.length == 0" >
@@ -25,8 +26,8 @@
                     <img src="{{comment.image}}" alt="" class="postUserPicture">
                     <p class="comment"><b><a [routerLink]="['/profile', capybaras[comment.userID].id]" (click)="dataService.profileIndex = comment.userID"> {{comment.user}}:</a></b>  {{comment.comment}}</p >
                 </div>
-                
             </div>
+
 
             <div *ngFor="let userComment of post.userComment; let i = index" class="userComments">
                 <div class="postUser">
