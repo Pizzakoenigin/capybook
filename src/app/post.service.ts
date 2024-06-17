@@ -35,7 +35,7 @@ export class PostService {
       this.wordsString = this.hashtagArray.join(' ');
 
       const newPost: Post = {
-        id: this.posts.length,
+        id: this.capybaras[0].posts.length,
         date: new Date(),
         content: this.content,
         // hashtags: this.hashtags,

@@ -53,7 +53,9 @@ export class CapyCardComponent {
     post.userComment.splice(index, 1)
   }
 
-  removePost()
+  removePost(index) {
+    this.capybaras[0].posts.splice(index, 1)
+  }
 
   trackByFn(index) {
     return index;  }

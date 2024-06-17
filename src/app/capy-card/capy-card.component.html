@@ -3,7 +3,7 @@
 <h2>Mein Feed</h2>
 
 <div  *ngFor="let capybara of capybaras">
-    <div *ngFor="let post of capybara.posts" class="card default-card">
+    <div *ngFor="let post of capybara.posts let i = index" class="card default-card">
         <img *ngIf="post.source" src={{post.source}} alt="">
         <div class="post">
             <div class="postUser">
@@ -19,7 +19,7 @@
             <!-- <div> -->
                 <button class="editCommentButton" (click)="post.editComment = true; post.id">
                     bearbeiten</button>
-                <button class="removeCommentButton" (click)="removeComment(post, post.id) "> entfernen</button>
+                <button class="removeCommentButton" (click)="removePost(i) "> entfernen</button>
             <!-- </div> -->
         </div>
 
