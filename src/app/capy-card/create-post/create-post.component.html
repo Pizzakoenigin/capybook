@@ -2,7 +2,8 @@
     Verfasse einen neuen Post
 </button>
 
-<form *ngIf="postService.showInput"  action="">
+<div *ngIf="postService.showInput" class="card default-card" style="padding: 1.5em;">
+  <form  action="">
     <label for="content">Schreibe deinen Post </label>
     <input type="text" id="content" [(ngModel)] = "postService.content" name="content" class="contentInput"> 
 
@@ -18,5 +19,7 @@
 <button class="compose" (click)="postService.addPost()">
     Post verfassen
 </button>
+</div>  
 </div>
+
 

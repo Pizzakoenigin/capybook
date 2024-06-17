@@ -27,16 +27,16 @@
 
 
         <div *ngIf="post.editPost" class="postButtons">
-            <label for="{{i}}">Kommentar editieren</label>
+            <label for="{{i}}">Post editieren</label>
             <div class="editPostText">
                 <input type="text" id="{{i}}" [(ngModel)]="post.content">
-                <button (click)="post.editPost = false">Kommentar bearbeitet</button>
+                <button (click)="post.editPost = false">Post bearbeitet</button>
             </div>
         </div>
 
 
 
-        <div class="comments">
+        <div class="comments" *ngIf="!post.editPost">
             <h3>Kommentare</h3>
             <div *ngIf="post.comments.length == 0 && post.userComment.length == 0">
                 <p>Noch keine Kommentare</p>
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div *ngIf="post.commentPossible" class="composeComment">
+        <div *ngIf="post.commentPossible && !post.editPost" class="composeComment">
             <label for="{{post.id}}">Kommentar verfassen</label>
             <div class="composeCommentText">
                 <input type="text" id="{{post.id}}" [(ngModel)]="newComment">

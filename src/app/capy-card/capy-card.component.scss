@@ -98,33 +98,32 @@ h2 {
     //     gap: 1em;
     // }
 
-        .postButtons {
-            margin: 1.5em 2em;
-    
-            .editPostText
-            {
-                display: flex;
-                gap: 1em;
-    
-                input {
-                    width: -webkit-fill-available;
-                }
+    .postButtons {
+        margin: 1.5em 2em;
+
+        .editPostText {
+            display: flex;
+            gap: 1em;
+
+            input {
+                width: -webkit-fill-available;
             }
-    
-            button {
-                width: 20%;
-                border: unset;
-                cursor: pointer;
-                align-self: center;
-                padding: 0.5em;
-    
-                &:hover {
-                    background-color: rgb(198, 217, 198);
-                    color: white;
-                }
-            }
-    
         }
+
+        button {
+            width: 20%;
+            border: unset;
+            cursor: pointer;
+            align-self: center;
+            padding: 0.5em;
+
+            &:hover {
+                background-color: rgb(198, 217, 198);
+                color: white;
+            }
+        }
+
+    }
 
     .editPost {
         margin: 1.5em;
@@ -152,21 +151,20 @@ h2 {
 
             }
         }
-    .removePostButton:hover {
-        background-color: red;
-    }
+
+        .removePostButton:hover {
+            background-color: red;
+        }
 
 
-        
+
     }
 
 
 
 
     .composeComment,
-    .editComment
-
-     {
+    .editComment {
         margin: 1.5em 2em;
         display: flex;
         flex-direction: column;
@@ -175,8 +173,7 @@ h2 {
 
 
         .composeCommentText,
-        .editCommentText
-        {
+        .editCommentText {
             display: flex;
             gap: 1em;
 
