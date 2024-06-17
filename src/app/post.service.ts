@@ -14,11 +14,8 @@ export class PostService {
   hashtagArray;
   wordsString;
   hashtagString: string = ''
-
   posts = POSTS
-
   capybaras = CAPYBARAS
-
   showInput: boolean = false
 
   constructor() { }
@@ -38,9 +35,7 @@ export class PostService {
         id: this.capybaras[0].posts.length,
         date: new Date(),
         content: this.content,
-        // hashtags: this.hashtags,
         hashtags: this.wordsString,
-        // source: 'You.com',
         likes: 0,
         liked: false,
         commentPossible: false,
