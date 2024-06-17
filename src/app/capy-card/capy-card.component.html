@@ -15,11 +15,11 @@
             <p>{{post.likes}} Likes</p>
         </div>
 
-        <div *ngIf="capybara.id == 0">
+        <div *ngIf="capybara.id == 0" class="postButtons">
             <!-- <div> -->
-                <button class="editCommentButton" (click)="post.editComment = true; post.id">
+                <button class="editPostButton" (click)="post.editComment = true; post.id">
                     bearbeiten</button>
-                <button class="removeCommentButton" (click)="removePost(i) "> entfernen</button>
+                <button class="removePostButton" (click)="postService.removePost(i) "> entfernen</button>
             <!-- </div> -->
         </div>
 

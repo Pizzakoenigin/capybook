@@ -54,4 +54,8 @@ export class PostService {
       this.showInput = false
     }
   }
+
+  removePost(index) {
+    this.capybaras[0].posts.splice(index, 1)
+  }
 }

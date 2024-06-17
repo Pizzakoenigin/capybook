@@ -10,6 +10,7 @@ import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-capy-card',
@@ -38,7 +39,13 @@ export class CapyCardComponent {
 
   newComment: string = ''
 
-  constructor(public ls: LikeService, private datePipe: DatePipe, public dataService: DataService, public friendService: FriendService) {
+  constructor(
+    public ls: LikeService, 
+    private datePipe: DatePipe, 
+    public dataService: DataService, 
+    public friendService: FriendService, 
+    public postService: PostService
+  ) {
 
   }
 
@@ -51,10 +58,6 @@ export class CapyCardComponent {
 
   removeComment(post: any, index) {
     post.userComment.splice(index, 1)
-  }
-
-  removePost(index) {
-    this.capybaras[0].posts.splice(index, 1)
   }
 
   trackByFn(index) {

@@ -98,6 +98,35 @@ h2 {
     //     gap: 1em;
     // }
 
+    .postButtons {
+        margin: 1.5em 1em;
+
+        .removePostButton,
+        .editPostButton {
+            border: unset;
+            cursor: pointer;
+            align-self: center;
+            padding: 0.5em;
+            margin: 0 0.75em;
+            display: inline;
+            font-size: 0.7em;
+            color: grey;
+
+            &:hover {
+                background-color: grey;
+                color: white;
+
+            }
+        }
+    .removePostButton:hover {
+        background-color: red;
+    }
+
+    }
+
+
+
+
 
 
     .composeComment,
