@@ -24,14 +24,6 @@ export class PostService {
   constructor() { }
 
   addHashtags() {
-    // debugger
-    console.log(this.hashtags);
-    
-    // this.hashtags = this.hashtags.replace(/\b/g,'#');
-    // console.log(this.hashtags);
-    // this.hashtags = this.hashtagString
-    
-    
   }
 
   addPost() {
@@ -43,7 +35,7 @@ export class PostService {
       this.wordsString = this.hashtagArray.join(' ');
 
       const newPost: Post = {
-        id: this.posts.length + 1,
+        id: this.posts.length,
         date: new Date(),
         content: this.content,
         // hashtags: this.hashtags,

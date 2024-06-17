@@ -3,7 +3,6 @@
 <h2>Mein Feed</h2>
 
 <div  *ngFor="let capybara of capybaras">
-
     <div *ngFor="let post of capybara.posts" class="card default-card">
         <img *ngIf="post.source" src={{post.source}} alt="">
         <div class="post">
@@ -15,6 +14,16 @@
             <p class="hashtags">{{post.hashtags}}</p>
             <p>{{post.likes}} Likes</p>
         </div>
+
+        <div *ngIf="capybara.id == 0">
+            <!-- <div> -->
+                <button class="editCommentButton" (click)="post.editComment = true; post.id">
+                    bearbeiten</button>
+                <button class="removeCommentButton" (click)="removeComment(post, post.id) "> entfernen</button>
+            <!-- </div> -->
+        </div>
+
+        
         <div class="comments">
             <h3>Kommentare</h3>
             <div *ngIf="post.comments.length == 0 && post.userComment.length == 0" >
@@ -57,7 +66,6 @@
                 <input type="text" id="{{post.id}}" [(ngModel)]="newComment">
                 <button (click)="post.commentPossible = false; addComment(post)">Kommentar posten</button>
             </div>
-
         </div>
 
 
