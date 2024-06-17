@@ -2,7 +2,7 @@
     Verfasse einen neuen Post
 </button>
 
-<div *ngIf="postService.showInput" class="card default-card" style="padding: 1.5em;">
+<div *ngIf="postService.showInput" class="card default-card" style="padding: 0em 1.5em;">
   <form  action="">
     <label for="content">Schreibe deinen Post </label>
     <input type="text" id="content" [(ngModel)] = "postService.content" name="content" class="contentInput"> 

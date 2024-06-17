@@ -43,7 +43,7 @@ export class PostService {
         // source: 'You.com',
         likes: 0,
         liked: false,
-        commentPossible: true,
+        commentPossible: false,
         editComment: false,
         comments: [],
         userComment: [],
