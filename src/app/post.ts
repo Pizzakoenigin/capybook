@@ -11,6 +11,7 @@ export interface Post {
     liked: boolean;
     commentPossible: boolean;
     editComment: boolean;
+    editPost?: boolean;
     comments: Comment[];
     userComment: string[];
 }
